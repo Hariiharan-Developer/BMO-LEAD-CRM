@@ -1,0 +1,276 @@
+/* ================= HOW IT WORKS ================= */
+
+.how-section {
+  position: relative;
+
+  padding: 130px 7%;
+
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #f8fafc 100%
+    );
+
+  overflow: hidden;
+}
+
+
+/* ================= HEADING ================= */
+
+.how-heading {
+  max-width: 720px;
+
+  margin: 0 auto 80px;
+
+  text-align: center;
+}
+
+.how-heading > span {
+  color: var(--bmo-red);
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.how-heading h2 {
+  margin: 16px 0;
+
+  color: var(--bmo-text);
+
+  font-size: clamp(36px, 4vw, 54px);
+
+  line-height: 1.08;
+
+  font-weight: 800;
+
+  letter-spacing: -2px;
+}
+
+.how-heading h2 strong {
+  color: var(--bmo-red);
+}
+
+.how-heading p {
+  max-width: 560px;
+
+  margin: 0 auto;
+
+  color: var(--bmo-muted);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* ================= STEPS ================= */
+
+.how-steps {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  max-width: 1150px;
+
+  margin: auto;
+}
+
+
+/* ================= PROGRESS LINE ================= */
+
+.how-progress-line {
+  position: absolute;
+
+  top: 43px;
+
+  left: 12%;
+
+  width: 76%;
+
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(229, 9, 20, 0.1),
+      rgba(229, 9, 20, 0.5),
+      rgba(229, 9, 20, 0.1)
+    );
+}
+
+
+/* ================= STEP ================= */
+
+.how-step {
+  position: relative;
+
+  padding: 0 25px;
+
+  text-align: center;
+}
+
+
+/* ================= NUMBER ================= */
+
+.how-number {
+  position: relative;
+
+  z-index: 3;
+
+  width: 26px;
+  height: 26px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin: 0 auto 18px;
+
+  border-radius: 50%;
+
+  color: var(--bmo-red);
+
+  background: #ffffff;
+
+  border: 1px solid rgba(229, 9, 20, 0.3);
+
+  font-size: 8px;
+
+  font-weight: 800;
+}
+
+
+/* ================= ICON ================= */
+
+.how-icon {
+  position: relative;
+
+  z-index: 2;
+
+  width: 58px;
+  height: 58px;
+
+  display: grid;
+
+  place-items: center;
+
+  margin: 0 auto 22px;
+
+  color: var(--bmo-red);
+
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.06);
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.how-icon:hover {
+  border-color: rgba(229, 9, 20, 0.3);
+
+  box-shadow:
+    0 15px 35px rgba(229, 9, 20, 0.12);
+}
+
+
+/* ================= TITLE ================= */
+
+.how-step h3 {
+  margin: 0 0 10px;
+
+  color: var(--bmo-text);
+
+  font-size: 17px;
+
+  font-weight: 800;
+}
+
+
+/* ================= DESCRIPTION ================= */
+
+.how-step p {
+  max-width: 220px;
+
+  margin: auto;
+
+  color: var(--bmo-muted);
+
+  font-size: 11px;
+
+  line-height: 1.8;
+}
+
+
+/* ================= ARROW ================= */
+
+.how-arrow {
+  position: absolute;
+
+  top: 115px;
+
+  right: -10px;
+
+  color: rgba(229, 9, 20, 0.45);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1000px) {
+
+  .how-steps {
+    grid-template-columns: repeat(2, 1fr);
+
+    row-gap: 70px;
+  }
+
+  .how-progress-line {
+    display: none;
+  }
+
+  .how-arrow {
+    display: none;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .how-section {
+    padding: 90px 5%;
+  }
+
+  .how-heading {
+    margin-bottom: 55px;
+  }
+
+  .how-heading h2 {
+    font-size: 36px;
+  }
+
+  .how-steps {
+    grid-template-columns: 1fr;
+
+    row-gap: 55px;
+  }
+
+  .how-step {
+    padding: 0;
+  }
+}

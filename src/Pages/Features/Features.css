@@ -1,0 +1,126 @@
+/* Features.css */
+
+.features-section {
+  position: relative;
+  padding: 120px 7%;
+  background: #ffffff;
+}
+
+.features-section .section-heading {
+  max-width: 700px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.features-section .section-heading > span {
+  color: var(--bmo-red);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.features-section .section-heading h2 {
+  margin: 15px 0;
+  color: var(--bmo-text);
+  font-size: clamp(36px, 4vw, 52px);
+  line-height: 1.1;
+  font-weight: 800;
+  letter-spacing: -2px;
+}
+
+.features-section .section-heading h2 strong {
+  color: var(--bmo-red);
+}
+
+.features-section .section-heading p {
+  color: var(--bmo-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.feature-card {
+  position: relative;
+  min-height: 240px;
+  padding: 30px;
+  overflow: hidden;
+
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(229, 9, 20, 0.3);
+  box-shadow: 0 20px 45px rgba(229, 9, 20, 0.08);
+}
+
+.feature-icon {
+  width: 46px;
+  height: 46px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 25px;
+
+  color: var(--bmo-red);
+  background: rgba(229, 9, 20, 0.08);
+
+  border-radius: 12px;
+}
+
+.feature-card h3 {
+  margin-bottom: 10px;
+
+  color: var(--bmo-text);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.feature-card p {
+  margin: 0;
+
+  color: var(--bmo-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.feature-arrow {
+  position: absolute;
+  right: 25px;
+  bottom: 22px;
+
+  color: var(--bmo-red);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+@media (max-width: 1000px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .features-section {
+    padding: 90px 5%;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+}

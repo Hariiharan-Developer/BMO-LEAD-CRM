@@ -1,0 +1,53 @@
+/* :root {
+  --bmo-bg: #ffffff;
+  --bmo-section: #fafafa;
+
+  --bmo-card: #ffffff;
+  --bmo-card-light: #f8f9fa;
+
+  --bmo-border: #e5e7eb;
+
+  --bmo-text: #111111;
+  --bmo-muted: #667085;
+
+  --bmo-red: #e50914;
+  --bmo-red-light: #ff3038;
+  --bmo-red-dark: #b0000b;
+
+  --bmo-red-soft: rgba(229, 9, 20, 0.08);
+  --bmo-red-glow: rgba(229, 9, 20, 0.18);
+}
+
+.hero-content h1 {
+  font-size: clamp(52px, 6vw, 82px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -3.5px;
+  color: #111111;
+}
+
+.section-heading h2,
+.pipeline-text h2,
+.cta-card h2 {
+  font-size: clamp(38px, 4.5vw, 58px);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -2.5px;
+  color: #111111;
+}
+
+.feature-card h3,
+.workflow-item h3,
+.security-card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #171717;
+}
+
+.hero-description,
+.section-heading p,
+.feature-card p,
+.workflow-item p,
+.security-card p {
+  color: #667085;
+} */

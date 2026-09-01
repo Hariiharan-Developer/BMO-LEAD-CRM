@@ -1,0 +1,393 @@
+/* ================= SECURITY ================= */
+
+.security-section {
+  position: relative;
+
+  padding: 140px 7%;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      180deg,
+      #fafafa 0%,
+      #ffffff 100%
+    );
+}
+
+.security-glow {
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  right: -250px;
+  top: 20%;
+
+  border-radius: 50%;
+
+  background: rgba(229, 9, 20, 0.07);
+
+  filter: blur(100px);
+
+  pointer-events: none;
+}
+
+
+/* ================= CONTAINER ================= */
+
+.security-container {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1150px;
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns: 0.85fr 1.15fr;
+
+  align-items: center;
+
+  gap: 80px;
+}
+
+
+/* ================= CONTENT ================= */
+
+.security-label {
+  color: #e50914;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.security-content h2 {
+  margin: 18px 0;
+
+  color: #171717;
+
+  font-size: clamp(38px, 4vw, 54px);
+
+  line-height: 1.05;
+
+  letter-spacing: -2px;
+
+  font-weight: 800;
+}
+
+.security-content h2 strong {
+  color: #e50914;
+}
+
+.security-content > p {
+  max-width: 480px;
+
+  color: #6b7280;
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+
+/* ================= STATUS ================= */
+
+.security-status {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+.security-status-icon {
+  width: 45px;
+  height: 45px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  color: #e50914;
+
+  background: rgba(229, 9, 20, 0.08);
+}
+
+.security-status strong {
+  display: block;
+
+  color: #171717;
+
+  font-size: 12px;
+
+  font-weight: 800;
+}
+
+.security-status span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #9ca3af;
+
+  font-size: 9px;
+}
+
+
+/* ================= SECURITY CARD ================= */
+
+.security-card {
+  padding: 28px;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.08),
+    0 10px 30px rgba(229, 9, 20, 0.04);
+}
+
+
+/* ================= HEADER ================= */
+
+.security-card-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid #eeeeee;
+}
+
+.security-shield {
+  width: 46px;
+  height: 46px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  color: #e50914;
+
+  background: rgba(229, 9, 20, 0.08);
+}
+
+.security-card-header small {
+  color: #9ca3af;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.4px;
+}
+
+.security-card-header h3 {
+  margin: 5px 0 0;
+
+  color: #171717;
+
+  font-size: 15px;
+
+  font-weight: 800;
+}
+
+.security-check {
+  margin-left: auto;
+
+  color: #16a34a;
+}
+
+
+/* ================= SECURITY GRID ================= */
+
+.security-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 12px;
+
+  margin-top: 20px;
+}
+
+.security-item {
+  display: flex;
+
+  gap: 10px;
+
+  padding: 16px;
+
+  border: 1px solid #eeeeee;
+
+  border-radius: 13px;
+
+  background: #fafafa;
+
+  transition: 0.25s;
+}
+
+.security-item:hover {
+  border-color: rgba(229, 9, 20, 0.2);
+
+  background: #fffafa;
+}
+
+.security-item-icon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 9px;
+
+  color: #e50914;
+
+  background: rgba(229, 9, 20, 0.08);
+}
+
+.security-item h4 {
+  margin: 1px 0 5px;
+
+  color: #171717;
+
+  font-size: 11px;
+
+  font-weight: 800;
+}
+
+.security-item p {
+  margin: 0;
+
+  color: #8b8f98;
+
+  font-size: 8px;
+
+  line-height: 1.6;
+}
+
+
+/* ================= SERVER ================= */
+
+.security-server {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 18px;
+
+  padding: 14px;
+
+  border-radius: 12px;
+
+  background: #f8f8f8;
+}
+
+.server-icon {
+  width: 34px;
+  height: 34px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 8px;
+
+  color: #e50914;
+
+  background: rgba(229, 9, 20, 0.08);
+}
+
+.server-info {
+  flex: 1;
+}
+
+.server-info strong {
+  display: block;
+
+  color: #171717;
+
+  font-size: 9px;
+
+  font-weight: 800;
+}
+
+.server-info span {
+  display: block;
+
+  margin-top: 3px;
+
+  color: #9ca3af;
+
+  font-size: 7px;
+}
+
+.server-dot {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #16a34a;
+
+  box-shadow:
+    0 0 10px rgba(22, 163, 74, 0.4);
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+  .security-container {
+    grid-template-columns: 1fr;
+
+    gap: 50px;
+  }
+
+  .security-content {
+    text-align: center;
+  }
+
+  .security-content > p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .security-status {
+    justify-content: center;
+  }
+}
+
+
+@media (max-width: 600px) {
+
+  .security-section {
+    padding: 90px 5%;
+  }
+
+  .security-card {
+    padding: 18px;
+  }
+
+  .security-grid {
+    grid-template-columns: 1fr;
+  }
+}
