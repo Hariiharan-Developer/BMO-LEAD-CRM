@@ -29,7 +29,7 @@ const Home = () => {
 
         <FAQ />
 
-        <CTA />
+        {/* <CTA /> */}
       </main>
 
       <Footer />

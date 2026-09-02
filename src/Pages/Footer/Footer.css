@@ -1,344 +1,255 @@
-/* ================= FOOTER ================= */
+/* =========================================================
+   BMO FOOTER
+========================================================= */
 
 .bmo-footer {
   position: relative;
 
-  padding: 80px 7% 25px;
+  width: 100%;
 
-  background: #111111;
+  padding: 28px 0;
 
-  color: #ffffff;
+  background: #ffffff;
+
+  border-top: 1px solid #eeeeee;
 }
 
 
-/* ================= CONTAINER ================= */
+/* =========================================================
+   CONTAINER
+========================================================= */
 
 .footer-container {
-  max-width: 1200px;
+  width: min(1180px, 92%);
 
-  margin: auto;
-}
+  margin: 0 auto;
 
-
-/* ================= TOP ================= */
-
-.footer-top {
-  display: grid;
-
-  grid-template-columns:
-    1.5fr
-    0.8fr
-    0.8fr
-    1.2fr;
-
-  gap: 60px;
-
-  padding-bottom: 60px;
-}
-
-
-/* ================= BRAND ================= */
-
-.footer-logo {
   display: flex;
 
   align-items: center;
 
-  gap: 10px;
+  justify-content: center;
 }
 
-.footer-logo-mark {
-  width: 38px;
-  height: 38px;
 
-  display: grid;
-  place-items: center;
+/* =========================================================
+   COPYRIGHT
+========================================================= */
 
-  border-radius: 10px;
+.footer-copy {
+  color: #475467;
 
-  color: #ffffff;
-
-  font-size: 17px;
-
-  font-weight: 800;
-
-  background:
-    linear-gradient(
-      135deg,
-      #e50914,
-      #ff3038
-    );
-
-  box-shadow:
-    0 8px 25px rgba(229, 9, 20, 0.25);
-}
-
-.footer-logo-title {
-  display: block;
-
-  font-size: 16px;
-
-  font-weight: 800;
-
-  letter-spacing: 1px;
-}
-
-.footer-logo-subtitle {
-  display: block;
-
-  margin-top: -2px;
-
-  color: #777777;
-
-  font-size: 7px;
+  font-size: 14px;
 
   font-weight: 700;
 
-  letter-spacing: 2px;
-}
+  letter-spacing: 0.1px;
 
-.footer-brand > p {
-  margin: 18px 0;
+  line-height: 1.5;
 
-  color: #888888;
-
-  font-size: 10px;
-
-  line-height: 1.8;
+  text-align: center;
 }
 
 
-/* ================= SOCIALS ================= */
-
-.footer-socials {
-  display: flex;
-
-  gap: 8px;
-}
-
-.footer-socials a {
-  width: 31px;
-  height: 31px;
-
-  display: grid;
-  place-items: center;
-
-  border: 1px solid #292929;
-
-  border-radius: 8px;
-
-  color: #888888;
-
-  background: #181818;
-
-  transition: 0.25s;
-}
-
-.footer-socials a:hover {
-  color: #ffffff;
-
-  border-color: rgba(229, 9, 20, 0.4);
-
-  background: rgba(229, 9, 20, 0.1);
-
-  transform: translateY(-2px);
-}
-
-
-/* ================= COLUMNS ================= */
-
-.footer-column {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: flex-start;
-
-  gap: 12px;
-}
-
-.footer-column h4 {
-  margin: 0 0 8px;
-
-  color: #ffffff;
-
-  font-size: 10px;
-
-  font-weight: 800;
-
-  letter-spacing: 0.5px;
-}
-
-.footer-column a {
-  color: #777777;
-
-  text-decoration: none;
-
-  font-size: 9px;
-
-  transition: 0.2s;
-}
-
-.footer-column a:hover {
-  color: #ff3038;
-
-  transform: translateX(2px);
-}
-
-
-/* ================= FOOTER CTA ================= */
-
-.footer-action {
-  padding-left: 20px;
-
-  border-left: 1px solid #252525;
-}
-
-.footer-action p {
-  margin: 0;
-
-  color: #777777;
-
-  font-size: 9px;
-
-  line-height: 1.7;
-}
-
-.footer-start-btn {
-  display: inline-flex !important;
-
-  align-items: center;
-
-  gap: 7px;
-
-  margin-top: 5px;
-
-  padding: 9px 13px;
-
-  border: 1px solid rgba(229, 9, 20, 0.3);
-
-  border-radius: 8px;
-
-  color: #ff5c63 !important;
-
-  background: rgba(229, 9, 20, 0.08);
-}
-
-.footer-start-btn:hover {
-  color: #ffffff !important;
-
-  background: #e50914;
-
-  transform: translateY(-2px);
-}
-
-
-/* ================= BOTTOM ================= */
-
-.footer-bottom {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  padding-top: 25px;
-
-  border-top: 1px solid #252525;
-
-  color: #555555;
-
-  font-size: 8px;
-}
-
-.footer-bottom-links {
-  display: flex;
-
-  align-items: center;
-
-  gap: 20px;
-}
-
-.footer-bottom-links a {
-  color: #666666;
-
-  text-decoration: none;
-
-  transition: 0.2s;
-}
-
-.footer-bottom-links a:hover {
-  color: #ffffff;
-}
-
-
-/* ================= BACK TOP ================= */
+/* =========================================================
+   STICKY BACK TO TOP
+========================================================= */
 
 .back-top {
-  padding: 0;
+  position: fixed;
 
-  border: 0;
+  right: 28px;
+  bottom: 28px;
 
-  color: #777777;
+  width: 54px;
+  height: 54px;
 
-  background: transparent;
+  display: flex;
 
-  font-family: inherit;
+  align-items: center;
+  justify-content: center;
 
-  font-size: 8px;
+  border: 2px solid #f97316;
+
+  border-radius: 50%;
+
+  background: #f97316;
+
+  color: #ffffff;
 
   cursor: pointer;
 
-  transition: 0.2s;
+  z-index: 9999;
+
+  box-shadow:
+    0 8px 22px rgba(249, 115, 22, 0.28);
+
+  animation:
+    footerArrowFloat 3s ease-in-out infinite;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
+
+/* =========================================================
+   ARROW
+========================================================= */
+
+.back-top svg {
+  width: 24px;
+  height: 24px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
 
 .back-top:hover {
-  color: #ff3038;
+  background: #ea580c;
+
+  border-color: #ea580c;
+
+  transform: translateY(-5px) scale(1.06);
+
+  box-shadow:
+    0 14px 32px rgba(249, 115, 22, 0.38);
+
+  animation-play-state: paused;
 }
 
 
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 900px) {
-
-  .footer-top {
-    grid-template-columns:
-      1fr 1fr;
-
-    gap: 45px;
-  }
-
-  .footer-action {
-    padding-left: 0;
-
-    border-left: 0;
-  }
+.back-top:hover svg {
+  transform: translateY(-3px);
 }
 
 
-@media (max-width: 600px) {
+/* =========================================================
+   ACTIVE / CLICK
+========================================================= */
+
+.back-top:active {
+  transform: translateY(-1px) scale(0.94);
+}
+
+
+/* =========================================================
+   FLOATING ANIMATION
+========================================================= */
+
+@keyframes footerArrowFloat {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+}
+
+
+/* =========================================================
+   ORANGE PULSE GLOW
+========================================================= */
+
+.back-top::before {
+  content: '';
+
+  position: absolute;
+
+  inset: -6px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(249, 115, 22, 0.30);
+
+  pointer-events: none;
+
+  animation:
+    footerArrowPulse 2.5s ease-out infinite;
+}
+
+
+@keyframes footerArrowPulse {
+
+  0% {
+    transform: scale(0.9);
+
+    opacity: 0.8;
+  }
+
+  70% {
+    transform: scale(1.25);
+
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.25);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 576px) {
 
   .bmo-footer {
-    padding: 60px 5% 25px;
+    padding: 24px 0;
   }
 
-  .footer-top {
-    grid-template-columns: 1fr;
 
-    gap: 35px;
+  .footer-copy {
+    font-size: 12px;
+
+    font-weight: 700;
   }
 
-  .footer-bottom {
-    flex-direction: column;
 
-    align-items: flex-start;
+  .back-top {
+    right: 18px;
+    bottom: 18px;
 
-    gap: 18px;
+    width: 48px;
+    height: 48px;
   }
 
-  .footer-bottom-links {
-    flex-wrap: wrap;
 
-    gap: 15px;
+  .back-top svg {
+    width: 21px;
+    height: 21px;
   }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .back-top {
+    animation: none;
+  }
+
+  .back-top::before {
+    animation: none;
+  }
+
 }

@@ -1,42 +1,56 @@
 import { motion } from 'framer-motion'
-import {
-  Upload,
-  Target,
-  BellRing,
-  Trophy,
-  ArrowRight,
-} from 'lucide-react'
 
 import './HowItWorks.css'
+
+import loginImage from '../../assets/login.png'
+import dashboardImage from '../../assets/dashboard.png'
+import leadImage from '../../assets/notification.png'
+import reportImage from '../../assets/report.png'
+import analyticsImage from '../../assets/analytic.png'
+import excelImage from '../../assets/excel.png'
 
 const steps = [
   {
     number: '01',
-    icon: Upload,
-    title: 'Capture',
+    title: 'Login',
     description:
-      'Collect leads from different sources and keep all customer information organized in one place.',
+      'Securely access your BMO Leads workspace and start managing your sales pipeline.',
+    image: loginImage,
   },
   {
     number: '02',
-    icon: Target,
-    title: 'Qualify',
+    title: 'Dashboard',
     description:
-      'Understand customer requirements, identify valuable opportunities and prioritize the right leads.',
+      'Get a complete overview of your leads, enquiries, conversions and sales performance.',
+    image: dashboardImage,
   },
   {
     number: '03',
-    icon: BellRing,
-    title: 'Follow Up',
+    title: 'Manage Leads',
     description:
-      'Stay connected with prospects using reminders and organized follow-up activities.',
+      'Create, organize, update and track every lead from one centralized workspace.',
+    image: leadImage,
   },
   {
     number: '04',
-    icon: Trophy,
-    title: 'Convert',
+    title: 'Reports',
     description:
-      'Move qualified opportunities through your pipeline and turn them into successful customers.',
+      'Monitor your lead activity and understand what is happening across your pipeline.',
+    image: reportImage,
+  },
+  {
+    number: '05',
+    title: 'Analytics',
+    description:
+      'Turn your lead data into useful insights and make better sales decisions.',
+    image: analyticsImage,
+  },
+  {
+    number: '06',
+    title: 'Export Data',
+    description:
+      'Download your lead information as an Excel file whenever you need it.',
+    image: excelImage,
   },
 ]
 
@@ -44,82 +58,242 @@ const HowItWorks = () => {
   return (
     <section id="how-it-works" className="how-section">
 
+      {/* =================================
+          HEADER
+      ================================= */}
+
       <motion.div
         className="how-heading"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
+        initial={{
+          opacity: 0,
+          y: 35,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{
+          once: true,
+        }}
+        transition={{
+          duration: 0.7,
+        }}
       >
-        <span>HOW IT WORKS</span>
+        <span className="section-label">
+          HOW IT WORKS
+        </span>
 
         <h2>
-          From First Contact
+          Everything You Need
           <br />
-          <strong>To Successful Conversion.</strong>
+
+          <strong>
+            From Login To Conversion.
+          </strong>
         </h2>
 
         <p>
-          BMO Lead gives your sales team a simple,
-          structured workflow to manage every opportunity.
+          Follow the complete BMO Leads workflow
+          and see how every part of your sales
+          process works together.
         </p>
       </motion.div>
 
-      <div className="how-steps">
 
-        <div className="how-progress-line" />
+      {/* =================================
+          MAIN
+      ================================= */}
 
-        {steps.map((step, index) => {
+      <div className="how-main">
 
-          const Icon = step.icon
 
-          return (
-            <motion.div
-              className="how-step"
-              key={step.number}
-              initial={{
-                opacity: 0,
-                y: 40,
-              }}
-              whileInView={{
-                opacity: 1,
-                y: 0,
-              }}
-              viewport={{
-                once: true,
-                margin: '-80px',
-              }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.15,
-              }}
-            >
+        {/* =================================
+            LEFT CONTENT
+        ================================= */}
 
-              <div className="how-number">
-                {step.number}
+        <motion.div
+          className="how-content"
+          initial={{
+            opacity: 0,
+            x: -45,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 0.7,
+          }}
+        >
+
+          <span className="content-label">
+            ONE PLATFORM
+          </span>
+
+          <h3>
+            Manage your
+            <span> entire lead journey.</span>
+          </h3>
+
+          <p>
+            From the moment a lead enters your system
+            to the final conversion, BMO Leads keeps
+            everything organized, visible and easy to manage.
+          </p>
+
+          <div className="content-points">
+
+            <div>
+              <span className="point-number">
+                01
+              </span>
+
+              <span>
+                Capture & organize leads
+              </span>
+            </div>
+
+            <div>
+              <span className="point-number">
+                02
+              </span>
+
+              <span>
+                Track your sales pipeline
+              </span>
+            </div>
+
+            <div>
+              <span className="point-number">
+                03
+              </span>
+
+              <span>
+                Analyze & improve performance
+              </span>
+            </div>
+
+          </div>
+
+        </motion.div>
+
+
+        {/* =================================
+            RIGHT SCREEN
+        ================================= */}
+
+        <motion.div
+          className="screen-section"
+          initial={{
+            opacity: 0,
+            x: 50,
+            scale: 0.96,
+          }}
+          whileInView={{
+            opacity: 1,
+            x: 0,
+            scale: 1,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 0.8,
+            delay: 0.15,
+          }}
+        >
+
+          {/* =================================
+              LAPTOP
+          ================================= */}
+
+          <div className="laptop">
+
+            <div className="laptop-header">
+
+              <div className="laptop-dots">
+                <span />
+                <span />
+                <span />
               </div>
 
+              <span className="laptop-title">
+                BMO Leads
+              </span>
+
+              <div className="laptop-status">
+                <span />
+                Live
+              </div>
+
+            </div>
+
+
+            {/* =================================
+                SCREEN
+            ================================= */}
+
+            <div className="screen">
+
               <motion.div
-                className="how-icon"
-                whileHover={{
-                  scale: 1.08,
-                  y: -4,
+                className="screen-track"
+                animate={{
+                  x: [
+                    '0%',
+                    '0%',
+                    '-16.666%',
+                    '-16.666%',
+                    '-33.333%',
+                    '-33.333%',
+                    '-50%',
+                    '-50%',
+                    '-66.666%',
+                    '-66.666%',
+                    '-83.333%',
+                    '-83.333%',
+                    '0%',
+                  ],
+                }}
+                transition={{
+                  duration: 30,
+                  repeat: Infinity,
+                  ease: 'linear',
                 }}
               >
-                <Icon size={23} />
+
+                {steps.map((step) => (
+                  <div
+                    className="screen-slide"
+                    key={step.number}
+                  >
+
+                    <img
+                      src={step.image}
+                      alt={`${step.title} - BMO Leads`}
+                    />
+
+                  </div>
+                ))}
+
               </motion.div>
 
-              <h3>{step.title}</h3>
+            </div>
 
-              <p>{step.description}</p>
 
-              {index < steps.length - 1 && (
-                <ArrowRight className="how-arrow" size={20} />
-              )}
+            {/* =================================
+                LAPTOP BASE
+            ================================= */}
 
-            </motion.div>
-          )
-        })}
+            <div className="laptop-base">
+              <div className="laptop-notch" />
+            </div>
+
+          </div>
+
+        </motion.div>
 
       </div>
 

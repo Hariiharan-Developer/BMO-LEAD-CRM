@@ -1,276 +1,820 @@
-/* ================= HOW IT WORKS ================= */
+/* =========================================
+   BMO LEADS - HOW IT WORKS
+========================================= */
+
+:root {
+  --bmo-red: #f97316;
+  --bmo-red-dark: #c2410c;
+  --bmo-red-light: #fff7ed;
+
+  --bmo-text: #101828;
+  --bmo-muted: #667085;
+
+  --border: #e5e7eb;
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
 
 .how-section {
   position: relative;
 
-  padding: 130px 7%;
+  width: 100%;
 
-  background:
-    linear-gradient(
-      180deg,
-      #ffffff 0%,
-      #f8fafc 100%
-    );
+  padding: 120px 6% 130px;
 
   overflow: hidden;
+
+  background: #ffffff;
 }
 
 
-/* ================= HEADING ================= */
+/* =========================================
+   HEADER
+========================================= */
 
 .how-heading {
-  max-width: 720px;
+  max-width: 850px;
 
-  margin: 0 auto 80px;
+  margin: 0 auto 90px;
 
   text-align: center;
 }
 
-.how-heading > span {
+.section-label {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  font-size: 11px;
+
+  font-weight: 850;
+
+  letter-spacing: 0.16em;
+
   color: var(--bmo-red);
-
-  font-size: 10px;
-  font-weight: 800;
-
-  letter-spacing: 2px;
 }
 
 .how-heading h2 {
-  margin: 16px 0;
+  margin: 0;
 
-  color: var(--bmo-text);
+  font-size: clamp(42px, 5vw, 64px);
 
-  font-size: clamp(36px, 4vw, 54px);
+  line-height: 1.05;
 
-  line-height: 1.08;
+  letter-spacing: -0.045em;
 
   font-weight: 800;
 
-  letter-spacing: -2px;
+  color: var(--bmo-text);
 }
 
 .how-heading h2 strong {
   color: var(--bmo-red);
+
+  font-weight: 850;
 }
 
 .how-heading p {
-  max-width: 560px;
+  max-width: 600px;
 
-  margin: 0 auto;
+  margin: 24px auto 0;
+
+  font-size: 16px;
+
+  line-height: 1.7;
 
   color: var(--bmo-muted);
-
-  font-size: 14px;
-
-  line-height: 1.8;
 }
 
 
-/* ================= STEPS ================= */
+/* =========================================
+   MAIN
+========================================= */
 
-.how-steps {
-  position: relative;
-
+.how-main {
   display: grid;
 
   grid-template-columns:
-    repeat(4, 1fr);
+    360px
+    minmax(600px, 1fr);
 
-  max-width: 1150px;
+  align-items: center;
 
-  margin: auto;
+  gap: 80px;
+
+  max-width: 1350px;
+
+  margin: 0 auto;
 }
 
 
-/* ================= PROGRESS LINE ================= */
+/* =========================================
+   LEFT CONTENT
+========================================= */
 
-.how-progress-line {
-  position: absolute;
+.how-content {
+  width: 100%;
+}
 
-  top: 43px;
+.content-label {
+  display: inline-block;
 
-  left: 12%;
+  margin-bottom: 20px;
 
-  width: 76%;
+  font-size: 11px;
 
-  height: 2px;
+  font-weight: 850;
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(229, 9, 20, 0.1),
-      rgba(229, 9, 20, 0.5),
-      rgba(229, 9, 20, 0.1)
-    );
+  letter-spacing: 0.14em;
+
+  color: var(--bmo-red);
+}
+
+.how-content h3 {
+  margin: 0;
+
+  font-size: clamp(38px, 4vw, 54px);
+
+  line-height: 1.05;
+
+  letter-spacing: -0.045em;
+
+  font-weight: 800;
+
+  color: var(--bmo-text);
+}
+
+.how-content h3 span {
+  color: var(--bmo-red);
+}
+
+.how-content > p {
+  max-width: 340px;
+
+  margin: 22px 0 0;
+
+  font-size: 15px;
+
+  line-height: 1.75;
+
+  color: var(--bmo-muted);
 }
 
 
-/* ================= STEP ================= */
+/* =========================================
+   CONTENT POINTS
+========================================= */
 
-.how-step {
+.content-points {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 13px;
+
+  margin-top: 32px;
+}
+
+.content-points div {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  font-size: 13px;
+
+  font-weight: 650;
+
+  color: #475467;
+}
+
+.point-number {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 27px;
+
+  height: 27px;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: var(--bmo-red-light);
+
+  color: var(--bmo-red);
+
+  font-size: 9px;
+
+  font-weight: 850;
+}
+
+
+/* =========================================
+   SCREEN SECTION
+========================================= */
+
+.screen-section {
+  width: 100%;
+}
+
+
+/* =========================================
+   LAPTOP
+========================================= */
+
+.laptop {
   position: relative;
 
-  padding: 0 25px;
+  width: 100%;
 
-  text-align: center;
+  max-width: 850px;
+
+  padding: 8px;
+
+  margin: 0 auto;
+
+  /* DARK ORANGE LAPTOP FRAME */
+  background: #431407;
+
+  border: 1px solid #7c2d12;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 45px 100px rgba(15, 23, 42, 0.20),
+    0 18px 40px rgba(249, 115, 22, 0.16);
 }
 
 
-/* ================= NUMBER ================= */
+/* =========================================
+   LAPTOP HEADER
+========================================= */
 
-.how-number {
+.laptop-header {
   position: relative;
-
-  z-index: 3;
-
-  width: 26px;
-  height: 26px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
-  margin: 0 auto 18px;
+  height: 46px;
 
-  border-radius: 50%;
+  /* DARK ORANGE HEADER */
+  background: #571a0b;
 
-  color: var(--bmo-red);
-
-  background: #ffffff;
-
-  border: 1px solid rgba(229, 9, 20, 0.3);
-
-  font-size: 8px;
-
-  font-weight: 800;
+  border-radius: 13px 13px 0 0;
 }
 
 
-/* ================= ICON ================= */
+/* =========================================
+   DOTS
+========================================= */
 
-.how-icon {
+.laptop-dots {
+  position: absolute;
+
+  left: 17px;
+
+  display: flex;
+
+  gap: 6px;
+}
+
+.laptop-dots span {
+  width: 8px;
+
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #fb923c;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.laptop-title {
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color: #fed7aa;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.laptop-status {
+  position: absolute;
+
+  right: 17px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  color: #fdba74;
+}
+
+.laptop-status span {
+  width: 6px;
+
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+}
+
+
+/* =========================================
+   SCREEN
+========================================= */
+
+.screen {
   position: relative;
 
-  z-index: 2;
+  width: 100%;
 
-  width: 58px;
-  height: 58px;
+  aspect-ratio: 16 / 9;
 
-  display: grid;
+  overflow: hidden;
 
-  place-items: center;
+  background: #f8fafc;
 
-  margin: 0 auto 22px;
+  border-radius: 0 0 13px 13px;
+}
 
-  color: var(--bmo-red);
+
+/* =========================================
+   SCREEN TRACK
+========================================= */
+
+.screen-track {
+  display: flex;
+
+  width: 600%;
+
+  height: 100%;
+}
+
+
+/* =========================================
+   SLIDE
+========================================= */
+
+.screen-slide {
+  width: 16.666666%;
+
+  height: 100%;
+
+  flex-shrink: 0;
+
+  overflow: hidden;
+
+  background: #f8fafc;
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.screen-slide img {
+  display: block;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: top center;
+}
+
+
+/* =========================================
+   LAPTOP BASE
+========================================= */
+
+.laptop-base {
+  position: absolute;
+
+  left: 50%;
+
+  bottom: -17px;
+
+  transform: translateX(-50%);
+
+  width: 88%;
+
+  height: 15px;
+
+  background: linear-gradient(
+    to bottom,
+    #fdba74,
+    #ea580c
+  );
+
+  border-radius: 0 0 18px 18px;
+}
+
+.laptop-notch {
+  position: absolute;
+
+  top: 0;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 80px;
+
+  height: 5px;
+
+  background: #c2410c;
+
+  border-radius: 0 0 6px 6px;
+}
+
+
+/* =========================================
+   SCREEN NAVIGATION
+========================================= */
+
+.screen-navigation {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 10px;
+
+  margin-top: 38px;
+}
+
+
+/* =========================================
+   STEP
+========================================= */
+
+.screen-step {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  min-width: 92px;
+
+  padding: 8px 10px;
+
+  border: 1px solid #eaecf0;
+
+  border-radius: 10px;
 
   background: #ffffff;
-
-  border: 1px solid #e2e8f0;
-
-  border-radius: 16px;
-
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.06);
 
   cursor: pointer;
 
   transition:
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    all 0.25s ease;
 }
 
-.how-icon:hover {
-  border-color: rgba(229, 9, 20, 0.3);
+.screen-step:hover {
+  border-color: rgba(249, 115, 22, 0.25);
 
   box-shadow:
-    0 15px 35px rgba(229, 9, 20, 0.12);
+    0 8px 20px rgba(16, 24, 40, 0.06);
 }
 
 
-/* ================= TITLE ================= */
+/* =========================================
+   ACTIVE STEP
+========================================= */
 
-.how-step h3 {
-  margin: 0 0 10px;
+.screen-step.active {
+  border-color: rgba(249, 115, 22, 0.22);
 
-  color: var(--bmo-text);
+  background: var(--bmo-red-light);
 
-  font-size: 17px;
+  box-shadow:
+    0 8px 22px rgba(249, 115, 22, 0.08);
+}
+
+
+/* =========================================
+   STEP ICON
+========================================= */
+
+.screen-step-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 30px;
+
+  height: 30px;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: #f4f5f7;
+
+  color: #98a2b3;
+}
+
+.screen-step.active .screen-step-icon {
+  background: var(--bmo-red);
+
+  color: #ffffff;
+}
+
+
+/* =========================================
+   STEP INFO
+========================================= */
+
+.screen-step-info {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+}
+
+.screen-step-info span {
+  font-size: 8px;
 
   font-weight: 800;
+
+  color: #98a2b3;
+}
+
+.screen-step-info strong {
+  white-space: nowrap;
+
+  font-size: 10px;
+
+  font-weight: 750;
+
+  color: #667085;
+}
+
+.screen-step.active .screen-step-info strong {
+  color: var(--bmo-text);
+
+  font-weight: 850;
 }
 
 
-/* ================= DESCRIPTION ================= */
+/* =========================================
+   TABLET
+========================================= */
 
-.how-step p {
-  max-width: 220px;
+@media (max-width: 1100px) {
 
-  margin: auto;
+  .how-main {
+    grid-template-columns:
+      300px
+      minmax(500px, 1fr);
 
-  color: var(--bmo-muted);
-
-  font-size: 11px;
-
-  line-height: 1.8;
-}
-
-
-/* ================= ARROW ================= */
-
-.how-arrow {
-  position: absolute;
-
-  top: 115px;
-
-  right: -10px;
-
-  color: rgba(229, 9, 20, 0.45);
-}
-
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 1000px) {
-
-  .how-steps {
-    grid-template-columns: repeat(2, 1fr);
-
-    row-gap: 70px;
+    gap: 50px;
   }
 
-  .how-progress-line {
-    display: none;
+  .laptop {
+    max-width: 720px;
   }
 
-  .how-arrow {
-    display: none;
+  .screen-step {
+    min-width: auto;
+
+    padding: 7px;
   }
+
+  .screen-step-info strong {
+    font-size: 9px;
+  }
+
 }
 
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .how-section {
+    padding:
+      90px 5%
+      100px;
+  }
+
+  .how-heading {
+    margin-bottom: 60px;
+  }
+
+  .how-main {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+
+    max-width: 850px;
+  }
+
+  .how-content {
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+  .how-content > p {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+  .content-points {
+    align-items: center;
+  }
+
+  .screen-section {
+    width: 100%;
+  }
+
+  .laptop {
+    max-width: 800px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
 
 @media (max-width: 600px) {
 
   .how-section {
-    padding: 90px 5%;
+    padding:
+      75px 16px
+      85px;
   }
 
   .how-heading {
-    margin-bottom: 55px;
+    margin-bottom: 50px;
   }
 
   .how-heading h2 {
     font-size: 36px;
   }
 
-  .how-steps {
-    grid-template-columns: 1fr;
-
-    row-gap: 55px;
+  .how-heading p {
+    font-size: 14px;
   }
 
-  .how-step {
-    padding: 0;
+
+  /* LEFT */
+
+  .how-content h3 {
+    font-size: 36px;
   }
+
+  .how-content > p {
+    font-size: 14px;
+  }
+
+
+  /* LAPTOP */
+
+  .laptop {
+    width: 100%;
+
+    padding: 5px;
+
+    border-radius: 13px;
+  }
+
+  .laptop-header {
+    height: 32px;
+
+    border-radius: 8px 8px 0 0;
+  }
+
+  .laptop-dots {
+    left: 10px;
+
+    gap: 4px;
+  }
+
+  .laptop-dots span {
+    width: 5px;
+
+    height: 5px;
+  }
+
+  .laptop-title {
+    font-size: 9px;
+  }
+
+  .laptop-status {
+    right: 10px;
+
+    font-size: 8px;
+  }
+
+  .laptop-status span {
+    width: 5px;
+
+    height: 5px;
+  }
+
+  .screen {
+    border-radius:
+      0 0 8px 8px;
+  }
+
+
+  /* NAVIGATION */
+
+  .screen-navigation {
+    gap: 5px;
+
+    margin-top: 28px;
+  }
+
+  .screen-step {
+    min-width: 0;
+
+    padding: 5px;
+  }
+
+  .screen-step-icon {
+    width: 28px;
+
+    height: 28px;
+  }
+
+  .screen-step-info {
+    display: none;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .how-heading h2 {
+    font-size: 31px;
+  }
+
+  .how-content h3 {
+    font-size: 31px;
+  }
+
+  .screen-navigation {
+    gap: 3px;
+  }
+
+  .screen-step {
+    padding: 4px;
+  }
+
+  .screen-step-icon {
+    width: 26px;
+
+    height: 26px;
+  }
+
 }
