@@ -39,7 +39,7 @@ const Navbar = () => {
           aria-label="Go to home"
         >
           <span className="logo-bmo">BMO</span>
-          <span className="logo-leads">Leads</span>
+          <span className="logo-leads">LEADS</span>
         </button>
 
         {/* DESKTOP NAVIGATION */}
