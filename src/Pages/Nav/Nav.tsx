@@ -44,7 +44,7 @@ const Navbar = () => {
           onClick={() => handleNavigation("home")}
         >
           <span className="logo-bmo">BMO</span>
-          <span className="logo-leads"> Leadsss</span>
+          <span className="logo-leads"> Leads</span>
         </button>
 
         {/* ================= DESKTOP NAVIGATION ================= */}
