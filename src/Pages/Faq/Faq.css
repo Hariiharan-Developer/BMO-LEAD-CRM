@@ -4,7 +4,18 @@
 .faq-section {
   position: relative;
   padding: 120px 7%;
-  background: #f6f4f1;
+  background:
+  radial-gradient(
+    circle at 15% 15%,
+    rgba(255, 89, 0, 0.06),
+    transparent 32%
+  ),
+  radial-gradient(
+    circle at 90% 85%,
+    rgba(255, 89, 0, 0.04),
+    transparent 30%
+  ),
+  #f6f6f6;
   overflow: hidden;
 }
 

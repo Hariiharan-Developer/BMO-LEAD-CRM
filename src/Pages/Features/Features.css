@@ -1,12 +1,28 @@
 /* =========================================
+   BMO LEADS - FEATURES
+   Theme: #ff5900
+   Scroll Reveal + Hover Animations
+========================================= */
+
+
+/* =========================================
    SECTION
 ========================================= */
 
 .features-section {
   padding: 110px 0;
-
-  background: #f6f4f1;
-
+  background:
+  radial-gradient(
+    circle at 15% 15%,
+    rgba(255, 89, 0, 0.06),
+    transparent 32%
+  ),
+  radial-gradient(
+    circle at 90% 85%,
+    rgba(255, 89, 0, 0.04),
+    transparent 30%
+  ),
+  #f6f6f6;
   overflow: hidden;
 }
 
@@ -14,17 +30,22 @@
 /* =========================================
    HEADER
 ========================================= */
+
 .features-header {
   max-width: 780px;
   margin: 0 auto 55px;
   text-align: center;
+
+  opacity: 0;
+  transform: translateY(35px);
+
+  animation: headerReveal 0.8s
+    cubic-bezier(0.2, 0.75, 0.2, 1)
+    forwards;
 }
-
-
 
 .features-eyebrow {
   display: inline-block;
-
   margin-bottom: 16px;
 
   color: #ff5900;
@@ -32,6 +53,12 @@
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 2px;
+
+  opacity: 0;
+  transform: translateY(15px);
+
+  animation: eyebrowReveal 0.7s ease forwards;
+  animation-delay: 0.15s;
 }
 
 .features-header h2 {
@@ -40,9 +67,7 @@
   color: #24211f;
 
   font-size: clamp(40px, 5vw, 58px);
-
   line-height: 1.08;
-
   font-weight: 750;
 
   letter-spacing: -2.5px;
@@ -50,21 +75,66 @@
 
 .features-header h2 span {
   color: #ff5900;
-  
-  /* prevents the orange text from looking faded */
   font-weight: 750;
 }
 
 .features-header p {
   max-width: 600px;
-
   margin: 20px auto 0;
 
   color: #625c57;
 
   font-size: 14px;
-
   line-height: 1.75;
+
+  opacity: 0;
+  transform: translateY(15px);
+
+  animation: paragraphReveal 0.7s ease forwards;
+  animation-delay: 0.3s;
+}
+
+
+/* =========================================
+   HEADER ANIMATIONS
+========================================= */
+
+@keyframes headerReveal {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes eyebrowReveal {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+    letter-spacing: 5px;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 2px;
+  }
+}
+
+@keyframes paragraphReveal {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
@@ -82,7 +152,7 @@
 
 
 /* =========================================
-   CARD
+   FEATURE CARD
 ========================================= */
 
 .feature-card {
@@ -91,7 +161,6 @@
   min-height: 205px;
 
   display: flex;
-
   align-items: center;
 
   gap: 24px;
@@ -106,6 +175,19 @@
 
   overflow: hidden;
 
+  opacity: 0;
+
+  transform:
+    translateY(55px)
+    scale(0.96);
+
+  animation:
+    featureReveal 0.8s
+    cubic-bezier(0.2, 0.75, 0.2, 1)
+    forwards;
+
+  animation-delay: var(--delay);
+
   transition:
     transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
     border-color 0.3s ease,
@@ -114,16 +196,81 @@
 
 
 /* =========================================
+   CARD REVEAL
+========================================= */
+
+@keyframes featureReveal {
+  0% {
+    opacity: 0;
+
+    transform:
+      translateY(55px)
+      scale(0.96);
+  }
+
+  65% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+
+/* =========================================
+   ORANGE GLOW
+========================================= */
+
+.feature-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 200px;
+  height: 200px;
+
+  top: -110px;
+  right: -90px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 89, 0, 0.09);
+
+  filter: blur(38px);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.feature-card:hover::before {
+  opacity: 1;
+
+  transform: scale(1.2);
+}
+
+
+/* =========================================
    CARD HOVER
 ========================================= */
 
 .feature-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-7px);
 
   border-color: #d8d0c9;
 
   box-shadow:
-    0 15px 35px rgba(50, 43, 38, 0.08);
+    0 18px 40px rgba(50, 43, 38, 0.09);
 }
 
 
@@ -132,43 +279,108 @@
 ========================================= */
 
 .feature-icon-wrapper {
+  position: relative;
+
   flex-shrink: 0;
 
   width: 65px;
   height: 65px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
   border-radius: 17px;
 
-  background: #fdecec;
+  background: #fff0e8;
+
+  opacity: 0;
+
+  transform:
+    scale(0.5)
+    rotate(-10deg);
+
+  animation:
+    iconPop 0.7s
+    cubic-bezier(0.2, 0.8, 0.2, 1)
+    forwards;
+
+  animation-delay:
+    calc(var(--delay) + 0.25s);
 
   transition:
     transform 0.4s ease,
-    background 0.4s ease;
+    background 0.4s ease,
+    box-shadow 0.4s ease;
 }
+
+
+/* =========================================
+   ICON POP
+========================================= */
+
+@keyframes iconPop {
+  0% {
+    opacity: 0;
+
+    transform:
+      scale(0.5)
+      rotate(-10deg);
+  }
+
+  70% {
+    opacity: 1;
+
+    transform:
+      scale(1.08)
+      rotate(2deg);
+  }
+
+  100% {
+    opacity: 1;
+
+    transform:
+      scale(1)
+      rotate(0);
+  }
+}
+
+
+/* =========================================
+   ICON HOVER
+========================================= */
 
 .feature-card:hover .feature-icon-wrapper {
-  transform: scale(1.05);
+  transform:
+    scale(1.08)
+    rotate(-4deg);
 
   background: #ff5900;
+
+  box-shadow:
+    0 10px 25px rgba(255, 89, 0, 0.2);
 }
 
+
+/* =========================================
+   ICON
+========================================= */
+
 .feature-icon {
-  color:   #ff5900;
+  color: #ff5900;
 
   font-size: 23px;
-
   font-weight: 600;
 
-  transition: color 0.3s ease;
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .feature-card:hover .feature-icon {
   color: #ffffff;
+
+  transform: scale(1.1);
 }
 
 
@@ -182,14 +394,49 @@
   z-index: 2;
 
   flex: 1;
+
+  opacity: 0;
+
+  transform: translateX(20px);
+
+  animation:
+    contentReveal 0.7s
+    ease forwards;
+
+  animation-delay:
+    calc(var(--delay) + 0.15s);
 }
+
+
+/* =========================================
+   CONTENT REVEAL
+========================================= */
+
+@keyframes contentReveal {
+  from {
+    opacity: 0;
+
+    transform: translateX(20px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================================
+   FEATURE TAG
+========================================= */
 
 .feature-tag {
   display: block;
 
   margin-bottom: 7px;
 
-  color :#d92d20;
+  color: #ff5900;
 
   font-size: 8px;
 
@@ -197,6 +444,11 @@
 
   letter-spacing: 1.5px;
 }
+
+
+/* =========================================
+   TITLE
+========================================= */
 
 .feature-card-content h3 {
   margin: 0 0 8px;
@@ -208,7 +460,22 @@
   font-weight: 700;
 
   letter-spacing: -0.5px;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
 }
+
+.feature-card:hover .feature-card-content h3 {
+  color: #ff5900;
+
+  transform: translateX(2px);
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
 
 .feature-card-content p {
   max-width: 350px;
@@ -233,9 +500,71 @@
   width: 155px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
+
+  opacity: 0;
+
+  transform:
+    translateX(30px)
+    scale(0.92);
+
+  animation:
+    visualReveal 0.8s
+    cubic-bezier(0.2, 0.75, 0.2, 1)
+    forwards;
+
+  animation-delay:
+    calc(var(--delay) + 0.35s);
+}
+
+
+/* =========================================
+   VISUAL REVEAL
+========================================= */
+
+@keyframes visualReveal {
+  from {
+    opacity: 0;
+
+    transform:
+      translateX(30px)
+      scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateX(0)
+      scale(1);
+  }
+}
+
+
+/* =========================================
+   VISUAL FLOAT
+========================================= */
+
+.status-flow,
+.excel-box,
+.status-pill,
+.report-bars {
+  animation:
+    visualFloat 3.5s
+    ease-in-out
+    infinite;
+}
+
+@keyframes visualFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 
@@ -250,9 +579,9 @@
 
   gap: 7px;
 
-  font-size: 9px;
-
   color: #77706a;
+
+  font-size: 9px;
 }
 
 .status-flow span {
@@ -261,17 +590,48 @@
   background: #f7f4f1;
 
   border-radius: 7px;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.feature-card:hover .status-flow span {
+  background: #fff0e8;
+
+  transform: translateY(-2px);
 }
 
 .status-flow b {
-  color: #d92d20;
+  color: #ff5900;
 
   font-size: 13px;
+
+  animation:
+    arrowMove 1.5s
+    ease-in-out
+    infinite;
 }
 
 
 /* =========================================
-   EXCEL
+   ARROW ANIMATION
+========================================= */
+
+@keyframes arrowMove {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(4px);
+  }
+}
+
+
+/* =========================================
+   EXCEL BOX
 ========================================= */
 
 .excel-box {
@@ -283,9 +643,18 @@
 
   padding: 11px;
 
+  background: #f7f4f1;
+
   border-radius: 10px;
 
-  background: #f7f4f1;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.feature-card:hover .excel-box {
+  box-shadow:
+    0 8px 20px rgba(50, 43, 38, 0.07);
 }
 
 .excel-box > span {
@@ -293,7 +662,6 @@
   height: 30px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
@@ -304,7 +672,6 @@
   color: #32814a;
 
   font-size: 9px;
-
   font-weight: 800;
 }
 
@@ -326,7 +693,7 @@
 
 
 /* =========================================
-   STATUS
+   STATUS PILL
 ========================================= */
 
 .status-pill {
@@ -338,15 +705,24 @@
 
   padding: 10px 13px;
 
-  background:#fdf0f0;
+  background: #fff0e8;
 
-  border: 1px solid #ffe2d1;
+  border: 1px solid #ffd8c2;
 
   border-radius: 20px;
 
   color: #6e655f;
 
   font-size: 10px;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.feature-card:hover .status-pill {
+  box-shadow:
+    0 8px 20px rgba(255, 89, 0, 0.12);
 }
 
 .status-pill i {
@@ -357,25 +733,43 @@
 
   border-radius: 50%;
 
-  background: #d92d20;
+  background: #ff5900;
 
-  animation: statusPulse 1.8s ease-in-out infinite;
+  animation:
+    statusPulse 1.8s
+    ease-in-out
+    infinite;
 }
+
+
+/* =========================================
+   STATUS PULSE
+========================================= */
 
 @keyframes statusPulse {
   0%,
   100% {
     opacity: 1;
+
+    transform: scale(1);
+
+    box-shadow:
+      0 0 0 0 rgba(255, 89, 0, 0.25);
   }
 
   50% {
-    opacity: 0.35;
+    opacity: 0.45;
+
+    transform: scale(0.75);
+
+    box-shadow:
+      0 0 0 6px rgba(255, 89, 0, 0);
   }
 }
 
 
 /* =========================================
-   REPORT
+   REPORT BARS
 ========================================= */
 
 .report-bars {
@@ -385,7 +779,6 @@
   display: flex;
 
   align-items: flex-end;
-
   justify-content: center;
 
   gap: 7px;
@@ -395,16 +788,30 @@
   background: #f7f4f1;
 
   border-radius: 10px;
+
+  transition:
+    box-shadow 0.3s ease;
+}
+
+.feature-card:hover .report-bars {
+  box-shadow:
+    0 8px 20px rgba(50, 43, 38, 0.07);
 }
 
 .report-bars span {
   width: 12px;
 
-  border-radius: 4px 4px 2px 2px;
+  border-radius:
+    4px 4px 2px 2px;
 
   background: #ff5900;
 
-  animation: barAnimation 2s ease-in-out infinite;
+  transform-origin: bottom;
+
+  animation:
+    barAnimation 2s
+    ease-in-out
+    infinite;
 }
 
 .report-bars span:nth-child(1) {
@@ -429,6 +836,11 @@
   animation-delay: 0.45s;
 }
 
+
+/* =========================================
+   BAR ANIMATION
+========================================= */
+
 @keyframes barAnimation {
   0%,
   100% {
@@ -442,7 +854,7 @@
 
 
 /* =========================================
-   DASHBOARD
+   DASHBOARD NUMBER
 ========================================= */
 
 .dashboard-number {
@@ -485,7 +897,7 @@
 
 
 /* =========================================
-   RECORD
+   RECORD CHECK
 ========================================= */
 
 .record-check {
@@ -518,6 +930,26 @@
   color: #ffffff;
 
   font-size: 11px;
+
+  animation:
+    recordPulse 2s
+    ease-in-out
+    infinite;
+}
+
+@keyframes recordPulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0
+      rgba(255, 89, 0, 0.25);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 7px
+      rgba(255, 89, 0, 0);
+  }
 }
 
 .record-check b {
@@ -536,34 +968,47 @@
 
 
 /* =========================================
-   ENTRANCE ANIMATION
+   SCROLL BEHAVIOR
 ========================================= */
 
-.feature-card {
-  opacity: 0;
-
-  animation:
-    featureSlideIn 0.65s
-    cubic-bezier(0.2, 0.75, 0.2, 1)
-    forwards;
-
-  animation-delay: var(--delay);
+html {
+  scroll-behavior: smooth;
 }
 
-@keyframes featureSlideIn {
+.features-section {
+  scroll-margin-top: 90px;
+}
 
-  from {
-    opacity: 0;
 
-    transform: translateY(25px);
-  }
+/* =========================================
+   ACCESSIBILITY
+========================================= */
 
-  to {
+@media (prefers-reduced-motion: reduce) {
+  .feature-card,
+  .feature-icon-wrapper,
+  .feature-card-content,
+  .feature-visual,
+  .features-header,
+  .features-eyebrow,
+  .features-header p,
+  .status-flow,
+  .excel-box,
+  .status-pill,
+  .report-bars,
+  .record-check > span,
+  .status-flow b {
+    animation: none;
+
     opacity: 1;
 
-    transform: translateY(0);
+    transform: none;
   }
 
+  .feature-card,
+  .feature-icon-wrapper {
+    transition: none;
+  }
 }
 
 
@@ -584,7 +1029,6 @@
   .feature-card {
     min-height: 190px;
   }
-
 }
 
 
@@ -606,6 +1050,10 @@
     font-size: 39px;
 
     letter-spacing: -1.8px;
+  }
+
+  .features-header p {
+    font-size: 13px;
   }
 
   .feature-card {
@@ -638,7 +1086,6 @@
   .feature-visual {
     display: none;
   }
-
 }
 
 
@@ -656,4 +1103,43 @@
     min-height: 165px;
   }
 
+  .feature-card-content h3 {
+    font-size: 16px;
+  }
+
+  .feature-card-content p {
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL DEVICES
+========================================= */
+
+@media (max-width: 360px) {
+
+  .features-section {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .feature-card {
+    padding: 17px;
+
+    gap: 13px;
+  }
+
+  .feature-icon-wrapper {
+    width: 48px;
+    height: 48px;
+  }
+
+  .feature-card-content h3 {
+    font-size: 15px;
+  }
+
+  .feature-card-content p {
+    font-size: 10.5px;
+  }
 }
