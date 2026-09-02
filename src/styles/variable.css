@@ -1,68 +1,78 @@
-@import url(
-  'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap'
-);
+/* =========================================
+   GLOBAL STYLES
+========================================= */
 
 :root {
-
   --bmo-bg: #ffffff;
-
   --bmo-card: #ffffff;
-
   --bmo-card-light: #f8f9fa;
 
   --bmo-border: #e5e7eb;
 
   --bmo-text: #111827;
-
   --bmo-muted: #6b7280;
 
-  --bmo-red: #e50914;
+  /* Orange Theme */
+  --bmo-red: #f97316;
+  --bmo-red-light: #fb923c;
+  --bmo-red-dark: #c2410c;
 
-  --bmo-red-light: #ff3038;
-
-  --bmo-red-dark: #8b0000;
-
-  --bmo-red-soft:
-    rgba(229, 9, 20, 0.08);
-
-  --bmo-red-glow:
-    rgba(229, 9, 20, 0.18);
+  --bmo-red-soft: rgba(249, 115, 22, 0.08);
+  --bmo-red-glow: rgba(249, 115, 22, 0.18);
 }
 
 
-* {
+/* =========================================
+   BOX SIZING
+========================================= */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
+
+/* =========================================
+   HTML
+========================================= */
 
 html {
   scroll-behavior: smooth;
 }
 
 
+/* =========================================
+   BODY
+========================================= */
+
+html,
 body {
-
   margin: 0;
+  padding: 0;
 
-  font-family:
-    'Inter',
-    sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
 
-  background:
-    var(--bmo-bg);
-
-  color:
-    var(--bmo-text);
+  background: var(--bmo-bg);
+  color: var(--bmo-text);
 }
 
+
+/* =========================================
+   FORM ELEMENTS
+========================================= */
 
 button,
 input,
 textarea,
 select {
-  font-family: inherit;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
+
+/* =========================================
+   SECTIONS
+========================================= */
 
 section {
   scroll-margin-top: 80px;

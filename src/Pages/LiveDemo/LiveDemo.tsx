@@ -1,264 +1,224 @@
 import { motion } from 'framer-motion'
 import {
-  BarChart3,
+  ArrowRight,
   CheckCircle2,
+  Play,
   TrendingUp,
-  Users,
+  Zap,
 } from 'lucide-react'
 import './LiveDemo.css'
-
-const stats = [
-  {
-    label: 'Total Leads',
-    value: '1,248',
-    icon: Users,
-    change: '+12.8%',
-  },
-  {
-    label: 'Enquiries',
-    value: '648',
-    icon: BarChart3,
-    change: '+8.4%',
-  },
-  {
-    label: 'Converted',
-    value: '126',
-    icon: CheckCircle2,
-    change: '+18.2%',
-  },
-]
-
-const pipeline = [
-  { label: 'Enquiry', value: 648, percentage: 100 },
-  { label: 'Quotation', value: 284, percentage: 72 },
-  { label: 'Confirmed', value: 126, percentage: 48 },
-  { label: 'Cancelled', value: 42, percentage: 18 },
-]
+import liveDemoVideo from '../../assets/live-demo-video.mp4'
 
 const LiveDemo = () => {
   return (
     <section id="live-demo" className="live-demo-section">
 
-      {/* HEADER */}
-      <motion.div
-        className="live-demo-heading"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.7 }}
-      >
-        <span>LIVE SHOWCASE</span>
+      <div className="live-demo-container">
 
-        <h2>
-          See Your Sales
-          <br />
-          <strong>Come To Life.</strong>
-        </h2>
+        {/* =====================================================
+            LEFT - MOBILE VIDEO
+        ===================================================== */}
+        <motion.div
+          className="live-demo-visual"
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
 
-        <p>
-          Get a clear view of your leads, pipeline and sales
-          performance from one powerful dashboard.
-        </p>
-      </motion.div>
+          <div className="live-demo-glow" />
 
-      {/* DASHBOARD */}
-      <motion.div
-        className="live-dashboard"
-        initial={{ opacity: 0, y: 60, scale: 0.96 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
+          <div className="mobile-device">
 
-        {/* DASHBOARD TOP BAR */}
-        <div className="live-dashboard-top">
+            {/* MOBILE TOP BAR */}
+            <div className="mobile-top">
 
-          <div>
-            <small>OVERVIEW</small>
-            <h3>Lead Dashboard</h3>
-          </div>
+              <div className="mobile-camera" />
 
-          <div className="live-status">
-            <span />
-            Live Data
-          </div>
-
-        </div>
-
-        {/* STATS */}
-        <div className="live-stats">
-
-          {stats.map((stat, index) => {
-            const Icon = stat.icon
-
-            return (
-              <motion.div
-                className="live-stat-card"
-                key={stat.label}
-                initial={{ opacity: 0, y: 25 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.12,
-                }}
-                whileHover={{
-                  y: -5,
-                }}
-              >
-
-                <div className="live-stat-icon">
-                  <Icon size={19} />
-                </div>
-
-                <div className="live-stat-content">
-                  <small>{stat.label}</small>
-
-                  <strong>{stat.value}</strong>
-
-                  <span>
-                    <TrendingUp size={11} />
-                    {stat.change}
-                  </span>
-                </div>
-
-              </motion.div>
-            )
-          })}
-
-        </div>
-
-        {/* MAIN CONTENT */}
-        <div className="live-dashboard-grid">
-
-          {/* CHART */}
-          <div className="live-chart-card">
-
-            <div className="live-card-heading">
-              <div>
-                <small>PERFORMANCE</small>
-                <h4>Lead Conversion</h4>
-              </div>
-
-              <span>Last 30 days</span>
             </div>
 
-            <div className="live-chart">
+            {/* VIDEO */}
+            <div className="mobile-screen">
 
-              <div className="chart-grid-line line-1" />
-              <div className="chart-grid-line line-2" />
-              <div className="chart-grid-line line-3" />
-              <div className="chart-grid-line line-4" />
-
-              <motion.div
-                className="chart-growth"
-                initial={{ pathLength: 0 }}
-                whileInView={{ pathLength: 1 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 2,
-                  ease: 'easeInOut',
-                }}
+              <video
+                className="live-demo-video"
+                src={liveDemoVideo}
+                autoPlay
+                muted
+                loop
+                playsInline
               />
 
-              <div className="chart-dots">
-                {[1, 2, 3, 4, 5, 6].map((item) => (
-                  <motion.span
-                    key={item}
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      delay: 0.4 + item * 0.15,
-                    }}
-                  />
-                ))}
-              </div>
-
-            </div>
-
-          </div>
-
-          {/* PIPELINE */}
-          <div className="live-pipeline-card">
-
-            <div className="live-card-heading">
-              <div>
-                <small>PIPELINE</small>
-                <h4>Sales Overview</h4>
-              </div>
-            </div>
-
-            <div className="live-pipeline">
-
-              {pipeline.map((item, index) => (
-
-                <div
-                  className="live-pipeline-row"
-                  key={item.label}
-                >
-
-                  <div className="pipeline-label">
-                    <span className={`pipeline-dot pipeline-dot-${index}`} />
-                    {item.label}
-                  </div>
-
-                  <strong>{item.value}</strong>
-
-                  <div className="pipeline-progress">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{
-                        width: `${item.percentage}%`,
-                      }}
-                      viewport={{ once: true }}
-                      transition={{
-                        duration: 1,
-                        delay: index * 0.15,
-                      }}
-                    />
-                  </div>
-
+              {/* PLAY OVERLAY */}
+              <div className="video-overlay">
+                <div className="video-play">
+                  <Play size={18} fill="currentColor" />
                 </div>
 
-              ))}
+                <span>LIVE DEMO</span>
+              </div>
+
+            </div>
+
+            {/* MOBILE BOTTOM */}
+            <div className="mobile-bottom">
+              <span />
+            </div>
+
+          </div>
+
+          {/* FLOATING LIVE BADGE */}
+          <motion.div
+            className="demo-live-badge"
+            animate={{
+              y: [0, -7, 0],
+            }}
+            transition={{
+              duration: 3,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+          >
+            <span className="live-dot" />
+            Live Showcase
+          </motion.div>
+
+          {/* FLOATING SUCCESS CARD */}
+          <motion.div
+            className="demo-success-card"
+            animate={{
+              y: [0, -8, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+          >
+
+            <div className="demo-success-icon">
+              <CheckCircle2 size={18} />
+            </div>
+
+            <div>
+              <small>LEAD CONVERTED</small>
+              <strong>New customer added</strong>
+            </div>
+
+          </motion.div>
+
+        </motion.div>
+
+
+        {/* =====================================================
+            RIGHT - CONTENT
+        ===================================================== */}
+        <motion.div
+          className="live-demo-content"
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+
+          {/* LABEL */}
+          <span className="live-demo-label">
+            <span className="label-dot" />
+            LIVE SHOWCASE
+          </span>
+
+
+          {/* HEADING */}
+          <h2>
+            See Your Sales
+            <br />
+            <strong>Come To Life.</strong>
+          </h2>
+
+
+          {/* DESCRIPTION */}
+          <p className="live-demo-description">
+            Experience how BMO Leads helps you manage your entire
+            sales process from one simple and powerful platform.
+          </p>
+
+
+          {/* FEATURES */}
+          <div className="live-demo-features">
+
+            <div className="live-feature">
+
+              <div className="live-feature-icon">
+                <Zap size={18} />
+              </div>
+
+              <div>
+                <strong>Manage Leads Effortlessly</strong>
+
+                <p>
+                  Capture, organize and track every lead
+                  without losing valuable opportunities.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div className="live-feature">
+
+              <div className="live-feature-icon">
+                <TrendingUp size={18} />
+              </div>
+
+              <div>
+                <strong>Track Your Sales Pipeline</strong>
+
+                <p>
+                  Get a clear view of enquiries, quotations,
+                  confirmations and conversions.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div className="live-feature">
+
+              <div className="live-feature-icon">
+                <CheckCircle2 size={18} />
+              </div>
+
+              <div>
+                <strong>Turn Leads Into Customers</strong>
+
+                <p>
+                  Follow every opportunity and improve
+                  your conversion performance.
+                </p>
+              </div>
 
             </div>
 
           </div>
 
-        </div>
 
-      </motion.div>
+          {/* CTA */}
+          <div className="live-demo-actions">
 
-      {/* FLOATING SUCCESS MESSAGE */}
-      <motion.div
-        className="demo-success-card"
-        initial={{ opacity: 0, x: 30 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true }}
-        animate={{
-          y: [0, -8, 0],
-        }}
-        transition={{
-          y: {
-            duration: 4,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          },
-        }}
-      >
+            <button className="live-demo-btn">
+              Explore BMO Leads
+              <ArrowRight size={17} />
+            </button>
 
-        <div className="demo-success-icon">
-          <CheckCircle2 size={20} />
-        </div>
+            <span className="live-demo-note">
+              Simple. Smart. Powerful.
+            </span>
 
-        <div>
-          <small>LEAD CONVERTED</small>
-          <strong>New customer added</strong>
-        </div>
+          </div>
 
-      </motion.div>
+        </motion.div>
+
+      </div>
 
     </section>
   )
