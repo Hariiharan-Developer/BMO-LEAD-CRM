@@ -1,4 +1,4 @@
-import CTA from "../Cta/Cta"
+// import CTA from "../Cta/Cta"
 import FAQ from "../Faq/Faq"
 import Features from "../Features/Features"
 import Footer from "../Footer/Footer"
@@ -22,7 +22,7 @@ const Home = () => {
         <Features />
 
         <LiveDemo />
-        
+
         <HowItWorks />
 
 
