@@ -1,132 +1,344 @@
 /* =========================================================
-   BMO NAVBAR
+   BMO SOFTWARE FOOTER
+   Orange: #e94f00
 ========================================================= */
 
-.bmo-navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-
+.bmo-footer {
   width: 100%;
-  min-height: 80px;
 
-  z-index: 1000;
+  background: #111111;
 
-  background: rgba(255, 255, 255, 0.94);
+  color: #ffffff;
 
-  border-bottom: 1px solid #eee8e3;
-
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  border-top: 1px solid #252525;
 
   box-sizing: border-box;
 }
 
 /* =========================================================
-   NAVBAR CONTAINER
+   CONTAINER
 ========================================================= */
 
-.navbar-container {
-  width: min(1250px, calc(100% - 40px));
-
-  min-height: 80px;
+.footer-container {
+  width: min(1150px, calc(100% - 40px));
 
   margin: 0 auto;
-
-  display: flex;
-  align-items: center;
-
-  gap: 30px;
 }
 
 /* =========================================================
-   LOGO
+   PRODUCT BANNER
 ========================================================= */
 
-.navbar-brand {
+.footer-product-banner {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  padding: 25px 28px;
+
+  margin: 35px 0 45px;
+
+  background: #191919;
+
+  border: 1px solid #2b2b2b;
+
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.footer-product-banner:hover {
+  background: #1c1c1c;
+
+  border-color: #e94f00;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   PRODUCT BANNER TEXT
+========================================================= */
+
+.product-banner-text span {
+  display: block;
+
+  margin-bottom: 6px;
+
+  color: #e94f00;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.8px;
+}
+
+.product-banner-text h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 19px;
+
+  font-weight: 750;
+
+  letter-spacing: -0.4px;
+}
+
+.product-banner-text p {
+  margin: 5px 0 0;
+
+  color: #666666;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   PRODUCT BANNER BUTTON
+========================================================= */
+
+.product-banner-button {
   display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  flex-shrink: 0;
+
+  min-width: 125px;
+
+  padding: 11px 16px;
+
+  color: #ffffff;
+
+  background: #e94f00;
+
+  border: 1px solid #e94f00;
+
+  border-radius: 8px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
+}
+
+.product-banner-button span {
+  font-size: 15px;
+
+  transition: transform 0.2s ease;
+}
+
+.footer-product-banner:hover .product-banner-button {
+  background: #e94f00;
+}
+
+.footer-product-banner:hover .product-banner-button span {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   ABOUT + NAVLINKS
+========================================================= */
+
+.footer-content {
+  display: grid;
+
+  grid-template-columns: 1fr 1.4fr;
+
+  gap: 70px;
+
+  padding-bottom: 42px;
+}
+
+/* =========================================================
+   ABOUT BMO SOFTWARE
+========================================================= */
+
+.footer-about {
+  max-width: 500px;
+}
+
+.footer-logo {
+  display: inline-flex;
+
   align-items: center;
 
   padding: 0;
-  margin: 0;
+
+  margin: 0 0 15px;
+
+  color: #ffffff;
 
   background: transparent;
+
   border: none;
 
-  cursor: pointer;
-
-  white-space: nowrap;
-
-  flex-shrink: 0;
-}
-
-.logo-bmo {
-  color: #ff5900;
-
   font-size: 24px;
-  font-weight: 900;
 
-  letter-spacing: -1.5px;
-}
-
-.logo-leads {
-  margin-left: 5px;
-
-  color: #222;
-
-  font-size: 24px;
   font-weight: 900;
 
   letter-spacing: -1px;
+
+  cursor: pointer;
+
+  transition: color 0.2s ease;
+}
+
+.footer-logo span {
+  color: #e94f00;
+}
+
+.footer-logo:hover {
+  color: #e94f00;
+}
+
+.footer-logo:hover span {
+  color: #ffffff;
+}
+
+.footer-about h3 {
+  margin: 0 0 12px;
+
+  color: #ffffff;
+
+  font-size: 13px;
+
+  font-weight: 700;
+}
+
+.footer-about p {
+  max-width: 480px;
+
+  margin: 0;
+
+  color: #707070;
+
+  font-size: 12px;
+
+  line-height: 1.75;
 }
 
 /* =========================================================
-   DESKTOP NAVIGATION
+   NAVIGATION
 ========================================================= */
 
-.bmo-nav-links {
-  flex: 1;
+.footer-navigation {
+  min-width: 0;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 28px;
+  padding-top: 3px;
 }
 
-.bmo-nav-links button {
+.footer-navigation h3 {
+  margin: 0 0 16px;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  letter-spacing: 1px;
+}
+
+/* =========================================================
+   NAVLINKS
+   ONE HORIZONTAL DIMENSION
+========================================================= */
+
+.footer-nav-links {
+  display: flex;
+
+  flex-direction: row;
+
+  align-items: center;
+
+  gap: 24px;
+
+  width: 100%;
+
+  white-space: nowrap;
+
+  overflow-x: auto;
+
+  scrollbar-width: none;
+}
+
+.footer-nav-links::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================================================
+   NAV LINK
+========================================================= */
+
+.footer-nav-links button {
   position: relative;
 
-  padding: 6px 0;
+  flex-shrink: 0;
 
-  color: #555;
+  padding: 5px 0;
+
+  color: #777777;
 
   background: transparent;
+
   border: none;
 
-  font-family: inherit;
-  font-size: 14px;
-  font-weight: 650;
+  font-size: 12px;
 
   cursor: pointer;
 
   white-space: nowrap;
 
-  transition: color 0.25s ease;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
-.bmo-nav-links button::after {
+/* =========================================================
+   ORANGE SLIDING UNDERLINE
+========================================================= */
+
+.footer-nav-links button::after {
   content: "";
 
   position: absolute;
 
   left: 50%;
-  bottom: -5px;
+
+  bottom: 0;
 
   width: 0;
+
   height: 2px;
 
-  background: #ff5900;
+  background: #e94f00;
 
   border-radius: 10px;
 
@@ -135,364 +347,71 @@
   transition: width 0.25s ease;
 }
 
-.bmo-nav-links button:hover {
-  color: #ff5900;
-}
-
-.bmo-nav-links button:hover::after {
-  width: 100%;
-}
-
 /* =========================================================
-   GET STARTED BUTTON
+   NAVLINK HOVER
 ========================================================= */
 
-.navbar-action {
-  flex-shrink: 0;
-}
+.footer-nav-links button:hover {
+  color: #ffffff;
 
-.navbar-start-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 9px;
-
-  padding: 11px 17px;
-
-  color: #fff;
-
-  background: #ff5900;
-
-  border: 1px solid #ff5900;
-  border-radius: 10px;
-
-  /* font-family: inherit; */
-  font-size: 13px;
-  font-weight: 750;
-
-  cursor: pointer;
-
-  box-shadow: 0 8px 20px rgba(255, 89, 0, 0.18);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
-}
-
-.navbar-start-btn:hover {
   transform: translateY(-2px);
-
-  background: #e94f00;
-
-  box-shadow: 0 12px 25px rgba(255, 89, 0, 0.25);
 }
 
-.arrow {
-  font-size: 16px;
-  line-height: 1;
-
-  transition: transform 0.25s ease;
-}
-
-.navbar-start-btn:hover .arrow,
-.mobile-start-btn:hover .arrow {
-  transform: translateX(3px);
-}
-
-/* =========================================================
-   HAMBURGER
-========================================================= */
-
-.hamburger-btn {
-  display: none;
-
-  width: 42px;
-  height: 42px;
-
-  padding: 9px;
-
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  gap: 5px;
-
-  background: #fff;
-
-  border: 1px solid #eee4dd;
-  border-radius: 10px;
-
-  cursor: pointer;
-
-  flex-shrink: 0;
-
-  position: relative;
-  z-index: 1003;
-}
-
-.hamburger-btn span {
-  display: block;
-
-  width: 20px;
-  height: 2px;
-
-  background: #222;
-
-  border-radius: 5px;
-
-  transition:
-    transform 0.25s ease,
-    opacity 0.25s ease,
-    background 0.25s ease;
-}
-
-/* HAMBURGER → X */
-
-.hamburger-btn.active span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-
-.hamburger-btn.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger-btn.active span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-.mobile-menu {
-  display: none;
-
+.footer-nav-links button:hover::after {
   width: 100%;
-
-  overflow: hidden;
-
-  background: rgba(255, 255, 255, 0.98);
-
-  border-top: 1px solid #eee8e3;
-
-  box-sizing: border-box;
 }
 
-.mobile-menu-inner {
+/* =========================================================
+   KEYBOARD FOCUS
+========================================================= */
+
+.footer-nav-links button:focus-visible {
+  outline: none;
+
+  color: #e94f00;
+}
+
+.footer-nav-links button:focus-visible::after {
   width: 100%;
-
-  display: flex;
-  flex-direction: column;
-
-  gap: 4px;
-
-  padding: 15px 20px 20px;
-
-  box-sizing: border-box;
 }
 
 /* =========================================================
-   MOBILE
+   FOOTER BOTTOM
 ========================================================= */
 
-@media (max-width: 800px) {
-  .bmo-navbar {
-    height: 70px;
-    min-height: 70px;
-    padding: 0 5%;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-  }
-
-  .navbar-container {
-    width: 100%;
-    height: 70px;
-    min-height: 70px;
-
-    display: flex;
-    align-items: center;
-
-    margin: 0 auto;
-  }
-
-  /* Hide desktop navigation */
-  .bmo-nav-links {
-    display: none;
-  }
-
-  .navbar-action {
-    display: none;
-  }
-
-  /* Logo stays on LEFT */
-  .navbar-brand {
-    margin-right: auto;
-  }
-
-  /* Hamburger stays on RIGHT */
-  .hamburger-btn {
-    display: flex;
-
-    margin-left: auto;
-
-    flex-shrink: 0;
-  }
-
-  /* Mobile menu starts at bottom of navbar */
-  .mobile-menu {
-    display: block;
-
-    position: absolute;
-
-    top: 100%;
-    left: 0;
-
-    width: 100%;
-
-    overflow: hidden;
-
-    background: rgba(255, 255, 255, 0.98);
-
-    border-top: 1px solid #eee8e3;
-
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-
-    z-index: 999;
-
-    box-sizing: border-box;
-  }
-
-  .mobile-menu-inner {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-
-    padding: 15px 5% 20px;
-
-    gap: 4px;
-
-    box-sizing: border-box;
-  }
-}
-
-/* =========================================================
-   MOBILE BUTTONS
-========================================================= */
-
-.mobile-menu-inner button {
+.footer-bottom {
   display: flex;
+
   align-items: center;
 
-  width: 100%;
-  min-height: 45px;
+  justify-content: space-between;
 
-  padding: 10px 14px;
+  padding: 18px 0 22px;
 
-  color: #444;
+  border-top: 1px solid #292929;
 
-  background: transparent;
+  color: #505050;
 
-  border: none;
-  border-radius: 10px;
-
-  /* font-family: inherit; */
-  font-size: 14px;
-  font-weight: 650;
-
-  text-align: left;
-
-  cursor: pointer;
-
-  transition:
-    color 0.2s ease,
-    background 0.2s ease,
-    transform 0.2s ease;
-}
-
-.mobile-menu-inner button:hover {
-  color: #ff5900;
-  background: #fff4ed;
-}
-
-.mobile-menu-inner button:active {
-  transform: scale(0.98);
-}
-
-/* =========================================================
-   MOBILE GET STARTED
-========================================================= */
-
-.mobile-menu-inner .mobile-start-btn {
-  justify-content: center;
-
-  margin-top: 8px;
-
-  color: #fff;
-
-  background: #ff5900;
-
-  text-align: center;
-
-  box-shadow: 0 8px 20px rgba(255, 89, 0, 0.16);
-}
-
-.mobile-menu-inner .mobile-start-btn:hover {
-  color: #fff;
-  background: #e94f00;
-}
-
-.mobile-start-btn .arrow {
-  margin-left: 3px;
+  font-size: 10px;
 }
 
 /* =========================================================
    TABLET
 ========================================================= */
 
-@media (max-width: 1050px) {
-  .navbar-container {
-    width: calc(100% - 32px);
-    gap: 18px;
-  }
-
-  .bmo-nav-links {
-    gap: 16px;
-  }
-
-  .bmo-nav-links button {
-    font-size: 12px;
-  }
-
-  .navbar-start-btn {
-    padding: 10px 14px;
-    font-size: 12px;
-  }
-}
-
-/* =========================================================
-   SMALL TABLET
-========================================================= */
-
 @media (max-width: 900px) {
-  .bmo-nav-links {
-    gap: 10px;
+  .footer-content {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
   }
 
-  .bmo-nav-links button {
-    font-size: 11px;
+  .footer-about {
+    max-width: 650px;
   }
 
-  .navbar-container {
-    gap: 12px;
-  }
-
-  .navbar-start-btn {
-    padding: 9px 12px;
+  .footer-navigation {
+    padding-top: 0;
   }
 }
 
@@ -500,41 +419,67 @@
    MOBILE
 ========================================================= */
 
-@media (max-width: 800px) {
-  .bmo-navbar {
-    min-height: 70px;
+@media (max-width: 650px) {
+  .footer-container {
+    width: calc(100% - 30px);
   }
 
-  .navbar-container {
-    width: calc(100% - 40px);
-    min-height: 70px;
+  /* Product banner */
 
-    gap: 0;
+  .footer-product-banner {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding: 22px;
+
+    margin: 25px 0 35px;
   }
 
-  .bmo-nav-links,
-  .navbar-action {
-    display: none;
+  .product-banner-text h3 {
+    font-size: 18px;
   }
 
-  .hamburger-btn {
-    display: flex;
+  .product-banner-button {
+    width: 100%;
   }
 
-  .navbar-brand {
-    margin-right: auto;
+  /* About + NavLinks */
+
+  .footer-content {
+    gap: 30px;
+
+    padding-bottom: 35px;
   }
 
-  .mobile-menu {
-    display: block;
+  .footer-about {
+    max-width: 100%;
   }
 
-  .logo-bmo {
-    font-size: 22px;
+  .footer-about p {
+    max-width: 100%;
   }
 
-  .logo-leads {
-    font-size: 19px;
+  /* NavLinks */
+
+  .footer-navigation {
+    width: 100%;
+  }
+
+  .footer-nav-links {
+    width: calc(100vw - 30px);
+
+    gap: 20px;
+
+    padding-bottom: 5px;
+  }
+
+  .footer-nav-links button {
+    padding: 5px 0;
+
+    font-size: 11px;
   }
 }
 
@@ -542,62 +487,36 @@
    SMALL MOBILE
 ========================================================= */
 
-@media (max-width: 480px) {
-  .navbar-container {
-    width: calc(100% - 30px);
+@media (max-width: 380px) {
+  .footer-logo {
+    font-size: 22px;
   }
 
-  .logo-bmo {
-    font-size: 21px;
+  .footer-about h3 {
+    font-size: 12px;
   }
 
-  .logo-leads {
+  .footer-about p {
+    font-size: 11px;
+  }
+
+  .footer-nav-links {
+    gap: 18px;
+  }
+
+  .footer-nav-links button {
+    font-size: 10px;
+  }
+
+  .product-banner-text h3 {
     font-size: 17px;
   }
 
-  .hamburger-btn {
-    width: 40px;
-    height: 40px;
+  .footer-bottom {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 8px;
   }
-
-  .mobile-menu-inner {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-
-/* =========================================================
-   EXTRA SMALL MOBILE
-========================================================= */
-
-@media (max-width: 360px) {
-  .navbar-container {
-    width: calc(100% - 24px);
-  }
-
-  .logo-bmo {
-    font-size: 19px;
-  }
-
-  .logo-leads {
-    font-size: 15px;
-  }
-
-  .hamburger-btn {
-    width: 38px;
-    height: 38px;
-  }
-
-  .mobile-menu-inner {
-    padding-left: 12px;
-    padding-right: 12px;
-  }
-}
-
-/* =========================================================
-   SECTION SCROLL OFFSET
-========================================================= */
-
-section {
-  scroll-margin-top: 90px;
 }
