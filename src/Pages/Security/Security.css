@@ -1,4 +1,6 @@
 
+
+
 /* =========================================================
    SECURITY SECTION
    Theme: #ff5900
@@ -8,7 +10,7 @@
   position: relative;
   padding: 120px 7%;
   overflow: hidden;
-  background: #fffaf7;
+  background:#f5f5f5;
   isolation: isolate;
 }
 

@@ -21,9 +21,10 @@ const Home = () => {
 
         <Features />
 
+        <LiveDemo />
+        
         <HowItWorks />
 
-        <LiveDemo />
 
         <Security />
 
