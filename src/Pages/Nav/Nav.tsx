@@ -5,11 +5,9 @@ import "./Nav.css";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Navigate to section and close mobile menu
   const handleNavigation = (id: string) => {
     setMenuOpen(false);
 
-    // Wait for menu closing animation, then scroll
     setTimeout(() => {
       const section = document.getElementById(id);
 
@@ -32,73 +30,80 @@ const Navbar = () => {
         ease: "easeOut",
       }}
     >
-      {/* =====================================================
-          NAVBAR CONTAINER
-      ===================================================== */}
-
       <div className="navbar-container">
-        {/* ================= LOGO ================= */}
-
+        {/* LOGO */}
         <button
-          className="navbar-brand brand-logo"
+          type="button"
+          className="navbar-brand"
           onClick={() => handleNavigation("home")}
+          aria-label="Go to home"
         >
           <span className="logo-bmo">BMO</span>
-          <span className="logo-leads"> Leads</span>
+          <span className="logo-leads">Leads</span>
         </button>
 
-        {/* ================= DESKTOP NAVIGATION ================= */}
-
+        {/* DESKTOP NAVIGATION */}
         <div className="bmo-nav-links">
-          <button onClick={() => handleNavigation("home")}>Home</button>
+          <button type="button" onClick={() => handleNavigation("home")}>
+            Home
+          </button>
 
-          <button onClick={() => handleNavigation("features")}>Features</button>
+          <button type="button" onClick={() => handleNavigation("features")}>
+            Features
+          </button>
 
-          <button onClick={() => handleNavigation("live-demo")}>
+          <button type="button" onClick={() => handleNavigation("live-demo")}>
             Live Showcase
           </button>
 
-          <button onClick={() => handleNavigation("how-it-works")}>
+          <button
+            type="button"
+            onClick={() => handleNavigation("how-it-works")}
+          >
             How It Works
           </button>
 
-          <button onClick={() => handleNavigation("security")}>Security</button>
+          <button type="button" onClick={() => handleNavigation("security")}>
+            Security
+          </button>
 
-          <button onClick={() => handleNavigation("faq")}>FAQ</button>
-        </div>
-
-        {/* ================= DESKTOP ACTION ================= */}
-
-        <div className="navbar-action">
-          <button
-            className="navbar-start-btn"
-            onClick={() => handleNavigation("started")}
-          >
-            Get Started
-            <span>→</span>
+          <button type="button" onClick={() => handleNavigation("faq")}>
+            FAQ
           </button>
         </div>
 
-        {/* ================= HAMBURGER ================= */}
+        {/* DESKTOP GET STARTED */}
+        <div className="navbar-action">
+          <button
+            type="button"
+            className="navbar-start-btn"
+            onClick={() => handleNavigation("started")}
+          >
+            <span>Get Started</span>
+            <span className="arrow">→</span>
+          </button>
+        </div>
 
+        {/* HAMBURGER */}
         <button
           type="button"
           className={`hamburger-btn ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen((prev) => !prev)}
-          aria-label="Toggle navigation menu"
+          aria-label={
+            menuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
           aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span />
+          <span />
+          <span />
         </button>
       </div>
 
-      {/* =====================================================
-          MOBILE MENU
-      ===================================================== */}
-
+      {/* MOBILE MENU */}
       <motion.div
+        id="mobile-navigation"
         className="mobile-menu"
         initial={false}
         animate={{
@@ -109,6 +114,7 @@ const Navbar = () => {
           duration: 0.25,
           ease: "easeOut",
         }}
+        aria-hidden={!menuOpen}
       >
         <div className="mobile-menu-inner">
           <button type="button" onClick={() => handleNavigation("home")}>
@@ -143,8 +149,8 @@ const Navbar = () => {
             className="mobile-start-btn"
             onClick={() => handleNavigation("started")}
           >
-            Get Started
-            <span>→</span>
+            <span>Get Started</span>
+            <span className="arrow">→</span>
           </button>
         </div>
       </motion.div>
