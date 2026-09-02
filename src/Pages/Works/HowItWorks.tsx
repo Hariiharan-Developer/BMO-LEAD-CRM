@@ -1,22 +1,27 @@
-import { motion } from 'framer-motion'
+import { useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import {
+  ChevronLeft,
+  ChevronRight,
+} from 'lucide-react'
 
 import './HowItWorks.css'
 
-import loginImage from '../../assets/login.png'
-import dashboardImage from '../../assets/dashboard.png'
-import leadImage from '../../assets/notification.png'
+// import loginImage from '../../assets/login.png'
+import dashboardImage from '../../assets/timeline.png'
+import leadImage from '../../assets/followup.png'
 import reportImage from '../../assets/report.png'
-import analyticsImage from '../../assets/analytic.png'
+import analyticsImage from '../../assets/lead.png'
 import excelImage from '../../assets/excel.png'
 
 const steps = [
-  {
-    number: '01',
-    title: 'Login',
-    description:
-      'Securely access your BMO Leads workspace and start managing your sales pipeline.',
-    image: loginImage,
-  },
+  // {
+  //   number: '01',
+  //   title: 'Login',
+  //   description:
+  //     'Securely access your BMO Leads workspace and start managing your sales pipeline.',
+  //   image: loginImage,
+  // },
   {
     number: '02',
     title: 'Dashboard',
@@ -54,13 +59,49 @@ const steps = [
   },
 ]
 
-const HowItWorks = () => {
-  return (
-    <section id="how-it-works" className="how-section">
+const AUTO_SCROLL_TIME = 5000
 
-      {/* =================================
-          HEADER
-      ================================= */}
+const HowItWorks = () => {
+  const [activeStep, setActiveStep] = useState(0)
+  const [isPaused, setIsPaused] = useState(false)
+
+  const nextSlide = () => {
+    setActiveStep((current) =>
+      current === steps.length - 1 ? 0 : current + 1
+    )
+  }
+
+  const previousSlide = () => {
+    setActiveStep((current) =>
+      current === 0 ? steps.length - 1 : current - 1
+    )
+  }
+
+  /* =====================================================
+     AUTO SLIDE
+  ===================================================== */
+
+  useEffect(() => {
+    if (isPaused) return
+
+    const timer = setInterval(() => {
+      setActiveStep((current) =>
+        current === steps.length - 1 ? 0 : current + 1
+      )
+    }, AUTO_SCROLL_TIME)
+
+    return () => clearInterval(timer)
+  }, [isPaused])
+
+  return (
+    <section
+      id="how-it-works"
+      className="how-section"
+    >
+
+      {/* =================================================
+          HEADING
+      ================================================= */}
 
       <motion.div
         className="how-heading"
@@ -99,17 +140,15 @@ const HowItWorks = () => {
         </p>
       </motion.div>
 
-
-      {/* =================================
-          MAIN
-      ================================= */}
+      {/* =================================================
+          MAIN CONTENT
+      ================================================= */}
 
       <div className="how-main">
 
-
-        {/* =================================
+        {/* =================================================
             LEFT CONTENT
-        ================================= */}
+        ================================================= */}
 
         <motion.div
           className="how-content"
@@ -180,10 +219,9 @@ const HowItWorks = () => {
 
         </motion.div>
 
-
-        {/* =================================
-            RIGHT SCREEN
-        ================================= */}
+        {/* =================================================
+            LAPTOP
+        ================================================= */}
 
         <motion.div
           className="screen-section"
@@ -206,11 +244,15 @@ const HowItWorks = () => {
           }}
         >
 
-          {/* =================================
-              LAPTOP
-          ================================= */}
+          <div
+            className="laptop"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
 
-          <div className="laptop">
+            {/* =================================================
+                LAPTOP HEADER
+            ================================================= */}
 
             <div className="laptop-header">
 
@@ -225,70 +267,140 @@ const HowItWorks = () => {
               </span>
 
               <div className="laptop-status">
+
                 <span />
+
                 Live
+
               </div>
 
             </div>
 
-
-            {/* =================================
+            {/* =================================================
                 SCREEN
-            ================================= */}
+            ================================================= */}
 
             <div className="screen">
 
-              <motion.div
-                className="screen-track"
-                animate={{
-                  x: [
-                    '0%',
-                    '0%',
-                    '-16.666%',
-                    '-16.666%',
-                    '-33.333%',
-                    '-33.333%',
-                    '-50%',
-                    '-50%',
-                    '-66.666%',
-                    '-66.666%',
-                    '-83.333%',
-                    '-83.333%',
-                    '0%',
-                  ],
-                }}
-                transition={{
-                  duration: 30,
-                  repeat: Infinity,
-                  ease: 'linear',
-                }}
+              <AnimatePresence mode="wait">
+
+                <motion.div
+                  key={activeStep}
+                  className="screen-slide"
+                  initial={{
+                    opacity: 0,
+                    scale: 1.015,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    scale: 1,
+                  }}
+                  exit={{
+                    opacity: 0,
+                    scale: 0.99,
+                  }}
+                  transition={{
+                    duration: 0.65,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                >
+
+                  <img
+                    src={steps[activeStep].image}
+                    alt={`${steps[activeStep].title} - BMO Leads`}
+                  />
+
+                </motion.div>
+
+              </AnimatePresence>
+
+              {/* =================================================
+                  NAVIGATION ARROWS
+              ================================================= */}
+
+              <button
+                type="button"
+                className="carousel-arrow carousel-arrow-left"
+                onClick={previousSlide}
+                aria-label="Previous slide"
               >
+                <ChevronLeft size={19} />
+              </button>
 
-                {steps.map((step) => (
-                  <div
-                    className="screen-slide"
-                    key={step.number}
-                  >
-
-                    <img
-                      src={step.image}
-                      alt={`${step.title} - BMO Leads`}
-                    />
-
-                  </div>
-                ))}
-
-              </motion.div>
+              <button
+                type="button"
+                className="carousel-arrow carousel-arrow-right"
+                onClick={nextSlide}
+                aria-label="Next slide"
+              >
+                <ChevronRight size={19} />
+              </button>
 
             </div>
 
+            {/* =================================================
+                CAROUSEL FOOTER
+            ================================================= */}
 
-            {/* =================================
+            <div className="carousel-footer">
+
+              <div className="carousel-dots">
+
+                {steps.map((step, index) => (
+
+                  <button
+                    key={step.number}
+                    type="button"
+                    className={`carousel-dot ${
+                      activeStep === index
+                        ? 'active'
+                        : ''
+                    }`}
+                    onClick={() =>
+                      setActiveStep(index)
+                    }
+                    aria-label={`Go to ${step.title}`}
+                  />
+
+                ))}
+
+              </div>
+
+              {/* Progress */}
+
+              <div className="carousel-progress">
+
+                <motion.div
+                  key={activeStep}
+                  className="carousel-progress-bar"
+                  initial={{
+                    width: '0%',
+                  }}
+                  animate={{
+                    width: isPaused
+                      ? '0%'
+                      : '100%',
+                  }}
+                  transition={{
+                    duration: isPaused
+                      ? 0
+                      : AUTO_SCROLL_TIME / 1000,
+                    ease: 'linear',
+                  }}
+                />
+
+              </div>
+
+            </div>
+
+            {/* =================================================
                 LAPTOP BASE
-            ================================= */}
+            ================================================= */}
 
             <div className="laptop-base">
+
               <div className="laptop-notch" />
+
             </div>
 
           </div>
