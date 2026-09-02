@@ -1,124 +1,133 @@
-import { motion } from 'framer-motion'
-import {
-  Target,
-  CheckCircle2,
-  Users,
-  BarChart3
-} from 'lucide-react'
+import React from "react";
+import "./Features.css";
 
-import './Features.css'
-
-const features = [
-  {
-    icon: Target,
-    title: 'Lead Tracking',
-    description:
-      'Keep every lead organized from first contact to final conversion.'
-  },
-  {
-    icon: CheckCircle2,
-    title: 'Smart Follow-Ups',
-    description:
-      'Never miss an important follow-up with organized activities.'
-  },
-  {
-    icon: Users,
-    title: 'Lead Prioritization',
-    description:
-      'Focus your team on the prospects that matter most.'
-  },
-  {
-    icon: BarChart3,
-    title: 'Powerful Analytics',
-    description:
-      'Understand your pipeline with clear real-time insights.'
-  }
-]
-
-const Features = () => {
-  return (
-    <section
-      id="features"
-      className="features-section"
-    >
-
-      <div className="section-heading">
-
-        <span>
-          POWERFUL TOOLS
-        </span>
-
-        <h2>
-          Everything You Need
-          <br />
-
-          <strong>
-            To Manage Your Leads.
-          </strong>
-        </h2>
-
-        <p>
-          BMO Lead gives your team everything
-          needed to organize, track and convert
-          opportunities.
-        </p>
-
-      </div>
-
-
-      <motion.div
-        className="feature-grid"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        transition={{
-          staggerChildren: 0.12
-        }}
-      >
-
-        {features.map((feature) => {
-
-          const Icon = feature.icon
-
-          return (
-            <motion.div
-              className="feature-card"
-              key={feature.title}
-              variants={{
-                hidden: {
-                  opacity: 0,
-                  y: 30
-                },
-                visible: {
-                  opacity: 1,
-                  y: 0
-                }
-              }}
-              whileHover={{
-                y: -8
-              }}
-            >
-
-              <div className="feature-icon">
-                <Icon size={22} />
-              </div>
-
-              <h3>
-                {feature.title}
-              </h3>
-
-              <p>
-                {feature.description}
-              </p>
-
-            </motion.div>
-          )
-        })}
-
-      </motion.div>
-
-    </section>
-  )
+interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+  tag: string;
 }
 
-export default Features
+const features: Feature[] = [
+  {
+    icon: "◉",
+    title: "Follow Every Client",
+    description:
+      "Follow each client from their first enquiry through quotation, confirmation, or cancellation.",
+    tag: "CLIENT FOLLOW-UP",
+  },
+  {
+    icon: "⇧",
+    title: "Upload Leads Easily",
+    description:
+      "Upload your Excel file and automatically extract client information into your lead database.",
+    tag: "EXCEL IMPORT",
+  },
+  {
+    icon: "⌂",
+    title: "Insightful Dashboard",
+    description:
+      "See your complete lead activity at a glance with important numbers, statuses, and real-time insights.",
+    tag: "DASHBOARD",
+  },
+  {
+    icon: "✓",
+    title: "Complete Lead Records",
+    description:
+      "Keep client details, follow-up history, status changes, and important information organized in one place.",
+    tag: "LEAD RECORDS",
+  },
+];
+
+const Features: React.FC = () => {
+  return (
+    <section className="features-section" id="features">
+      <div className="container">
+        {/* Header */}
+        <div className="features-header">
+
+          <div className="features-eyebrow">EVERYTHING IN ONE PLACE</div>
+
+          <h2>
+            Make every lead
+            <span> easier to follow.</span>
+          </h2>
+
+          <p>
+            BMO Leads helps your team organize client enquiries, follow every
+            lead, update statuses, and keep complete records.
+          </p>
+        </div>
+
+        {/* Feature Cards */}
+        <div className="features-list">
+          {features.map((feature, index) => (
+            <div
+              className="feature-card"
+              key={feature.title}
+              style={
+                {
+                  "--delay": `${index * 0.08}s`,
+                } as React.CSSProperties
+              }
+            >
+              {/* Icon */}
+              <div className="feature-icon-wrapper">
+                <div className="feature-icon">{feature.icon}</div>
+              </div>
+
+              {/* Content */}
+              <div className="feature-card-content">
+                <span className="feature-tag">{feature.tag}</span>
+
+                <h3>{feature.title}</h3>
+
+                <p>{feature.description}</p>
+              </div>
+
+              {/* Right Visual */}
+              <div className="feature-visual">
+                {index === 0 && (
+                  <div className="status-flow">
+                    <span>Enquiry</span>
+                    <b>→</b>
+                    <span>Quotation</span>
+                  </div>
+                )}
+
+                {index === 1 && (
+                  <div className="excel-box">
+                    <span>XL</span>
+
+                    <div>
+                      <b>1,240</b>
+                      <small> leads imported</small>
+                    </div>
+                  </div>
+                )}
+
+                {index === 2 && (
+                  <div className="status-pill">
+                    <i></i>
+                    Quotation
+                  </div>
+                )}
+
+                {index === 3 && (
+                  <div className="report-bars">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Features;

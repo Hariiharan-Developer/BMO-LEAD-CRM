@@ -17,20 +17,10 @@ const Navbar = () => {
 
         {/* ================= LOGO ================= */}
 
-        <a href="#home" className="bmo-logo">
-          <div className="logo-mark">
-            B
-          </div>
-
-          <div className="logo-text">
-            <span className="logo-title">
-              BMO
-            </span>
-
-            <span className="logo-subtitle">
-              LEADS
-            </span>
-          </div>
+         {/* Logo */}
+         <a className="navbar-brand brand-logo" href="#">
+          <span className="logo-bmo">BMO</span>
+          <span className="logo-leads"> Leads</span>
         </a>
 
 
@@ -46,11 +36,11 @@ const Navbar = () => {
             Features
           </a>
 
-          <a href="#liveShowCase">
+          <a href="#live-demo">
             Live Showcase
           </a>
 
-          <a href="#works">
+          <a href="#how-it-works">
             How It Works
           </a>
 
@@ -68,10 +58,6 @@ const Navbar = () => {
         {/* ================= ACTION ================= */}
 
         <div className="navbar-action">
-
-          <button className="login-btn">
-            Login
-          </button>
 
           <a
             href="#started"

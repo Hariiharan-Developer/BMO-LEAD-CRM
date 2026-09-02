@@ -1,210 +1,237 @@
-import { motion } from 'framer-motion'
+import React from "react";
+import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import {
-  Lock,
   ShieldCheck,
-  Database,
+  LockKeyhole,
   UserCheck,
-  KeyRound,
-  Server,
+  Database,
   CheckCircle2,
-} from 'lucide-react'
-import './Security.css'
+  Activity,
+} from "lucide-react";
 
-const securityItems = [
-  {
-    icon: Lock,
-    title: 'Secure Authentication',
-    description:
-      'Protect every account with secure authentication and controlled access.',
-  },
-  {
-    icon: UserCheck,
-    title: 'Role-Based Access',
-    description:
-      'Give every team member access only to the features they need.',
-  },
-  {
-    icon: Database,
-    title: 'Protected Data',
-    description:
-      'Keep customer and lead information protected throughout the system.',
-  },
-  {
-    icon: KeyRound,
-    title: 'Controlled Permissions',
-    description:
-      'Manage create, view, update and delete permissions with precision.',
-  },
-]
+import "./Security.css";
 
-const Security = () => {
+
+
+const fadeUp:Variants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
+
+
+
+const Security: React.FC = () => {
   return (
     <section id="security" className="security-section">
-
-      <div className="security-glow" />
+      {/* Background */}
+      <div className="security-bg-orb security-bg-orb-one" />
+      <div className="security-bg-orb security-bg-orb-two" />
 
       <div className="security-container">
-
-        {/* LEFT CONTENT */}
-
+        {/* ================= LEFT CONTENT ================= */}
         <motion.div
           className="security-content"
-          initial={{ opacity: 0, x: -40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
         >
-
-          <span className="security-label">
-            SECURITY FIRST
-          </span>
+          <div className="security-top-label">
+            <span className="security-label-dot" />
+            SECURITY
+          </div>
 
           <h2>
-            Your Data.
+            Your leads.
             <br />
-            <strong>Protected By Design.</strong>
+            <span>Protected.</span>
           </h2>
 
-          <p>
-            BMO Lead is designed with security and access
-            control at the core, helping your team manage
-            sensitive sales information with confidence.
+          <p className="security-description">
+            Keep your customer information secure while giving your team the
+            access they need to manage every lead with confidence.
           </p>
 
-          <div className="security-status">
-
-            <div className="security-status-icon">
-              <ShieldCheck size={22} />
+          {/* Security Status */}
+          <div className="security-status-card">
+            <div className="status-icon">
+              <ShieldCheck size={23} />
             </div>
 
-            <div>
-              <strong>Security Ready</strong>
-              <span>
-                Built for controlled business access
-              </span>
-            </div>
+            <div className="status-content">
+              <div className="status-heading">
+                <span>Workspace Security</span>
 
+                <span className="status-active">
+                  <span />
+                  Active
+                </span>
+              </div>
+
+              <p>
+                Your workspace is protected with controlled access and secure
+                lead management.
+              </p>
+            </div>
           </div>
 
+          {/* Small features */}
+          <div className="security-small-features">
+            <div className="security-small-item">
+              <CheckCircle2 size={18} />
+              <span>Controlled access</span>
+            </div>
+
+            <div className="security-small-item">
+              <CheckCircle2 size={18} />
+              <span>Protected records</span>
+            </div>
+          </div>
         </motion.div>
 
-
-        {/* RIGHT SECURITY CARD */}
-
+        {/* ================= RIGHT VISUAL ================= */}
         <motion.div
-          className="security-card"
+          className="security-dashboard"
           initial={{ opacity: 0, x: 40 }}
           whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          viewport={{ once: true, amount: 0.2 }}
         >
+          {/* Main dashboard card */}
+          <div className="security-panel">
+            {/* Panel header */}
+            <div className="security-panel-header">
+              <div>
+                <span className="panel-mini-label">SECURITY CENTER</span>
+                <h3>Access Overview</h3>
+              </div>
 
-          <div className="security-card-header">
-
-            <div className="security-shield">
-              <ShieldCheck size={25} />
+              <div className="panel-shield">
+                <ShieldCheck size={21} />
+              </div>
             </div>
 
-            <div>
-              <small>PROTECTION STATUS</small>
+            {/* Main security score */}
+            <div className="security-score">
+              <div className="score-ring">
+                <div className="score-ring-inner">
+                  <ShieldCheck size={31} />
+                  <strong>100%</strong>
+                  <span>Protected</span>
+                </div>
+              </div>
 
-              <h3>
-                System Protected
-              </h3>
-            </div>
-
-            <motion.div
-              className="security-check"
-              animate={{
-                scale: [1, 1.12, 1],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-              }}
-            >
-              <CheckCircle2 size={18} />
-            </motion.div>
-
-          </div>
-
-
-          <div className="security-grid">
-
-            {securityItems.map((item, index) => {
-
-              const Icon = item.icon
-
-              return (
-                <motion.div
-                  className="security-item"
-                  key={item.title}
-                  initial={{
-                    opacity: 0,
-                    y: 20,
-                  }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.1,
-                  }}
-                  whileHover={{
-                    y: -4,
-                  }}
-                >
-
-                  <div className="security-item-icon">
-                    <Icon size={18} />
+              <div className="score-details">
+                <div className="score-detail-item">
+                  <div className="detail-icon">
+                    <LockKeyhole size={17} />
                   </div>
 
                   <div>
-                    <h4>{item.title}</h4>
-
-                    <p>
-                      {item.description}
-                    </p>
+                    <strong>Secure Login</strong>
+                    <span>Enabled</span>
                   </div>
 
-                </motion.div>
-              )
-            })}
+                  <CheckCircle2 size={17} className="detail-check" />
+                </div>
 
-          </div>
+                <div className="score-detail-item">
+                  <div className="detail-icon">
+                    <UserCheck size={17} />
+                  </div>
 
+                  <div>
+                    <strong>User Access</strong>
+                    <span>Controlled</span>
+                  </div>
 
-          <div className="security-server">
+                  <CheckCircle2 size={17} className="detail-check" />
+                </div>
 
-            <div className="server-icon">
-              <Server size={17} />
+                <div className="score-detail-item">
+                  <div className="detail-icon">
+                    <Database size={17} />
+                  </div>
+
+                  <div>
+                    <strong>Lead Data</strong>
+                    <span>Protected</span>
+                  </div>
+
+                  <CheckCircle2 size={17} className="detail-check" />
+                </div>
+              </div>
             </div>
 
-            <div className="server-info">
+            {/* Activity */}
+            <div className="security-activity">
+              <div className="activity-header">
+                <div>
+                  <span>ACCESS ACTIVITY</span>
+                  <h4>Recent workspace activity</h4>
+                </div>
 
-              <strong>
-                Protected Workspace
-              </strong>
+                <Activity size={18} />
+              </div>
 
-              <span>
-                Access is controlled by your
-                organization permissions.
-              </span>
-
+           
             </div>
 
-            <div className="server-dot" />
+            {/* Floating cards */}
+            <motion.div
+              className="floating-security-card floating-card-one"
+              animate={{ y: [0, -7, 0] }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <div className="floating-icon orange">
+                <LockKeyhole size={17} />
+              </div>
 
+              <div>
+                <strong>Secure</strong>
+                <span>Authentication</span>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="floating-security-card floating-card-two"
+              animate={{ y: [0, 7, 0] }}
+              transition={{
+                duration: 3.5,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <div className="floating-icon green">
+                <CheckCircle2 size={17} />
+              </div>
+
+              <div>
+                <strong>Access</strong>
+                <span>Verified</span>
+              </div>
+            </motion.div>
           </div>
-
         </motion.div>
-
       </div>
 
     </section>
-  )
-}
+  );
+};
 
-export default Security
+export default Security;

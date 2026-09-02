@@ -83,12 +83,13 @@
   background:
     linear-gradient(
       135deg,
-      #e50914,
-      #ff3038
+      #d64f06,
+      #ff5900
     );
 
   box-shadow:
-    0 8px 25px rgba(229, 9, 20, 0.25);
+    0 8px 25px  #ff5900,
+ ;
 
   transition: 0.3s ease;
 }
@@ -98,7 +99,7 @@
   transform: translateY(-2px);
 
   box-shadow:
-    0 12px 30px rgba(229, 9, 20, 0.35);
+    0 12px 30px  #ff5900;
 }
 
 
@@ -126,7 +127,7 @@
 .logo-subtitle {
   margin-top: 4px;
 
-  color: #e50914;
+  color: #ff5900;
 
   font-size: 7px;
   font-weight: 700;
@@ -168,7 +169,7 @@
 
 
 .bmo-nav-links a:hover {
-  color: #e50914;
+  color:  #ff5900;
 
   transform: translateY(-1px);
 }
@@ -189,7 +190,7 @@
 
   border-radius: 10px;
 
-  background: #e50914;
+  background:  #ff5f08;
 
   transition: width 0.3s ease;
 }
@@ -241,9 +242,9 @@
 
 
 .login-btn:hover {
-  color: #e50914;
+  color:  #ff5900;
 
-  border-color: rgba(229, 9, 20, 0.35);
+  border-color: rgba(229, 9, 9, 0.35);
 
   background: rgba(229, 9, 20, 0.04);
 
@@ -277,7 +278,7 @@
   background:
     linear-gradient(
       135deg,
-      #e50914,
+      #ff5900,
       #ff3038
     );
 
@@ -286,6 +287,7 @@
 
   transition: all 0.3s ease;
 }
+
 
 
 .navbar-start-btn span {
@@ -310,6 +312,35 @@
 .navbar-start-btn:hover span {
   transform: translateX(3px);
 }
+
+ /* =========================================
+     LOGO
+  ========================================= */
+  
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;              /* space between BMO and Leads */
+    text-decoration: none;
+    font-size: 28px;        /* overall font size */
+    font-weight: 700;
+  }
+  
+  .brand-logo:hover {
+    transform: translateY(-1px);
+  }
+  
+  .logo-bmo {
+    color: rgb(255, 89, 0);
+    font-size: 29px; 
+    font-weight: 700;
+  }
+  
+  .logo-leads {
+    font-size: 24px;
+  
+    font-weight: 600;
+  }
 
 
 /* =====================================================

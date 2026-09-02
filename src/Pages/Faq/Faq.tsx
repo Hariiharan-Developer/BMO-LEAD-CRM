@@ -25,11 +25,7 @@ const faqData = [
     answer:
       'Yes. Role-based permissions can control which modules and actions each employee can access.',
   },
-  {
-    question: 'Can I see my sales pipeline?',
-    answer:
-      'Yes. The pipeline provides visibility into your enquiries, quotations, confirmed leads and other stages.',
-  },
+  
   {
     question: 'Is my data secure?',
     answer:

@@ -1,126 +1,659 @@
-/* Features.css */
+/* =========================================
+   SECTION
+========================================= */
 
 .features-section {
-  position: relative;
-  padding: 120px 7%;
-  background: #ffffff;
+  padding: 110px 0;
+
+  background: #f6f4f1;
+
+  overflow: hidden;
 }
 
-.features-section .section-heading {
-  max-width: 700px;
-  margin: 0 auto 60px;
+
+/* =========================================
+   HEADER
+========================================= */
+.features-header {
+  max-width: 780px;
+  margin: 0 auto 55px;
   text-align: center;
 }
 
-.features-section .section-heading > span {
-  color: var(--bmo-red);
+
+
+.features-eyebrow {
+  display: inline-block;
+
+  margin-bottom: 16px;
+
+  color: #ff5900;
+
   font-size: 10px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 2px;
 }
 
-.features-section .section-heading h2 {
-  margin: 15px 0;
-  color: var(--bmo-text);
-  font-size: clamp(36px, 4vw, 52px);
-  line-height: 1.1;
-  font-weight: 800;
-  letter-spacing: -2px;
+.features-header h2 {
+  margin: 0;
+
+  color: #24211f;
+
+  font-size: clamp(40px, 5vw, 58px);
+
+  line-height: 1.08;
+
+  font-weight: 750;
+
+  letter-spacing: -2.5px;
 }
 
-.features-section .section-heading h2 strong {
-  color: var(--bmo-red);
+.features-header h2 span {
+  color: #ff5900;
+  
+  /* prevents the orange text from looking faded */
+  font-weight: 750;
 }
 
-.features-section .section-heading p {
-  color: var(--bmo-muted);
+.features-header p {
+  max-width: 600px;
+
+  margin: 20px auto 0;
+
+  color: #625c57;
+
   font-size: 14px;
-  line-height: 1.8;
+
+  line-height: 1.75;
 }
 
-.feature-grid {
+
+/* =========================================
+   FEATURE LIST
+========================================= */
+
+.features-list {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 18px;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 16px;
 }
+
+
+/* =========================================
+   CARD
+========================================= */
 
 .feature-card {
   position: relative;
-  min-height: 240px;
-  padding: 30px;
-  overflow: hidden;
+
+  min-height: 205px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 24px;
+
+  padding: 25px;
 
   background: #ffffff;
-  border: 1px solid #e5e7eb;
+
+  border: 1px solid #e5e0db;
+
   border-radius: 18px;
 
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
 
   transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
+
+/* =========================================
+   CARD HOVER
+========================================= */
+
 .feature-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(229, 9, 20, 0.3);
-  box-shadow: 0 20px 45px rgba(229, 9, 20, 0.08);
+  transform: translateY(-5px);
+
+  border-color: #d8d0c9;
+
+  box-shadow:
+    0 15px 35px rgba(50, 43, 38, 0.08);
+}
+
+
+/* =========================================
+   ICON BLOCK
+========================================= */
+
+.feature-icon-wrapper {
+  flex-shrink: 0;
+
+  width: 65px;
+  height: 65px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 17px;
+
+  background: #fdecec;
+
+  transition:
+    transform 0.4s ease,
+    background 0.4s ease;
+}
+
+.feature-card:hover .feature-icon-wrapper {
+  transform: scale(1.05);
+
+  background: #ff5900;
 }
 
 .feature-icon {
-  width: 46px;
-  height: 46px;
+  color:   #ff5900;
 
-  display: grid;
-  place-items: center;
+  font-size: 23px;
 
-  margin-bottom: 25px;
+  font-weight: 600;
 
-  color: var(--bmo-red);
-  background: rgba(229, 9, 20, 0.08);
-
-  border-radius: 12px;
+  transition: color 0.3s ease;
 }
 
-.feature-card h3 {
-  margin-bottom: 10px;
+.feature-card:hover .feature-icon {
+  color: #ffffff;
+}
 
-  color: var(--bmo-text);
-  font-size: 17px;
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.feature-card-content {
+  position: relative;
+
+  z-index: 2;
+
+  flex: 1;
+}
+
+.feature-tag {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color :#d92d20;
+
+  font-size: 8px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+.feature-card-content h3 {
+  margin: 0 0 8px;
+
+  color: #25221f;
+
+  font-size: 19px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.5px;
+}
+
+.feature-card-content p {
+  max-width: 350px;
+
+  margin: 0;
+
+  color: #77706a;
+
+  font-size: 12.5px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   VISUAL AREA
+========================================= */
+
+.feature-visual {
+  flex-shrink: 0;
+
+  width: 155px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================
+   STATUS FLOW
+========================================= */
+
+.status-flow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+
+  font-size: 9px;
+
+  color: #77706a;
+}
+
+.status-flow span {
+  padding: 7px 9px;
+
+  background: #f7f4f1;
+
+  border-radius: 7px;
+}
+
+.status-flow b {
+  color: #d92d20;
+
+  font-size: 13px;
+}
+
+
+/* =========================================
+   EXCEL
+========================================= */
+
+.excel-box {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 11px;
+
+  border-radius: 10px;
+
+  background: #f7f4f1;
+}
+
+.excel-box > span {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 7px;
+
+  background: #e7f3e9;
+
+  color: #32814a;
+
+  font-size: 9px;
+
   font-weight: 800;
 }
 
-.feature-card p {
-  margin: 0;
+.excel-box b {
+  display: block;
 
-  color: var(--bmo-muted);
-  font-size: 12px;
-  line-height: 1.8;
+  color: #292522;
+
+  font-size: 13px;
 }
 
-.feature-arrow {
-  position: absolute;
-  right: 25px;
-  bottom: 22px;
+.excel-box small {
+  display: block;
 
-  color: var(--bmo-red);
-  font-size: 20px;
+  color: #918a84;
+
+  font-size: 8px;
+}
+
+
+/* =========================================
+   STATUS
+========================================= */
+
+.status-pill {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 10px 13px;
+
+  background:#fdf0f0;
+
+  border: 1px solid #ffe2d1;
+
+  border-radius: 20px;
+
+  color: #6e655f;
+
+  font-size: 10px;
+}
+
+.status-pill i {
+  width: 7px;
+  height: 7px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background: #d92d20;
+
+  animation: statusPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes statusPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+}
+
+
+/* =========================================
+   REPORT
+========================================= */
+
+.report-bars {
+  width: 110px;
+  height: 70px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 12px;
+
+  background: #f7f4f1;
+
+  border-radius: 10px;
+}
+
+.report-bars span {
+  width: 12px;
+
+  border-radius: 4px 4px 2px 2px;
+
+  background: #ff5900;
+
+  animation: barAnimation 2s ease-in-out infinite;
+}
+
+.report-bars span:nth-child(1) {
+  height: 25%;
+}
+
+.report-bars span:nth-child(2) {
+  height: 50%;
+
+  animation-delay: 0.15s;
+}
+
+.report-bars span:nth-child(3) {
+  height: 70%;
+
+  animation-delay: 0.3s;
+}
+
+.report-bars span:nth-child(4) {
+  height: 90%;
+
+  animation-delay: 0.45s;
+}
+
+@keyframes barAnimation {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(0.7);
+  }
+}
+
+
+/* =========================================
+   DASHBOARD
+========================================= */
+
+.dashboard-number {
+  padding: 13px 18px;
+
+  background: #f7f4f1;
+
+  border-radius: 10px;
+}
+
+.dashboard-number small {
+  display: block;
+
+  color: #918a84;
+
+  font-size: 8px;
+}
+
+.dashboard-number strong {
+  display: block;
+
+  margin: 2px 0;
+
+  color: #292522;
+
+  font-size: 21px;
+
+  letter-spacing: -1px;
+}
+
+.dashboard-number em {
+  color: #3e9760;
+
+  font-size: 8px;
+
+  font-style: normal;
+
   font-weight: 700;
 }
 
-@media (max-width: 1000px) {
-  .feature-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+
+/* =========================================
+   RECORD
+========================================= */
+
+.record-check {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 11px;
+
+  background: #f7f4f1;
+
+  border-radius: 10px;
 }
 
-@media (max-width: 600px) {
-  .features-section {
-    padding: 90px 5%;
+.record-check > span {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ff5900;
+
+  color: #ffffff;
+
+  font-size: 11px;
+}
+
+.record-check b {
+  display: block;
+
+  color: #403a36;
+
+  font-size: 9px;
+}
+
+.record-check small {
+  color: #928a84;
+
+  font-size: 7px;
+}
+
+
+/* =========================================
+   ENTRANCE ANIMATION
+========================================= */
+
+.feature-card {
+  opacity: 0;
+
+  animation:
+    featureSlideIn 0.65s
+    cubic-bezier(0.2, 0.75, 0.2, 1)
+    forwards;
+
+  animation-delay: var(--delay);
+}
+
+@keyframes featureSlideIn {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(25px);
   }
 
-  .feature-grid {
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 991px) {
+
+  .features-section {
+    padding: 85px 0;
+  }
+
+  .features-list {
     grid-template-columns: 1fr;
   }
+
+  .feature-card {
+    min-height: 190px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  .features-section {
+    padding: 75px 20px;
+  }
+
+  .features-header {
+    margin-bottom: 40px;
+  }
+
+  .features-header h2 {
+    font-size: 39px;
+
+    letter-spacing: -1.8px;
+  }
+
+  .feature-card {
+    min-height: 175px;
+
+    padding: 20px;
+
+    gap: 17px;
+  }
+
+  .feature-icon-wrapper {
+    width: 52px;
+    height: 52px;
+
+    border-radius: 14px;
+  }
+
+  .feature-icon {
+    font-size: 19px;
+  }
+
+  .feature-card-content h3 {
+    font-size: 17px;
+  }
+
+  .feature-card-content p {
+    font-size: 11.5px;
+  }
+
+  .feature-visual {
+    display: none;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+
+  .features-header h2 {
+    font-size: 34px;
+  }
+
+  .feature-card {
+    min-height: 165px;
+  }
+
 }
