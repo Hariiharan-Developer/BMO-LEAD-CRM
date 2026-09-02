@@ -1,55 +1,18 @@
 /* =========================================================
-   BMO LEADS — MODERN FOOTER
+   BMO SOFTWARE FOOTER
+   Orange: #e94f00
 ========================================================= */
 
 .bmo-footer {
-  position: relative;
-
   width: 100%;
 
-  background: linear-gradient(180deg, #0d0d0d 0%, #111111 100%);
+  background: #111111;
 
   color: #ffffff;
 
-  overflow: hidden;
+  border-top: 1px solid #252525;
 
   box-sizing: border-box;
-}
-
-/* =========================================================
-   BACKGROUND GLOW
-========================================================= */
-
-.footer-glow {
-  position: absolute;
-
-  pointer-events: none;
-
-  border-radius: 50%;
-
-  filter: blur(100px);
-
-  opacity: 0.15;
-}
-
-.footer-glow-one {
-  top: -150px;
-  left: -100px;
-
-  width: 400px;
-  height: 400px;
-
-  background: #ff5900;
-}
-
-.footer-glow-two {
-  right: -150px;
-  bottom: 50px;
-
-  width: 350px;
-  height: 350px;
-
-  background: #ff5900;
 }
 
 /* =========================================================
@@ -57,245 +20,188 @@
 ========================================================= */
 
 .footer-container {
-  position: relative;
-
-  width: min(1200px, calc(100% - 40px));
+  width: min(1150px, calc(100% - 40px));
 
   margin: 0 auto;
-
-  z-index: 2;
 }
 
 /* =========================================================
-   CTA CARD
+   PRODUCT BANNER
 ========================================================= */
 
-.footer-cta-card {
-  position: relative;
-
+.footer-product-banner {
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
-  gap: 40px;
+  gap: 30px;
 
-  min-height: 230px;
+  padding: 25px 28px;
 
-  margin-top: 70px;
+  margin: 35px 0 45px;
 
-  padding: 45px 50px;
+  background: #191919;
 
-  background: linear-gradient(
-    135deg,
-    rgba(255, 89, 0, 0.16),
-    rgba(255, 255, 255, 0.035)
-  );
-
-  border: 1px solid rgba(255, 255, 255, 0.09);
-
-  border-radius: 24px;
-
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.05),
-    0 25px 70px rgba(0, 0, 0, 0.3);
-
-  overflow: hidden;
-
-  box-sizing: border-box;
-}
-
-/* =========================================================
-   CTA PATTERN
-========================================================= */
-
-.cta-pattern {
-  position: absolute;
-
-  top: -100px;
-  right: -80px;
-
-  width: 300px;
-  height: 300px;
-
-  border: 1px solid rgba(255, 89, 0, 0.15);
-
-  border-radius: 50%;
-
-  box-shadow:
-    0 0 0 40px rgba(255, 89, 0, 0.025),
-    0 0 0 80px rgba(255, 89, 0, 0.02);
-
-  pointer-events: none;
-}
-
-/* =========================================================
-   CTA CONTENT
-========================================================= */
-
-.footer-cta-content {
-  position: relative;
-
-  z-index: 2;
-
-  max-width: 650px;
-}
-
-.cta-small {
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 8px;
-
-  margin-bottom: 15px;
-
-  padding: 6px 10px;
-
-  color: #ff7a3d;
-
-  background: rgba(255, 89, 0, 0.08);
-
-  border: 1px solid rgba(255, 89, 0, 0.16);
-
-  border-radius: 30px;
-
-  font-size: 11px;
-
-  font-weight: 700;
-}
-
-.cta-dot {
-  width: 6px;
-  height: 6px;
-
-  background: #ff5900;
-
-  border-radius: 50%;
-
-  box-shadow: 0 0 10px #ff5900;
-}
-
-.footer-cta-content h2 {
-  margin: 0;
-
-  font-size: clamp(32px, 4vw, 50px);
-
-  line-height: 1.05;
-
-  letter-spacing: -2px;
-
-  font-weight: 800;
-}
-
-.footer-cta-content h2 span {
-  color: #ff5900;
-}
-
-.footer-cta-content p {
-  margin: 16px 0 0;
-
-  color: #858585;
-
-  font-size: 14px;
-
-  line-height: 1.7;
-}
-
-/* =========================================================
-   CTA BUTTON
-========================================================= */
-
-.footer-cta-button {
-  position: relative;
-
-  z-index: 3;
-
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  gap: 13px;
-
-  min-width: 155px;
-
-  padding: 14px 20px;
-
-  color: #ffffff;
-
-  background: #ff5900;
-
-  border: 1px solid #ff5900;
+  border: 1px solid #292929;
 
   border-radius: 12px;
 
-  font-family: inherit;
-
-  font-size: 13px;
-
-  font-weight: 750;
-
   cursor: pointer;
 
-  box-shadow: 0 10px 30px rgba(255, 89, 0, 0.25);
+  box-sizing: border-box;
 
   transition:
     transform 0.25s ease,
+    border-color 0.25s ease,
     background 0.25s ease,
     box-shadow 0.25s ease;
 }
 
-.footer-cta-button span {
-  font-size: 18px;
+.footer-product-banner:hover {
+  transform: translateY(-2px);
+
+  background: #1c1c1c;
+
+  border-color: rgba(233, 79, 0, 0.55);
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+}
+
+/* =========================================================
+   BANNER TEXT
+========================================================= */
+
+.product-banner-text {
+  min-width: 0;
+}
+
+.product-banner-text span {
+  display: block;
+
+  margin-bottom: 7px;
+
+  color: #e94f00;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+.product-banner-text h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 20px;
+
+  font-weight: 750;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.4px;
+}
+
+.product-banner-text p {
+  margin: 7px 0 0;
+
+  color: #777777;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   BANNER BUTTON
+========================================================= */
+
+.product-banner-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  flex-shrink: 0;
+
+  min-width: 125px;
+
+  padding: 11px 17px;
+
+  color: #ffffff;
+
+  background: #e94f00;
+
+  border: 1px solid #e94f00;
+
+  border-radius: 8px;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.product-banner-button span {
+  color: #ffffff;
+
+  font-size: 15px;
 
   transition: transform 0.25s ease;
 }
 
-.footer-cta-button:hover {
-  background: #e94f00;
+.footer-product-banner:hover .product-banner-button {
+  background: #d94700;
 
-  transform: translateY(-3px);
-
-  box-shadow: 0 15px 40px rgba(255, 89, 0, 0.35);
+  box-shadow: 0 8px 20px rgba(233, 79, 0, 0.2);
 }
 
-.footer-cta-button:hover span {
-  transform: translate(3px, -3px);
+.footer-product-banner:hover .product-banner-button span {
+  transform: translateX(3px);
 }
 
 /* =========================================================
-   MAIN FOOTER
+   MAIN FOOTER CONTENT
 ========================================================= */
 
-.footer-main {
+.footer-content {
   display: grid;
 
-  grid-template-columns:
-    2fr
-    1fr
-    1.3fr
-    0.8fr;
+  grid-template-columns: 1fr 1.4fr;
 
-  gap: 50px;
+  align-items: start;
 
-  padding: 70px 10px 60px;
+  gap: 70px;
+
+  padding-bottom: 42px;
 }
 
 /* =========================================================
-   BRAND
+   ABOUT BMO SOFTWARE
 ========================================================= */
 
-.footer-brand {
-  max-width: 300px;
+.footer-about {
+  max-width: 500px;
 }
 
 .footer-logo {
   display: inline-flex;
 
   align-items: center;
-
-  gap: 10px;
 
   padding: 0;
 
@@ -307,272 +213,206 @@
 
   border: none;
 
-  font-family: inherit;
-
-  cursor: pointer;
-}
-
-.logo-box {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  width: 35px;
-  height: 35px;
-
-  color: #ffffff;
-
-  background: #ff5900;
-
-  border-radius: 9px;
-
-  font-size: 18px;
+  font-size: 24px;
 
   font-weight: 900;
 
-  box-shadow: 0 7px 20px rgba(255, 89, 0, 0.2);
-}
-
-.logo-text {
-  font-size: 22px;
-
-  font-weight: 800;
-
   letter-spacing: -1px;
+
+  cursor: pointer;
+
+  transition: color 0.25s ease;
 }
 
-.logo-text span {
-  color: #ff5900;
+.footer-logo span {
+  color: #e94f00;
+
+  transition: color 0.25s ease;
 }
 
-.footer-brand > p {
-  margin: 0;
+.footer-logo:hover {
+  color: #e94f00;
+}
 
-  color: #777777;
+.footer-logo:hover span {
+  color: #ffffff;
+}
+
+.footer-about h3 {
+  margin: 0 0 11px;
+
+  color: #ffffff;
 
   font-size: 13px;
 
-  line-height: 1.8;
+  font-weight: 700;
 }
 
-/* =========================================================
-   TRUST
-========================================================= */
+.footer-about p {
+  max-width: 470px;
 
-.footer-trust {
-  display: flex;
+  margin: 0;
 
-  align-items: center;
-
-  gap: 8px;
-
-  margin-top: 20px;
-
-  color: #666666;
-
-  font-size: 11px;
-}
-
-.trust-icon {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  width: 17px;
-  height: 17px;
-
-  color: #0d0d0d;
-
-  background: #35d06f;
-
-  border-radius: 50%;
-
-  font-size: 10px;
-
-  font-weight: 900;
-}
-
-/* =========================================================
-   FOOTER SECTIONS
-========================================================= */
-
-.footer-section {
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: flex-start;
-}
-
-.footer-section h3 {
-  margin: 2px 0 22px;
-
-  color: #ffffff;
+  color: #707070;
 
   font-size: 12px;
 
-  font-weight: 700;
-
-  text-transform: uppercase;
-
-  letter-spacing: 0.8px;
+  line-height: 1.75;
 }
 
-.footer-section button,
-.footer-section a,
-.footer-location {
-  margin-bottom: 13px;
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
-  padding: 0;
+.footer-navigation {
+  min-width: 0;
 
-  color: #747474;
+  padding-top: 4px;
+}
+
+.footer-navigation h3 {
+  margin: 0 0 17px;
+
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   NAV LINKS
+   SINGLE ROW
+========================================================= */
+
+.footer-nav-links {
+  display: flex;
+
+  flex-direction: row;
+
+  align-items: center;
+
+  gap: 25px;
+
+  width: 100%;
+
+  overflow-x: auto;
+
+  padding-bottom: 6px;
+
+  scrollbar-width: none;
+}
+
+.footer-nav-links::-webkit-scrollbar {
+  display: none;
+}
+
+/* =========================================================
+   NAV LINK
+========================================================= */
+
+.footer-nav-links button {
+  position: relative;
+
+  flex-shrink: 0;
+
+  padding: 5px 0;
+
+  color: #777777;
 
   background: transparent;
 
   border: none;
 
-  font-family: inherit;
-
   font-size: 12px;
 
-  text-decoration: none;
+  font-weight: 600;
+
+  white-space: nowrap;
 
   cursor: pointer;
 
   transition:
-    color 0.2s ease,
-    transform 0.2s ease;
-}
-
-.footer-section button:hover,
-.footer-section a:hover {
-  color: #ff5900;
-
-  transform: translateX(3px);
-}
-
-.footer-location {
-  cursor: default;
-
-  line-height: 1.6;
-}
-
-/* =========================================================
-   SOCIAL
-========================================================= */
-
-.footer-socials {
-  display: flex;
-
-  gap: 8px;
-}
-
-.footer-socials a {
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  width: 38px;
-  height: 38px;
-
-  margin: 0;
-
-  color: #888888;
-
-  background: rgba(255, 255, 255, 0.035);
-
-  border: 1px solid rgba(255, 255, 255, 0.08);
-
-  border-radius: 10px;
-
-  transition:
     color 0.25s ease,
-    background 0.25s ease,
-    border-color 0.25s ease,
     transform 0.25s ease;
 }
 
-.footer-socials a:hover {
+/* =========================================================
+   NAV LINK HOVER LINE
+========================================================= */
+
+.footer-nav-links button::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+
+  bottom: 0;
+
+  width: 0;
+
+  height: 2px;
+
+  background: #e94f00;
+
+  border-radius: 20px;
+
+  transform: translateX(-50%);
+
+  transition: width 0.25s ease;
+}
+
+.footer-nav-links button:hover {
   color: #ffffff;
 
-  background: #ff5900;
+  transform: translateY(-2px);
+}
 
-  border-color: #ff5900;
-
-  transform: translateY(-3px);
+.footer-nav-links button:hover::after {
+  width: 100%;
 }
 
 /* =========================================================
-   BOTTOM
+   FOCUS
+========================================================= */
+
+.footer-nav-links button:focus-visible {
+  outline: none;
+
+  color: #e94f00;
+}
+
+.footer-nav-links button:focus-visible::after {
+  width: 100%;
+}
+
+/* =========================================================
+   FOOTER BOTTOM
 ========================================================= */
 
 .footer-bottom {
   display: flex;
 
   align-items: center;
+
   justify-content: space-between;
 
-  gap: 20px;
+  min-height: 60px;
 
-  padding: 22px 10px;
+  padding: 15px 0;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  border-top: 1px solid #292929;
 
-  color: #555555;
+  color: #505050;
 
-  font-size: 11px;
-}
+  font-size: 10px;
 
-.footer-center {
-  display: flex;
-
-  align-items: center;
-
-  gap: 7px;
-
-  color: #5e5e5e;
-}
-
-.live-dot {
-  width: 6px;
-  height: 6px;
-
-  background: #35d06f;
-
-  border-radius: 50%;
-
-  box-shadow: 0 0 8px rgba(53, 208, 111, 0.7);
-}
-
-.footer-legal {
-  display: flex;
-
-  gap: 18px;
-}
-
-.footer-legal button {
-  padding: 0;
-
-  color: #555555;
-
-  background: transparent;
-
-  border: none;
-
-  font-family: inherit;
-
-  font-size: 11px;
-
-  cursor: pointer;
-
-  transition: color 0.2s ease;
-}
-
-.footer-legal button:hover {
-  color: #ff5900;
+  box-sizing: border-box;
 }
 
 /* =========================================================
@@ -580,23 +420,18 @@
 ========================================================= */
 
 @media (max-width: 900px) {
-  .footer-cta-card {
-    padding: 40px;
+  .footer-content {
+    grid-template-columns: 1fr;
+
+    gap: 35px;
   }
 
-  .footer-main {
-    grid-template-columns:
-      1.5fr
-      1fr
-      1fr;
-
-    gap: 40px;
+  .footer-about {
+    max-width: 650px;
   }
 
-  .footer-brand {
-    grid-column: span 3;
-
-    max-width: 450px;
+  .footer-navigation {
+    padding-top: 0;
   }
 }
 
@@ -609,62 +444,86 @@
     width: calc(100% - 30px);
   }
 
-  .footer-cta-card {
+  /* =====================================
+     PRODUCT BANNER
+  ===================================== */
+
+  .footer-product-banner {
     flex-direction: column;
 
     align-items: flex-start;
 
-    gap: 28px;
+    gap: 20px;
 
-    min-height: auto;
+    padding: 22px;
 
-    margin-top: 40px;
-
-    padding: 32px 25px;
-
-    border-radius: 20px;
+    margin: 25px 0 35px;
   }
 
-  .footer-cta-content h2 {
-    font-size: 32px;
-
-    letter-spacing: -1.2px;
+  .product-banner-text h3 {
+    font-size: 18px;
   }
 
-  .footer-cta-content p {
-    font-size: 13px;
+  .product-banner-text p {
+    font-size: 11px;
   }
 
-  .footer-cta-button {
+  .product-banner-button {
     width: 100%;
   }
 
-  .footer-main {
-    grid-template-columns: 1fr;
+  /* =====================================
+     CONTENT
+  ===================================== */
 
-    gap: 38px;
+  .footer-content {
+    gap: 32px;
 
-    padding: 50px 0 40px;
+    padding-bottom: 35px;
   }
 
-  .footer-brand {
-    grid-column: auto;
-
+  .footer-about {
     max-width: 100%;
   }
 
-  .footer-bottom {
-    flex-direction: column;
+  .footer-about p {
+    max-width: 100%;
 
-    align-items: flex-start;
-
-    gap: 14px;
-
-    padding: 20px 0 25px;
+    font-size: 11px;
   }
 
-  .footer-center {
-    order: 3;
+  /* =====================================
+     NAVIGATION
+  ===================================== */
+
+  .footer-navigation {
+    width: 100%;
+  }
+
+  .footer-nav-links {
+    width: 100%;
+
+    gap: 22px;
+
+    overflow-x: auto;
+
+    padding-bottom: 8px;
+  }
+
+  .footer-nav-links button {
+    font-size: 11px;
+  }
+
+  /* =====================================
+     BOTTOM
+  ===================================== */
+
+  .footer-bottom {
+    min-height: auto;
+
+    padding: 17px 0;
+
+    font-size: 9px;
   }
 }
 
@@ -674,18 +533,66 @@
 
 @media (max-width: 400px) {
   .footer-container {
+    width: calc(100% - 28px);
+  }
+
+  .footer-product-banner {
+    padding: 19px;
+  }
+
+  .product-banner-text h3 {
+    font-size: 17px;
+  }
+
+  .footer-logo {
+    font-size: 22px;
+  }
+
+  .footer-about h3 {
+    font-size: 12px;
+  }
+
+  .footer-about p {
+    font-size: 11px;
+
+    line-height: 1.7;
+  }
+
+  .footer-nav-links {
+    gap: 19px;
+  }
+
+  .footer-nav-links button {
+    font-size: 10px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 7px;
+  }
+}
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 340px) {
+  .footer-container {
     width: calc(100% - 24px);
   }
 
-  .footer-cta-card {
-    padding: 28px 20px;
+  .footer-product-banner {
+    padding: 17px;
   }
 
-  .footer-cta-content h2 {
-    font-size: 29px;
+  .product-banner-text h3 {
+    font-size: 16px;
   }
 
-  .logo-text {
-    font-size: 20px;
+  .footer-nav-links {
+    gap: 17px;
   }
 }
