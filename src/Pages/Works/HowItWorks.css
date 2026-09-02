@@ -1,664 +1,611 @@
-/* =========================================
+/* =========================================================
    BMO LEADS - HOW IT WORKS
-========================================= */
-
-:root {
-  --bmo-red: #f97316;
-  --bmo-red-dark: #c2410c;
-  --bmo-red-light: #fff7ed;
-
-  --bmo-text: #101828;
-  --bmo-muted: #667085;
-
-  --border: #e5e7eb;
-}
-
-
-/* =========================================
-   SECTION
-========================================= */
+========================================================= */
 
 .how-section {
-  position: relative;
-
   width: 100%;
-
-  padding: 120px 6% 130px;
-
+  padding: 110px 7%;
+  background: #ffffff;
   overflow: hidden;
-
-  background:  #fff7ed;
 }
 
 
-/* =========================================
-   HEADER
-========================================= */
+/* =========================================================
+   HEADING
+========================================================= */
 
 .how-heading {
   max-width: 850px;
-
-  margin: 0 auto 90px;
-
+  margin: 0 auto 80px;
   text-align: center;
 }
 
 .section-label {
   display: inline-block;
-
   margin-bottom: 18px;
 
-  font-size: 11px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
 
-  font-weight: 850;
-
-  letter-spacing: 0.16em;
-
-  color: var(--bmo-red);
+  color: #f97316;
 }
 
 .how-heading h2 {
   margin: 0;
-
-  font-size: clamp(42px, 5vw, 64px);
-
-  line-height: 1.05;
-
-  letter-spacing: -0.045em;
-
-  font-weight: 800;
-
-  color: var(--bmo-text);
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.08;
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: #171717;
 }
 
 .how-heading h2 strong {
-  color: var(--bmo-red);
-
-  font-weight: 850;
+  display: inline-block;
+  font-weight: 800;
+  color: #f97316;
 }
 
 .how-heading p {
-  max-width: 600px;
+  max-width: 620px;
+  margin: 25px auto 0;
 
-  margin: 24px auto 0;
-
-  font-size: 16px;
-
+  font-size: 17px;
   line-height: 1.7;
 
-  color: var(--bmo-muted);
+  color: #667085;
 }
 
 
-/* =========================================
+/* =========================================================
    MAIN
-========================================= */
+========================================================= */
 
 .how-main {
+  max-width: 1450px;
+  margin: 0 auto;
+
   display: grid;
 
   grid-template-columns:
-    360px
-    minmax(600px, 1fr);
+    minmax(300px, 0.8fr)
+    minmax(500px, 1.2fr);
 
   align-items: center;
 
-  gap: 80px;
-
-  max-width: 1350px;
-
-  margin: 0 auto;
+  gap: 70px;
 }
 
 
-/* =========================================
+/* =========================================================
    LEFT CONTENT
-========================================= */
+========================================================= */
 
 .how-content {
-  width: 100%;
+  max-width: 520px;
 }
 
 .content-label {
   display: inline-block;
+  margin-bottom: 18px;
 
-  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
 
-  font-size: 11px;
-
-  font-weight: 850;
-
-  letter-spacing: 0.14em;
-
-  color: var(--bmo-red);
+  color: #f97316;
 }
 
 .how-content h3 {
   margin: 0;
 
-  font-size: clamp(38px, 4vw, 54px);
+  font-size: clamp(34px, 4vw, 52px);
+  line-height: 1.08;
 
-  line-height: 1.05;
+  letter-spacing: -1.5px;
 
-  letter-spacing: -0.045em;
+  font-weight: 700;
 
-  font-weight: 800;
-
-  color: var(--bmo-text);
+  color: #171717;
 }
 
 .how-content h3 span {
-  color: var(--bmo-red);
+  color: #f97316;
 }
 
 .how-content > p {
-  max-width: 340px;
+  margin: 25px 0 35px;
 
-  margin: 22px 0 0;
-
-  font-size: 15px;
-
+  font-size: 17px;
   line-height: 1.75;
 
-  color: var(--bmo-muted);
+  color: #667085;
 }
 
 
-/* =========================================
+/* =========================================================
    CONTENT POINTS
-========================================= */
+========================================================= */
 
 .content-points {
   display: flex;
-
   flex-direction: column;
-
-  gap: 13px;
-
-  margin-top: 32px;
+  gap: 16px;
 }
 
-.content-points div {
+.content-points > div {
   display: flex;
-
   align-items: center;
 
-  gap: 12px;
+  gap: 16px;
 
-  font-size: 13px;
+  font-size: 15px;
+  font-weight: 600;
 
-  font-weight: 650;
+  color: #344054;
 
-  color: #475467;
+  transition:
+    transform 0.3s ease,
+    color 0.3s ease;
+}
+
+.content-points > div:hover {
+  transform: translateX(8px);
+  color: #f97316;
 }
 
 .point-number {
+  width: 38px;
+  height: 38px;
+
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
-  width: 27px;
-
-  height: 27px;
 
   flex-shrink: 0;
 
-  border-radius: 8px;
+  border-radius: 50%;
 
-  background: var(--bmo-red-light);
+  background: #fff7ed;
 
-  color: var(--bmo-red);
+  color: #f97316;
 
-  font-size: 9px;
-
-  font-weight: 850;
+  font-size: 12px;
+  font-weight: 800;
 }
 
 
-/* =========================================
+/* =========================================================
    SCREEN SECTION
-========================================= */
+========================================================= */
 
 .screen-section {
   width: 100%;
+  min-width: 0;
 }
 
 
-/* =========================================
+/* =========================================================
    LAPTOP
-========================================= */
+========================================================= */
 
 .laptop {
-  position: relative;
-
   width: 100%;
-
   max-width: 850px;
-
-  padding: 8px;
 
   margin: 0 auto;
 
-  /* DARK ORANGE LAPTOP FRAME */
-  background: #431407;
+  padding: 10px 10px 0;
 
-  border: 1px solid #7c2d12;
+  border-radius: 18px 18px 8px 8px;
 
-  border-radius: 20px;
+  background: #181818;
 
   box-shadow:
-    0 45px 100px rgba(15, 23, 42, 0.20),
-    0 18px 40px rgba(249, 115, 22, 0.16);
+    0 35px 80px rgba(0, 0, 0, 0.16),
+    0 15px 35px rgba(249, 115, 22, 0.10);
+
+  position: relative;
 }
 
 
-/* =========================================
+/* =========================================================
    LAPTOP HEADER
-========================================= */
+========================================================= */
 
 .laptop-header {
-  position: relative;
+  height: 42px;
 
   display: flex;
-
   align-items: center;
+  justify-content: space-between;
 
-  justify-content: center;
+  padding: 0 14px;
 
-  height: 46px;
+  background: #222222;
 
-  /* DARK ORANGE HEADER */
-  background: #571a0b;
+  border-radius: 10px 10px 0 0;
 
-  border-radius: 13px 13px 0 0;
+  color: #ffffff;
 }
 
 
-/* =========================================
-   DOTS
-========================================= */
+/* =========================================================
+   LAPTOP DOTS
+========================================================= */
 
 .laptop-dots {
-  position: absolute;
-
-  left: 17px;
-
   display: flex;
+  align-items: center;
 
   gap: 6px;
+
+  width: 100px;
 }
 
 .laptop-dots span {
   width: 8px;
-
   height: 8px;
 
   border-radius: 50%;
 
-  background: #fb923c;
+  background: #777777;
+}
+
+.laptop-dots span:nth-child(1) {
+  background: #f97316;
+}
+
+.laptop-dots span:nth-child(2) {
+  background: #f59e0b;
+}
+
+.laptop-dots span:nth-child(3) {
+  background: #22c55e;
 }
 
 
-/* =========================================
-   TITLE
-========================================= */
+/* =========================================================
+   LAPTOP TITLE
+========================================================= */
 
 .laptop-title {
   font-size: 12px;
-
   font-weight: 700;
 
-  color: #fed7aa;
+  letter-spacing: 0.5px;
+
+  color: #eeeeee;
 }
 
 
-/* =========================================
+/* =========================================================
    STATUS
-========================================= */
+========================================================= */
 
 .laptop-status {
-  position: absolute;
-
-  right: 17px;
+  width: 100px;
 
   display: flex;
-
+  justify-content: flex-end;
   align-items: center;
 
-  gap: 7px;
+  gap: 6px;
 
-  font-size: 10px;
+  font-size: 11px;
+  font-weight: 600;
 
-  font-weight: 700;
-
-  color: #fdba74;
+  color: #bbbbbb;
 }
 
 .laptop-status span {
   width: 6px;
-
   height: 6px;
 
   border-radius: 50%;
 
   background: #22c55e;
+
+  box-shadow:
+    0 0 8px rgba(34, 197, 94, 0.8);
 }
 
 
-/* =========================================
+/* =========================================================
    SCREEN
-========================================= */
+========================================================= */
 
 .screen {
-  position: relative;
-
   width: 100%;
 
   aspect-ratio: 16 / 9;
 
   overflow: hidden;
 
-  background: #f8fafc;
+  background: #ffffff;
 
-  border-radius: 0 0 13px 13px;
+  position: relative;
 }
 
 
-/* =========================================
-   SCREEN TRACK
-========================================= */
-
-.screen-track {
-  display: flex;
-
-  width: 600%;
-
-  height: 100%;
-}
-
-
-/* =========================================
-   SLIDE
-========================================= */
+/* =========================================================
+   SCREEN IMAGE
+========================================================= */
 
 .screen-slide {
-  width: 16.666666%;
-
+  width: 100%;
   height: 100%;
 
-  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
+
+  inset: 0;
 
   overflow: hidden;
 
-  background: #f8fafc;
+  background: #ffffff;
 }
-
-
-/* =========================================
-   IMAGE
-========================================= */
 
 .screen-slide img {
   display: block;
 
   width: 100%;
-
   height: 100%;
 
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
 
-  object-position: top center;
+  margin: 0;
+
+  transform: none;
+
+  user-select: none;
+  pointer-events: none;
 }
 
 
-/* =========================================
-   LAPTOP BASE
-========================================= */
+/* =========================================================
+   ARROW BUTTONS
+========================================================= */
 
-.laptop-base {
+.carousel-arrow {
   position: absolute;
 
-  left: 50%;
+  top: 50%;
 
-  bottom: -17px;
+  transform: translateY(-50%);
 
-  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
 
-  width: 88%;
-
-  height: 15px;
-
-  background: linear-gradient(
-    to bottom,
-    #fdba74,
-    #ea580c
-  );
-
-  border-radius: 0 0 18px 18px;
-}
-
-.laptop-notch {
-  position: absolute;
-
-  top: 0;
-
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  width: 80px;
-
-  height: 5px;
-
-  background: #c2410c;
-
-  border-radius: 0 0 6px 6px;
-}
-
-
-/* =========================================
-   SCREEN NAVIGATION
-========================================= */
-
-.screen-navigation {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
-  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
 
-  margin-top: 38px;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.90);
+
+  color: #f97316;
+
+  cursor: pointer;
+
+  z-index: 5;
+
+  opacity: 0;
+
+  box-shadow:
+    0 6px 20px rgba(0, 0, 0, 0.12);
+
+  backdrop-filter: blur(8px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.laptop:hover .carousel-arrow {
+  opacity: 1;
+}
+
+.carousel-arrow:hover {
+  background: #f97316;
+
+  color: #ffffff;
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
+}
+
+.carousel-arrow-left {
+  left: 18px;
+}
+
+.carousel-arrow-right {
+  right: 18px;
 }
 
 
-/* =========================================
-   STEP
-========================================= */
+/* =========================================================
+   CAROUSEL FOOTER
+========================================================= */
 
-.screen-step {
+.carousel-footer {
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 22px;
+
+  padding: 0 18px;
+
+  background: #181818;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================================
+   DOTS
+========================================================= */
+
+.carousel-dots {
   display: flex;
 
   align-items: center;
 
-  gap: 8px;
+  gap: 7px;
+}
 
-  min-width: 92px;
+.carousel-dot {
+  width: 6px;
+  height: 6px;
 
-  padding: 8px 10px;
+  padding: 0;
 
-  border: 1px solid #eaecf0;
+  border: none;
 
-  border-radius: 10px;
+  border-radius: 50%;
 
-  background: #ffffff;
+  background: #666666;
 
   cursor: pointer;
 
   transition:
-    all 0.25s ease;
+    width 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
-.screen-step:hover {
-  border-color: rgba(249, 115, 22, 0.25);
+.carousel-dot:hover {
+  background: #fb923c;
 
-  box-shadow:
-    0 8px 20px rgba(16, 24, 40, 0.06);
+  transform: scale(1.25);
 }
 
+.carousel-dot.active {
+  width: 22px;
+  height: 6px;
 
-/* =========================================
-   ACTIVE STEP
-========================================= */
+  border-radius: 10px;
 
-.screen-step.active {
-  border-color: rgba(249, 115, 22, 0.22);
-
-  background: var(--bmo-red-light);
-
-  box-shadow:
-    0 8px 22px rgba(249, 115, 22, 0.08);
+  background: #f97316;
 }
 
 
-/* =========================================
-   STEP ICON
-========================================= */
+/* =========================================================
+   PROGRESS
+========================================================= */
 
-.screen-step-icon {
-  display: flex;
+.carousel-progress {
+  width: 90px;
+  height: 2px;
 
-  align-items: center;
+  overflow: hidden;
 
-  justify-content: center;
+  border-radius: 10px;
 
-  width: 30px;
-
-  height: 30px;
-
-  flex-shrink: 0;
-
-  border-radius: 8px;
-
-  background: #f4f5f7;
-
-  color: #98a2b3;
+  background: #3b3b3b;
 }
 
-.screen-step.active .screen-step-icon {
-  background: var(--bmo-red);
+.carousel-progress-bar {
+  height: 100%;
 
-  color: #ffffff;
+  border-radius: inherit;
+
+  background: #f97316;
 }
 
 
-/* =========================================
-   STEP INFO
-========================================= */
+/* =========================================================
+   LAPTOP BASE
+========================================================= */
 
-.screen-step-info {
-  display: flex;
+.laptop-base {
+  width: 108%;
+  height: 18px;
 
-  flex-direction: column;
+  margin-left: -4%;
 
-  gap: 2px;
+  background: #202020;
+
+  border-radius: 0 0 20px 20px;
+
+  position: relative;
 }
 
-.screen-step-info span {
-  font-size: 8px;
+.laptop-notch {
+  width: 80px;
+  height: 5px;
 
-  font-weight: 800;
+  position: absolute;
 
-  color: #98a2b3;
-}
+  left: 50%;
+  top: 0;
 
-.screen-step-info strong {
-  white-space: nowrap;
+  transform: translateX(-50%);
 
-  font-size: 10px;
+  background: #444444;
 
-  font-weight: 750;
-
-  color: #667085;
-}
-
-.screen-step.active .screen-step-info strong {
-  color: var(--bmo-text);
-
-  font-weight: 850;
+  border-radius: 0 0 8px 8px;
 }
 
 
-/* =========================================
+/* =========================================================
+   LAPTOP SHADOW
+========================================================= */
+
+.laptop::after {
+  content: '';
+
+  position: absolute;
+
+  left: 8%;
+  right: 8%;
+  bottom: -35px;
+
+  height: 35px;
+
+  background: rgba(0, 0, 0, 0.12);
+
+  filter: blur(18px);
+
+  z-index: -1;
+}
+
+
+/* =========================================================
    TABLET
-========================================= */
+========================================================= */
 
 @media (max-width: 1100px) {
 
-  .how-main {
-    grid-template-columns:
-      300px
-      minmax(500px, 1fr);
-
-    gap: 50px;
-  }
-
-  .laptop {
-    max-width: 720px;
-  }
-
-  .screen-step {
-    min-width: auto;
-
-    padding: 7px;
-  }
-
-  .screen-step-info strong {
-    font-size: 9px;
-  }
-
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 900px) {
-
   .how-section {
-    padding:
-      90px 5%
-      100px;
-  }
-
-  .how-heading {
-    margin-bottom: 60px;
+    padding: 90px 5%;
   }
 
   .how-main {
     grid-template-columns: 1fr;
 
     gap: 60px;
-
-    max-width: 850px;
   }
 
   .how-content {
-    max-width: 600px;
+    max-width: 700px;
 
     margin: 0 auto;
 
     text-align: center;
-  }
-
-  .how-content > p {
-    margin-left: auto;
-
-    margin-right: auto;
   }
 
   .content-points {
@@ -670,74 +617,64 @@
   }
 
   .laptop {
-    max-width: 800px;
+    max-width: 850px;
   }
-
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE
-========================================= */
+========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
   .how-section {
-    padding:
-      75px 16px
-      85px;
+    padding: 75px 20px;
   }
 
   .how-heading {
-    margin-bottom: 50px;
+    margin-bottom: 55px;
   }
 
   .how-heading h2 {
-    font-size: 36px;
+    font-size: 38px;
+    letter-spacing: -1px;
   }
 
   .how-heading p {
-    font-size: 14px;
+    font-size: 15px;
   }
 
-
-  /* LEFT */
-
   .how-content h3 {
-    font-size: 36px;
+    font-size: 34px;
   }
 
   .how-content > p {
-    font-size: 14px;
+    font-size: 15px;
   }
 
-
-  /* LAPTOP */
-
   .laptop {
-    width: 100%;
+    padding: 7px 7px 0;
 
-    padding: 5px;
-
-    border-radius: 13px;
+    border-radius:
+      12px 12px 6px 6px;
   }
 
   .laptop-header {
     height: 32px;
 
-    border-radius: 8px 8px 0 0;
+    padding: 0 10px;
   }
 
   .laptop-dots {
-    left: 10px;
+    width: 70px;
 
     gap: 4px;
   }
 
   .laptop-dots span {
-    width: 5px;
-
-    height: 5px;
+    width: 6px;
+    height: 6px;
   }
 
   .laptop-title {
@@ -745,76 +682,108 @@
   }
 
   .laptop-status {
-    right: 10px;
+    width: 70px;
 
     font-size: 8px;
   }
 
   .laptop-status span {
     width: 5px;
-
     height: 5px;
   }
 
-  .screen {
-    border-radius:
-      0 0 8px 8px;
+  .carousel-arrow {
+    width: 34px;
+    height: 34px;
+
+    opacity: 1;
   }
 
-
-  /* NAVIGATION */
-
-  .screen-navigation {
-    gap: 5px;
-
-    margin-top: 28px;
+  .carousel-arrow-left {
+    left: 10px;
   }
 
-  .screen-step {
-    min-width: 0;
-
-    padding: 5px;
+  .carousel-arrow-right {
+    right: 10px;
   }
 
-  .screen-step-icon {
-    width: 28px;
+  .carousel-footer {
+    height: 42px;
 
-    height: 28px;
+    gap: 14px;
   }
 
-  .screen-step-info {
-    display: none;
+  .carousel-progress {
+    width: 60px;
   }
 
+  .laptop-base {
+    height: 12px;
+  }
+
+  .laptop-notch {
+    width: 45px;
+    height: 3px;
+  }
 }
 
 
-/* =========================================
+/* =========================================================
    SMALL MOBILE
-========================================= */
+========================================================= */
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
+
+  .how-section {
+    padding: 60px 15px;
+  }
 
   .how-heading h2 {
-    font-size: 31px;
+    font-size: 32px;
+  }
+
+  .how-heading p {
+    font-size: 14px;
   }
 
   .how-content h3 {
-    font-size: 31px;
+    font-size: 30px;
   }
 
-  .screen-navigation {
-    gap: 3px;
+  .content-points > div {
+    font-size: 14px;
   }
 
-  .screen-step {
-    padding: 4px;
+  .point-number {
+    width: 34px;
+    height: 34px;
+
+    font-size: 11px;
   }
 
-  .screen-step-icon {
-    width: 26px;
-
-    height: 26px;
+  .laptop {
+    padding: 5px 5px 0;
   }
 
+  .laptop-header {
+    height: 27px;
+  }
+
+  .laptop-title {
+    font-size: 8px;
+  }
+
+  .carousel-footer {
+    height: 38px;
+
+    gap: 10px;
+  }
+
+  .carousel-dot.active {
+    width: 17px;
+  }
+
+  .carousel-progress {
+    width: 45px;
+  }
 }

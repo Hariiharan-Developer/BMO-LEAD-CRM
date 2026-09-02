@@ -1,41 +1,59 @@
 /* =========================================================
-   LIVE DEMO SECTION
+   BMO LEADS - LIVE SHOWCASE
 ========================================================= */
 
 .live-demo-section {
   position: relative;
-
+  width: 100%;
   padding: 120px 0;
-
   overflow: hidden;
 
   background:
-    linear-gradient(
-      180deg,
-      #ffffff 0%,
-      #fffaf7 50%,
-      #ffffff 100%
-    );
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(249, 115, 22, 0.10),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 90% 80%,
+      rgba(251, 146, 60, 0.08),
+      transparent 32%
+    ),
+  linear-gradient(
+    135deg,
+    #ffffff,
+    #fffaf5,
+    #ffffff
+  );
+
+  background-size: 150% 150%;
+  animation: liveBackground 12s ease-in-out infinite;
 }
 
+@keyframes liveBackground {
+  0% {
+    background-position: 0% 50%;
+  }
 
-/* =========================================================
-   CONTAINER
-========================================================= */
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 .live-demo-container {
-  width: min(1180px, 92%);
-
+  width: min(1180px, calc(100% - 40px));
   margin: 0 auto;
 
   display: grid;
-
-  grid-template-columns:
-    0.9fr 1.1fr;
+  grid-template-columns: 1fr 1fr;
 
   align-items: center;
 
-  gap: 100px;
+  gap: 90px;
 }
 
 
@@ -46,223 +64,80 @@
 .live-demo-visual {
   position: relative;
 
-  min-height: 620px;
+  min-height: 640px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 }
 
 
 /* =========================================================
-   ORANGE GLOW
+   BACKGROUND ORBITS
 ========================================================= */
 
-.live-demo-glow {
+.journey-orbit {
   position: absolute;
-
-  width: 360px;
-  height: 360px;
 
   border-radius: 50%;
 
-  background:
-    radial-gradient(
-      circle,
-      rgba(249, 115, 22, 0.18),
-      rgba(249, 115, 22, 0.04),
-      transparent 70%
-    );
-
-  filter: blur(15px);
+  pointer-events: none;
 }
 
+.journey-orbit-one {
+  width: 440px;
+  height: 440px;
 
-/* =========================================================
-   MOBILE DEVICE
-========================================================= */
+  border: 1px solid rgba(249, 115, 22, 0.08);
 
-.mobile-device {
-  position: relative;
-
-  width: 285px;
-  height: 570px;
-
-  padding: 9px;
-
-  border-radius: 38px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #171717,
-      #303030,
-      #111111
-    );
-
-  box-shadow:
-    0 35px 80px rgba(0, 0, 0, 0.22),
-    0 10px 30px rgba(249, 115, 22, 0.15);
-
-  z-index: 2;
-}
-
-
-/* =========================================================
-   MOBILE TOP
-========================================================= */
-
-.mobile-top {
-  position: absolute;
-
-  top: 16px;
+  top: 50%;
   left: 50%;
 
-  transform: translateX(-50%);
-
-  width: 90px;
-  height: 24px;
-
-  border-radius: 20px;
-
-  background: #080808;
-
-  z-index: 5;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
+  transform: translate(-50%, -50%);
 }
 
+.journey-orbit-two {
+  width: 340px;
+  height: 340px;
 
-/* CAMERA */
+  border: 1px dashed rgba(249, 115, 22, 0.08);
 
-.mobile-camera {
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.journey-orbit-one::before,
+.journey-orbit-two::before {
+  content: '';
+
+  position: absolute;
+
   width: 7px;
   height: 7px;
 
   border-radius: 50%;
 
-  background: #343434;
-
-  box-shadow:
-    inset 0 0 0 2px #151515;
-}
-
-
-/* =========================================================
-   MOBILE SCREEN
-========================================================= */
-
-.mobile-screen {
-  position: relative;
-
-  width: 100%;
-  height: 100%;
-
-  overflow: hidden;
-
-  border-radius: 30px;
-
-  background: #000;
-}
-
-
-/* =========================================================
-   VIDEO
-========================================================= */
-
-.live-demo-video {
-  width: 100%;
-  height: 100%;
-
-  display: block;
-
-  object-fit: cover;
-
-  background: #111;
-}
-
-
-/* =========================================================
-   VIDEO OVERLAY
-========================================================= */
-
-.video-overlay {
-  position: absolute;
-
-  left: 18px;
-  right: 18px;
-  bottom: 20px;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 10px;
-
-  padding: 10px 12px;
-
-  border-radius: 12px;
-
-  background:
-    rgba(0, 0, 0, 0.55);
-
-  backdrop-filter: blur(10px);
-
-  color: #ffffff;
-
-  font-size: 10px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.8px;
-}
-
-
-/* PLAY */
-
-.video-play {
-  width: 30px;
-  height: 30px;
-
-  border-radius: 50%;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
   background: #f97316;
 
-  color: #ffffff;
+  box-shadow:
+    0 0 0 5px rgba(249, 115, 22, 0.08);
 }
 
+.journey-orbit-one::before {
+  top: 60px;
+  left: 65px;
+}
 
-/* =========================================================
-   MOBILE BOTTOM
-========================================================= */
+.journey-orbit-two::before {
+  right: 45px;
+  bottom: 60px;
 
-.mobile-bottom {
-  position: absolute;
+  background: #22c55e;
 
-  bottom: 14px;
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  width: 90px;
-  height: 4px;
-
-  border-radius: 10px;
-
-  background: rgba(255, 255, 255, 0.75);
-
-  z-index: 5;
+  box-shadow:
+    0 0 0 5px rgba(34, 197, 94, 0.08);
 }
 
 
@@ -270,63 +145,769 @@
    LIVE BADGE
 ========================================================= */
 
-.demo-live-badge {
+.journey-live-badge {
   position: absolute;
 
-  top: 105px;
-  right: 15px;
+  top: 22px;
+  left: 18px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 9px 15px;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.06);
+
+  color: #171717;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+
+  z-index: 20;
+}
+
+.journey-live-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #f97316;
+
+  animation: livePulse 1.8s infinite;
+}
+
+@keyframes livePulse {
+
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(249, 115, 22, 0.30);
+  }
+
+  70% {
+    box-shadow:
+      0 0 0 7px rgba(249, 115, 22, 0);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(249, 115, 22, 0);
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE STYLE COVER
+========================================================= */
+
+.mobile-journey-cover {
+  position: relative;
+
+  width: 410px;
+
+  padding: 22px 22px 20px;
+
+  border-radius: 32px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #fcfcfc 65%,
+      #fffaf5 100%
+    );
+
+  border: 1px solid #e8e8e8;
+
+  box-shadow:
+    0 35px 80px rgba(16, 24, 40, 0.12),
+    0 10px 25px rgba(16, 24, 40, 0.05);
+
+  overflow: hidden;
+
+  z-index: 5;
+}
+
+
+/* Orange edge glow */
+
+.cover-border-glow {
+  position: absolute;
+
+  top: -1px;
+  left: 15%;
+
+  width: 70%;
+  height: 2px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #f97316,
+      transparent
+    );
+
+  opacity: 0.75;
+}
+
+
+/* =========================================================
+   COVER HEADER
+========================================================= */
+
+.cover-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.cover-brand {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.cover-brand-icon {
+  width: 35px;
+  height: 35px;
 
   display: flex;
 
   align-items: center;
 
-  gap: 8px;
+  justify-content: center;
 
-  padding: 10px 15px;
+  border-radius: 11px;
 
-  border-radius: 12px;
+  color: #ffffff;
 
-  background: #ffffff;
+  background: #f97316;
 
-  border: 1px solid #fed7aa;
+  font-size: 16px;
+
+  font-weight: 800;
 
   box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.08);
-
-  color: #374151;
-
-  font-size: 11px;
-
-  font-weight: 700;
-
-  z-index: 4;
+    0 6px 15px rgba(249, 115, 22, 0.20);
 }
 
+.cover-brand span {
+  display: block;
 
-/* LIVE DOT */
+  margin-bottom: 2px;
 
-.live-dot {
-  width: 7px;
-  height: 7px;
+  color: #98a2b3;
 
-  border-radius: 50%;
+  font-size: 7px;
 
-  background: #22c55e;
+  font-weight: 800;
 
-  box-shadow:
-    0 0 0 4px rgba(34, 197, 94, 0.12);
+  letter-spacing: 1px;
+}
+
+.cover-brand strong {
+  display: block;
+
+  color: #171717;
+
+  font-size: 12px;
+
+  font-weight: 700;
 }
 
 
 /* =========================================================
-   SUCCESS CARD
+   MENU DOTS
 ========================================================= */
 
-.demo-success-card {
+.cover-menu {
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+}
+
+.cover-menu span {
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #98a2b3;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.cover-divider {
+  width: 100%;
+
+  height: 1px;
+
+  margin: 18px 0;
+
+  background: #eeeeee;
+}
+
+
+/* =========================================================
+   COVER TITLE
+========================================================= */
+
+.cover-title {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 5px;
+}
+
+.cover-title > div:first-child span {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #f97316;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.1px;
+}
+
+.cover-title h3 {
+  margin: 0;
+
+  color: #171717;
+
+  font-size: 17px;
+
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   LIVE STATUS
+========================================================= */
+
+.cover-live-status {
+  display: flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 5px 9px;
+
+  border-radius: 999px;
+
+  color: #15803d;
+
+  background: #f0fdf4;
+
+  border: 1px solid #bbf7d0;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.7px;
+}
+
+.cover-live-status span {
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+}
+
+
+/* =========================================================
+   LEAD JOURNEY
+========================================================= */
+
+.lead-journey {
+  position: relative;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 23px;
+
+  padding-top: 19px;
+}
+
+
+/* =========================================================
+   JOURNEY LINE
+========================================================= */
+
+.journey-line {
   position: absolute;
 
-  bottom: 105px;
-  left: 10px;
+  left: 25px;
+
+  top: 47px;
+  bottom: 47px;
+
+  width: 2px;
+
+  background: #eeeeee;
+
+  z-index: 1;
+}
+
+.journey-line-progress {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #f97316 0%,
+      #f97316 65%,
+      #22c55e 100%
+    );
+}
+
+.journey-line-dot {
+  position: absolute;
+
+  left: 50%;
+
+  width: 8px;
+  height: 8px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: #f97316;
+
+  box-shadow:
+    0 0 0 5px rgba(249, 115, 22, 0.10),
+    0 0 15px rgba(249, 115, 22, 0.30);
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   JOURNEY STEP
+========================================================= */
+
+.journey-step {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  min-height: 105px;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   NODE
+========================================================= */
+
+.journey-node {
+  width: 51px;
+  height: 51px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  color: #f97316;
+
+  background: #fff7ed;
+
+  border: 1px solid #fed7aa;
+
+  box-shadow:
+    0 7px 20px rgba(249, 115, 22, 0.10);
+
+  z-index: 5;
+}
+
+.follow-node {
+  color: #ea580c;
+
+  background: #fff7ed;
+}
+
+
+/* =========================================================
+   SUCCESS NODE
+========================================================= */
+
+.converted-node {
+  color: #ffffff;
+
+  background: #22c55e;
+
+  border-color: #22c55e;
+
+  box-shadow:
+    0 8px 25px rgba(34, 197, 94, 0.25);
+}
+
+
+/* =========================================================
+   JOURNEY CARD
+========================================================= */
+
+.journey-card {
+  flex: 1;
+
+  min-width: 0;
+
+  padding: 15px 16px;
+
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border: 1px solid #eeeeee;
+
+  box-shadow:
+    0 8px 25px rgba(16, 24, 40, 0.06);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.journey-card:hover {
+  transform: translateX(4px);
+
+  border-color: #fed7aa;
+
+  box-shadow:
+    0 12px 30px rgba(249, 115, 22, 0.09);
+}
+
+
+/* =========================================================
+   CARD TOP
+========================================================= */
+
+.journey-card-top {
+  display: flex;
+
+  align-items: flex-start;
+
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+.journey-card-label {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #f97316;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.journey-card h4 {
+  margin: 0;
+
+  color: #171717;
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   CARD ICON
+========================================================= */
+
+.journey-card-icon {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 9px;
+
+  color: #f97316;
+
+  background: #fff7ed;
+}
+
+.success-icon {
+  color: #ffffff;
+
+  background: #22c55e;
+}
+
+
+/* =========================================================
+   CARD BOTTOM
+========================================================= */
+
+.journey-card-bottom {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: 9px;
+}
+
+.journey-card-bottom > span:first-child {
+  color: #98a2b3;
+
+  font-size: 9px;
+
+  font-weight: 500;
+}
+
+.journey-status {
+  padding: 3px 7px;
+
+  border-radius: 999px;
+
+  font-size: 7px;
+
+  font-weight: 800;
+}
+
+.new-status {
+  color: #f97316;
+
+  background: #fff7ed;
+}
+
+.follow-status {
+  color: #c2410c;
+
+  background: #ffedd5;
+}
+
+
+/* =========================================================
+   CONVERTED CARD
+========================================================= */
+
+.converted-card {
+  border-color: #dcfce7;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #fafffb
+    );
+}
+
+.converted-card:hover {
+  border-color: #86efac;
+
+  box-shadow:
+    0 12px 30px rgba(34, 197, 94, 0.10);
+}
+
+.converted-card .journey-card-label {
+  color: #16a34a;
+}
+
+.converted-status {
+  color: #15803d;
+
+  background: #dcfce7;
+
+  border: 1px solid #bbf7d0;
+}
+
+
+/* =========================================================
+   COVER FOOTER
+========================================================= */
+
+.cover-footer {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-top: 18px;
+
+  padding-top: 15px;
+
+  border-top: 1px solid #eeeeee;
+}
+
+.cover-footer-icon {
+  width: 31px;
+  height: 31px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 9px;
+
+  color: #16a34a;
+
+  background: #f0fdf4;
+
+  border: 1px solid #bbf7d0;
+}
+
+.cover-footer span {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: #98a2b3;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+.cover-footer strong {
+  color: #15803d;
+
+  font-size: 13px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   MINI GRAPH
+========================================================= */
+
+.cover-footer-line {
+  flex: 1;
+
+  height: 25px;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: flex-end;
+
+  gap: 3px;
+
+  margin-left: auto;
+}
+
+.cover-footer-line span {
+  width: 4px;
+
+  margin: 0;
+
+  border-radius: 3px;
+
+  background: #22c55e;
+}
+
+.cover-footer-line span:nth-child(1) {
+  height: 7px;
+  opacity: 0.25;
+}
+
+.cover-footer-line span:nth-child(2) {
+  height: 11px;
+  opacity: 0.4;
+}
+
+.cover-footer-line span:nth-child(3) {
+  height: 15px;
+  opacity: 0.55;
+}
+
+.cover-footer-line span:nth-child(4) {
+  height: 19px;
+  opacity: 0.75;
+}
+
+.cover-footer-line span:nth-child(5) {
+  height: 23px;
+}
+
+
+/* =========================================================
+   SMART FOLLOW-UP FLOAT
+========================================================= */
+
+.journey-notification {
+  position: absolute;
+
+  right: -15px;
+  top: 125px;
 
   display: flex;
 
@@ -334,63 +915,129 @@
 
   gap: 10px;
 
-  padding: 12px 15px;
-
-  border-radius: 13px;
+  padding: 11px 13px;
 
   background: #ffffff;
 
-  border: 1px solid #f3f4f6;
+  border: 1px solid #eeeeee;
+
+  border-radius: 12px;
 
   box-shadow:
-    0 18px 40px rgba(0, 0, 0, 0.10);
+    0 15px 35px rgba(16, 24, 40, 0.09);
 
-  z-index: 4;
+  z-index: 15;
 }
 
-
-/* ICON */
-
-.demo-success-icon {
-  width: 34px;
-  height: 34px;
+.notification-icon {
+  width: 31px;
+  height: 31px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
-  border-radius: 10px;
+  border-radius: 9px;
 
-  background: #ecfdf3;
+  color: #ffffff;
 
-  color: #16a34a;
+  background: #f97316;
 }
 
-
-/* TEXT */
-
-.demo-success-card small {
+.journey-notification span {
   display: block;
 
-  margin-bottom: 3px;
+  margin-bottom: 2px;
 
-  color: #9ca3af;
+  color: #98a2b3;
 
-  font-size: 8px;
+  font-size: 7px;
 
-  font-weight: 700;
+  font-weight: 800;
 
   letter-spacing: 0.8px;
 }
 
-
-.demo-success-card strong {
+.journey-notification strong {
   display: block;
 
-  color: #111827;
+  color: #344054;
 
-  font-size: 11px;
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   SUCCESS FLOAT
+========================================================= */
+
+.journey-success-float {
+  position: absolute;
+
+  left: -18px;
+  bottom: 105px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 10px 13px;
+
+  background: #ffffff;
+
+  border: 1px solid #dcfce7;
+
+  border-radius: 11px;
+
+  box-shadow:
+    0 14px 30px rgba(16, 24, 40, 0.07);
+
+  z-index: 15;
+}
+
+.success-float-icon {
+  width: 29px;
+  height: 29px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 8px;
+
+  color: #ffffff;
+
+  background: #22c55e;
+}
+
+.journey-success-float span {
+  display: block;
+
+  margin-bottom: 2px;
+
+  color: #98a2b3;
+
+  font-size: 7px;
+
+  font-weight: 800;
+
+  letter-spacing: 0.8px;
+}
+
+.journey-success-float strong {
+  display: block;
+
+  color: #15803d;
+
+  font-size: 10px;
 
   font-weight: 700;
 }
@@ -401,24 +1048,19 @@
 ========================================================= */
 
 .live-demo-content {
-  max-width: 570px;
+  max-width: 520px;
 }
-
-
-/* =========================================================
-   LABEL
-========================================================= */
 
 .live-demo-label {
   display: inline-flex;
 
   align-items: center;
 
-  gap: 8px;
+  gap: 9px;
 
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 
-  color: #ea580c;
+  color: #f97316;
 
   font-size: 11px;
 
@@ -426,7 +1068,6 @@
 
   letter-spacing: 1.5px;
 }
-
 
 .label-dot {
   width: 7px;
@@ -448,17 +1089,16 @@
 .live-demo-content h2 {
   margin: 0;
 
-  color: #111827;
+  color: #171717;
 
-  font-size: clamp(38px, 4vw, 56px);
+  font-size: clamp(40px, 5vw, 62px);
 
   line-height: 1.05;
 
-  letter-spacing: -2px;
+  letter-spacing: -2.5px;
 
   font-weight: 700;
 }
-
 
 .live-demo-content h2 strong {
   color: #f97316;
@@ -474,7 +1114,7 @@
 .live-demo-description {
   max-width: 500px;
 
-  margin: 24px 0 32px;
+  margin: 24px 0 35px;
 
   color: #667085;
 
@@ -493,9 +1133,8 @@
 
   flex-direction: column;
 
-  gap: 20px;
+  gap: 23px;
 }
-
 
 .live-feature {
   display: flex;
@@ -505,44 +1144,38 @@
   gap: 14px;
 }
 
-
-/* FEATURE ICON */
-
 .live-feature-icon {
-  flex-shrink: 0;
-
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
-  border-radius: 11px;
+  flex-shrink: 0;
+
+  border-radius: 10px;
+
+  color: #f97316;
 
   background: #fff7ed;
 
-  color: #ea580c;
-
   border: 1px solid #fed7aa;
 }
-
-
-/* FEATURE TEXT */
 
 .live-feature strong {
   display: block;
 
   margin-bottom: 4px;
 
-  color: #1f2937;
+  color: #171717;
 
-  font-size: 13px;
+  font-size: 14px;
 
   font-weight: 700;
 }
-
 
 .live-feature p {
   margin: 0;
@@ -566,119 +1199,91 @@
 
   gap: 18px;
 
-  margin-top: 35px;
+  margin-top: 38px;
 }
-
 
 .live-demo-btn {
   display: inline-flex;
 
   align-items: center;
+
   justify-content: center;
 
   gap: 9px;
 
-  min-height: 46px;
+  padding: 13px 20px;
 
-  padding: 0 20px;
-
-  border: 1px solid #f97316;
+  border: none;
 
   border-radius: 9px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #ea580c,
-      #f97316
-    );
-
   color: #ffffff;
 
-  font-size: 12px;
+  background: #f97316;
+
+  font-size: 13px;
 
   font-weight: 700;
 
   cursor: pointer;
 
   box-shadow:
-    0 10px 24px rgba(249, 115, 22, 0.18);
+    0 8px 20px rgba(249, 115, 22, 0.20);
 
   transition:
     transform 0.25s ease,
-    box-shadow 0.25s ease;
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 }
-
 
 .live-demo-btn:hover {
   transform: translateY(-2px);
 
-  box-shadow:
-    0 14px 30px rgba(249, 115, 22, 0.25);
-}
+  background: #ea580c;
 
+  box-shadow:
+    0 12px 28px rgba(249, 115, 22, 0.28);
+}
 
 .live-demo-btn svg {
   transition: transform 0.25s ease;
 }
 
-
 .live-demo-btn:hover svg {
-  transform: translateX(3px);
+  transform: translateX(4px);
 }
-
-
-/* NOTE */
 
 .live-demo-note {
   color: #98a2b3;
 
   font-size: 11px;
 
-  font-weight: 600;
+  font-weight: 500;
 }
 
 
 /* =========================================================
-   RESPONSIVE
+   TABLET
 ========================================================= */
 
-@media (max-width: 992px) {
+@media (max-width: 1050px) {
 
   .live-demo-container {
     grid-template-columns: 1fr;
 
     gap: 70px;
-
-    max-width: 700px;
   }
 
   .live-demo-visual {
-    min-height: 580px;
+    min-height: 620px;
   }
 
   .live-demo-content {
-    max-width: 100%;
+    max-width: 700px;
 
-    text-align: center;
+    margin: 0 auto;
   }
 
-  .live-demo-description {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .live-demo-label {
-    justify-content: center;
-  }
-
-  .live-demo-actions {
-    justify-content: center;
-  }
-
-  .live-demo-features {
-    text-align: left;
-  }
 }
 
 
@@ -686,61 +1291,232 @@
    MOBILE
 ========================================================= */
 
-@media (max-width: 576px) {
+@media (max-width: 650px) {
 
   .live-demo-section {
     padding: 80px 0;
   }
 
   .live-demo-container {
-    width: 90%;
+    width: min(100% - 28px, 560px);
 
-    gap: 45px;
+    gap: 55px;
   }
 
   .live-demo-visual {
-    min-height: 510px;
+    min-height: 590px;
   }
 
-  .mobile-device {
-    width: 245px;
-    height: 490px;
 
-    border-radius: 32px;
+  /* Smaller orbit */
+
+  .journey-orbit-one {
+    width: 350px;
+    height: 350px;
   }
 
-  .mobile-screen {
-    border-radius: 25px;
+  .journey-orbit-two {
+    width: 275px;
+    height: 275px;
   }
 
-  .demo-live-badge {
+
+  /* Live badge */
+
+  .journey-live-badge {
+    top: 5px;
+    left: 3px;
+
+    padding: 8px 12px;
+
+    font-size: 9px;
+  }
+
+
+  /* Mobile cover */
+
+  .mobile-journey-cover {
+    width: min(100%, 390px);
+
+    padding: 19px 16px 17px;
+
+    border-radius: 27px;
+  }
+
+
+  /* Header */
+
+  .cover-brand-icon {
+    width: 32px;
+    height: 32px;
+
+    font-size: 14px;
+  }
+
+  .cover-title h3 {
+    font-size: 15px;
+  }
+
+
+  /* Journey */
+
+  .lead-journey {
+    gap: 21px;
+
+    padding-top: 16px;
+  }
+
+  .journey-line {
+    left: 24px;
+
+    top: 45px;
+    bottom: 45px;
+  }
+
+  .journey-step {
+    gap: 14px;
+
+    min-height: 96px;
+  }
+
+  .journey-node {
+    width: 48px;
+    height: 48px;
+  }
+
+  .journey-card {
+    padding: 13px;
+  }
+
+  .journey-card h4 {
+    font-size: 13px;
+  }
+
+
+  /* Floating cards */
+
+  .journey-notification {
+    right: -2px;
     top: 70px;
-    right: -5px;
+
+    transform: scale(0.82);
+
+    transform-origin: right top;
   }
 
-  .demo-success-card {
-    bottom: 70px;
-    left: -5px;
+  .journey-success-float {
+    left: -2px;
+    bottom: 55px;
+
+    transform: scale(0.82);
+
+    transform-origin: left bottom;
   }
+
+
+  /* Content */
 
   .live-demo-content h2 {
-    font-size: 38px;
+    font-size: clamp(38px, 11vw, 52px);
 
-    letter-spacing: -1.5px;
+    letter-spacing: -1.8px;
   }
 
   .live-demo-description {
     font-size: 14px;
+
+    margin-top: 20px;
+  }
+
+  .live-demo-features {
+    gap: 20px;
+  }
+
+  .live-feature p {
+    font-size: 11px;
   }
 
   .live-demo-actions {
     flex-direction: column;
 
+    align-items: flex-start;
+
     gap: 12px;
   }
 
-  .live-demo-btn {
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .live-demo-visual {
+    min-height: 555px;
+  }
+
+  .mobile-journey-cover {
     width: 100%;
+
+    padding: 16px 13px;
+  }
+
+  .cover-header {
+    gap: 10px;
+  }
+
+  .cover-brand strong {
+    font-size: 11px;
+  }
+
+  .cover-title h3 {
+    font-size: 14px;
+  }
+
+  .journey-step {
+    gap: 11px;
+
+    min-height: 90px;
+  }
+
+  .journey-node {
+    width: 43px;
+    height: 43px;
+  }
+
+  .journey-card {
+    padding: 11px;
+  }
+
+  .journey-card h4 {
+    font-size: 12px;
+  }
+
+  .journey-card-bottom > span:first-child {
+    font-size: 8px;
+  }
+
+  .journey-status {
+    display: none;
+  }
+
+  .journey-card-icon {
+    width: 27px;
+    height: 27px;
+  }
+
+  .journey-notification {
+    transform: scale(0.72);
+  }
+
+  .journey-success-float {
+    transform: scale(0.72);
+  }
+
+  .cover-footer-line {
+    display: none;
   }
 
 }
