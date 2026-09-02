@@ -1,44 +1,39 @@
 
-/* =====================================================
+/* =========================================================
    BMO NAVBAR
-===================================================== */
+   Theme: #ff5900
+========================================================= */
 
 .bmo-navbar {
   position: fixed;
-
   top: 0;
   left: 0;
 
   width: 100%;
-  height: 76px;
 
   z-index: 1000;
 
-  display: flex;
-  align-items: center;
+  padding: 16px 5%;
 
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.94);
+
+  border-bottom: 1px solid #eee8e3;
 
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 
-  border-bottom: 1px solid #eeeeee;
-
-  transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 
-/* =====================================================
-   CONTAINER
-===================================================== */
+/* =========================================================
+   NAVBAR CONTAINER
+========================================================= */
 
 .navbar-container {
-  width: 100%;
-  max-width: 1400px;
+  width: min(1250px, 100%);
 
   margin: 0 auto;
-
-  padding: 0 6%;
 
   display: flex;
   align-items: center;
@@ -48,247 +43,156 @@
 }
 
 
-/* =====================================================
+/* =========================================================
    LOGO
-===================================================== */
+========================================================= */
 
-.bmo-logo {
-  display: flex;
+.navbar-brand {
+  display: inline-flex;
   align-items: center;
 
-  gap: 10px;
+  padding: 0;
+
+  background: transparent;
+
+  border: none;
 
   text-decoration: none;
+
+  white-space: nowrap;
+
+  cursor: pointer;
 
   flex-shrink: 0;
 }
 
-
-/* Logo B */
-
-.logo-mark {
-  width: 40px;
-  height: 40px;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 11px;
-
-  color: #ffffff;
-
-  font-size: 18px;
-  font-weight: 800;
-
-  background:
-    linear-gradient(
-      135deg,
-      #d64f06,
-      #ff5900
-    );
-
-  box-shadow:
-    0 8px 25px  #ff5900,
- ;
-
-  transition: 0.3s ease;
-}
-
-
-.bmo-logo:hover .logo-mark {
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 12px 30px  #ff5900;
-}
-
-
-/* Logo Text */
-
-.logo-text {
-  display: flex;
-
-  flex-direction: column;
-
-  line-height: 1;
-}
-
-
-.logo-title {
-  color: #171717;
-
-  font-size: 17px;
-  font-weight: 800;
-
-  letter-spacing: 1px;
-}
-
-
-.logo-subtitle {
-  margin-top: 4px;
-
+.logo-bmo {
   color: #ff5900;
 
-  font-size: 7px;
-  font-weight: 700;
+  font-size: 24px;
+  font-weight: 900;
 
-  letter-spacing: 2.5px;
+  letter-spacing: -1.5px;
+}
+
+.logo-leads {
+  margin-left: 5px;
+
+  color: #222;
+
+  font-size: 18px;
+  font-weight: 600;
 }
 
 
-/* =====================================================
-   NAVIGATION LINKS
-===================================================== */
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
 
 .bmo-nav-links {
   display: flex;
   align-items: center;
+  justify-content: center;
 
-  gap: 30px;
+  gap: 28px;
 
-  margin-left: auto;
+  flex: 1;
 }
 
-
-.bmo-nav-links a {
+.bmo-nav-links button {
   position: relative;
 
-  color: #5f6368;
+  padding: 6px 0;
 
-  text-decoration: none;
+  color: #555;
 
-  font-size: 13px;
-  font-weight: 600;
+  background: transparent;
 
-  padding: 8px 0;
-
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
-}
-
-
-.bmo-nav-links a:hover {
-  color:  #ff5900;
-
-  transform: translateY(-1px);
-}
-
-
-/* Animated underline */
-
-.bmo-nav-links a::after {
-  content: '';
-
-  position: absolute;
-
-  left: 0;
-  bottom: 0;
-
-  width: 0;
-  height: 2px;
-
-  border-radius: 10px;
-
-  background:  #ff5f08;
-
-  transition: width 0.3s ease;
-}
-
-
-.bmo-nav-links a:hover::after {
-  width: 100%;
-}
-
-
-/* =====================================================
-   NAVBAR ACTION
-===================================================== */
-
-.navbar-action {
-  display: flex;
-  align-items: center;
-
-  gap: 10px;
-
-  flex-shrink: 0;
-}
-
-
-/* =====================================================
-   LOGIN BUTTON
-===================================================== */
-
-.login-btn {
-  padding: 9px 18px;
-
-  color: #171717;
-
-  background: #ffffff;
-
-  border: 1px solid #e5e7eb;
-
-  border-radius: 9px;
+  border: none;
 
   font-family: inherit;
 
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 650;
 
   cursor: pointer;
 
-  transition: all 0.25s ease;
+  white-space: nowrap;
+
+  transition: color 0.25s ease;
+}
+
+.bmo-nav-links button::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -4px;
+
+  width: 0;
+  height: 2px;
+
+  background: #ff5900;
+
+  border-radius: 10px;
+
+  transform: translateX(-50%);
+
+  transition: width 0.25s ease;
+}
+
+.bmo-nav-links button:hover {
+  color: #ff5900;
+}
+
+.bmo-nav-links button:hover::after {
+  width: 100%;
 }
 
 
-.login-btn:hover {
-  color:  #ff5900;
+/* =========================================================
+   DESKTOP GET STARTED
+========================================================= */
 
-  border-color: rgba(229, 9, 9, 0.35);
-
-  background: rgba(229, 9, 20, 0.04);
-
-  transform: translateY(-1px);
+.navbar-action {
+  flex-shrink: 0;
 }
-
-
-/* =====================================================
-   GET STARTED
-===================================================== */
 
 .navbar-start-btn {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
 
-  gap: 8px;
+  gap: 9px;
 
-  padding: 10px 17px;
+  padding: 11px 17px;
 
   color: #ffffff;
 
-  text-decoration: none;
+  background: #ff5900;
 
-  border-radius: 9px;
+  border: 1px solid #ff5900;
+
+  border-radius: 10px;
+
+  font-family: inherit;
 
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 750;
 
-  background:
-    linear-gradient(
-      135deg,
-      #ff5900,
-      #ff3038
-    );
+  text-decoration: none;
+
+  cursor: pointer;
 
   box-shadow:
-    0 8px 25px rgba(229, 9, 20, 0.2);
+    0 8px 20px rgba(255, 89, 0, 0.18);
 
-  transition: all 0.3s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
 }
-
-
 
 .navbar-start-btn span {
   font-size: 16px;
@@ -298,131 +202,376 @@
   transition: transform 0.25s ease;
 }
 
-
 .navbar-start-btn:hover {
-  color: #ffffff;
-
   transform: translateY(-2px);
 
-  box-shadow:
-    0 12px 30px rgba(229, 9, 20, 0.3);
-}
+  background: #e94f00;
 
+  box-shadow:
+    0 12px 25px rgba(255, 89, 0, 0.25);
+}
 
 .navbar-start-btn:hover span {
   transform: translateX(3px);
 }
 
- /* =========================================
-     LOGO
-  ========================================= */
-  
-  .brand-logo {
-    display: flex;
-    align-items: center;
-    gap: 8px;              /* space between BMO and Leads */
-    text-decoration: none;
-    font-size: 28px;        /* overall font size */
-    font-weight: 700;
-  }
-  
-  .brand-logo:hover {
-    transform: translateY(-1px);
-  }
-  
-  .logo-bmo {
-    color: rgb(255, 89, 0);
-    font-size: 29px; 
-    font-weight: 700;
-  }
-  
-  .logo-leads {
-    font-size: 24px;
-  
-    font-weight: 600;
-  }
 
+/* =========================================================
+   HAMBURGER BUTTON
+========================================================= */
 
-/* =====================================================
-   TABLET
-===================================================== */
+.hamburger-btn {
+  display: none;
 
-@media (max-width: 1100px) {
+  width: 42px;
+  height: 42px;
 
-  .navbar-container {
-    padding: 0 4%;
-  }
+  padding: 9px;
 
-  .bmo-nav-links {
-    gap: 20px;
-  }
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-  .bmo-nav-links a {
-    font-size: 12px;
-  }
+  gap: 5px;
 
+  background: #ffffff;
+
+  border: 1px solid #eee4dd;
+
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  position: relative;
+
+  z-index: 1003;
+
+  flex-shrink: 0;
+}
+
+.hamburger-btn span {
+  display: block;
+
+  width: 20px;
+  height: 2px;
+
+  background: #222;
+
+  border-radius: 5px;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    background 0.25s ease;
 }
 
 
-/* =====================================================
-   MOBILE
-===================================================== */
+/* =========================================================
+   HAMBURGER → X
+========================================================= */
 
-@media (max-width: 850px) {
+.hamburger-btn.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu {
+  display: none;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.98);
+
+  border-top: 1px solid #eee8e3;
+
+  position: relative;
+
+  z-index: 1001;
+
+  box-sizing: border-box;
+}
+
+.mobile-menu-inner {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  padding: 15px 5% 20px;
+
+  gap: 4px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTONS
+========================================================= */
+
+.mobile-menu-inner button {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 45px;
+
+  padding: 10px 14px;
+
+  color: #444;
+
+  background: transparent;
+
+  border: none;
+
+  border-radius: 10px;
+
+  font-family: inherit;
+
+  font-size: 13px;
+  font-weight: 650;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.mobile-menu-inner button:hover {
+  color: #ff5900;
+
+  background: #fff4ed;
+}
+
+.mobile-menu-inner button:active {
+  transform: scale(0.98);
+}
+
+
+/* =========================================================
+   MOBILE GET STARTED
+========================================================= */
+
+.mobile-menu-inner .mobile-start-btn {
+  justify-content: center;
+
+  margin-top: 8px;
+
+  color: #ffffff;
+
+  background: #ff5900;
+
+  text-align: center;
+
+  box-shadow:
+    0 8px 20px rgba(255, 89, 0, 0.16);
+}
+
+.mobile-menu-inner .mobile-start-btn:hover {
+  color: #ffffff;
+
+  background: #e94f00;
+}
+
+.mobile-start-btn span {
+  margin-left: 8px;
+
+  font-size: 16px;
+
+  transition: transform 0.25s ease;
+}
+
+.mobile-start-btn:hover span {
+  transform: translateX(3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
 
   .bmo-navbar {
-    height: 70px;
+    padding: 15px 4%;
   }
 
   .navbar-container {
-    padding: 0 5%;
+    gap: 18px;
   }
+
+  .bmo-nav-links {
+    gap: 17px;
+  }
+
+  .bmo-nav-links button {
+    font-size: 11px;
+  }
+
+  .navbar-start-btn {
+    padding: 10px 14px;
+
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .bmo-nav-links {
+    gap: 12px;
+  }
+
+  .bmo-nav-links button {
+    font-size: 10px;
+  }
+
+  .logo-bmo {
+    font-size: 21px;
+  }
+
+  .logo-leads {
+    font-size: 16px;
+  }
+
+  .navbar-start-btn {
+    padding: 9px 12px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .bmo-navbar {
+    padding: 14px 5%;
+  }
+
+  /* Hide desktop navigation */
 
   .bmo-nav-links {
     display: none;
   }
 
   .navbar-action {
-    margin-left: auto;
-  }
-
-  .login-btn {
     display: none;
   }
 
-  .navbar-start-btn {
-    padding: 9px 14px;
 
-    font-size: 11px;
+  /* Show hamburger */
+
+  .hamburger-btn {
+    display: flex;
   }
 
+
+  /* Show mobile menu */
+
+  .mobile-menu {
+    display: block;
+  }
+
+
+  /* Keep logo on left */
+
+  .navbar-brand {
+    margin-right: auto;
+  }
 }
 
 
-/* =====================================================
+/* =========================================================
    SMALL MOBILE
-===================================================== */
+========================================================= */
 
 @media (max-width: 480px) {
 
-  .logo-mark {
-    width: 36px;
-    height: 36px;
-
-    font-size: 16px;
+  .bmo-navbar {
+    padding: 13px 20px;
   }
 
-  .logo-title {
+  .logo-bmo {
+    font-size: 21px;
+  }
+
+  .logo-leads {
     font-size: 15px;
   }
 
-  .logo-subtitle {
-    font-size: 6px;
+  .hamburger-btn {
+    width: 40px;
+    height: 40px;
   }
 
-  .navbar-start-btn {
-    padding: 8px 12px;
+  .mobile-menu-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .bmo-navbar {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
+  .logo-bmo {
+    font-size: 19px;
+  }
+
+  .logo-leads {
+    font-size: 14px;
+  }
+
+  .hamburger-btn {
+    width: 38px;
+    height: 38px;
+  }
+
+  .mobile-menu-inner {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+
+/* =========================================================
+   SECTION SCROLL OFFSET
+   Prevents fixed navbar from covering section headings
+========================================================= */
+
+section {
+  scroll-margin-top: 90px;
 }
 
