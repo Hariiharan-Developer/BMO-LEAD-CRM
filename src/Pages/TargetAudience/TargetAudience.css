@@ -1,0 +1,179 @@
+/* =========================================================
+   BMO LEAD — WHO IT'S FOR / TARGET AUDIENCE
+========================================================= */
+
+.ta-section {
+  background: #fafafa;
+  padding: 88px 0 80px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.ta-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+/* Header */
+.ta-header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.ta-eyebrow {
+  display: inline-flex;
+  background: rgba(255, 89, 0, 0.08);
+  border: 1px solid rgba(255, 89, 0, 0.2);
+  color: var(--bmo-primary, #ff5900);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  padding: 4px 14px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  font-family: var(--bmo-font-sans, Helvetica, Arial, sans-serif);
+}
+
+.ta-heading {
+  font-family: var(--bmo-font-heading, Helvetica, Arial, sans-serif);
+  font-size: 2.2rem;
+  font-weight: 850;
+  letter-spacing: -0.03em;
+  color: #111827;
+  margin: 0;
+  line-height: 1.22;
+  max-width: 640px;
+}
+
+.ta-heading-orange {
+  color: var(--bmo-primary, #ff5900);
+}
+
+.ta-sub {
+  font-size: 0.96rem;
+  color: #6b7280;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 500px;
+  font-family: var(--bmo-font-sans, Helvetica, Arial, sans-serif);
+}
+
+/* Cards grid: 4 across on desktop, wrap for last row of 3 */
+.ta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Individual audience card */
+.ta-card {
+  background: #ffffff;
+  border: 1.5px solid #ede8e3;
+  border-radius: 18px;
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  cursor: default;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Top accent bar with card's brand color */
+.ta-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--ta-color, #ff5900);
+  border-radius: 18px 18px 0 0;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.ta-card:hover::before {
+  opacity: 1;
+}
+
+.ta-card:hover {
+  border-color: var(--ta-color, #ff5900);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+}
+
+.ta-emoji {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.ta-card-title {
+  font-family: var(--bmo-font-heading, Helvetica, Arial, sans-serif);
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.ta-card-desc {
+  font-family: var(--bmo-font-sans, Helvetica, Arial, sans-serif);
+  font-size: 0.83rem;
+  color: #6b7280;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Center the last row when 7 cards (4+3) */
+.ta-grid .ta-card:nth-child(5),
+.ta-grid .ta-card:nth-child(6),
+.ta-grid .ta-card:nth-child(7) {
+  /* Use grid positioning to center the last 3 */
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 1100px) {
+  .ta-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ta-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .ta-heading {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ta-section {
+    padding: 58px 0 50px;
+  }
+
+  .ta-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ta-heading {
+    font-size: 1.55rem;
+  }
+
+  .ta-card {
+    padding: 20px 18px;
+  }
+}

@@ -1,61 +1,25 @@
 /* =========================================================
-   BMO LEADS - LIVE SHOWCASE
+   BMO LEAD - LEAD JOURNEY SECTION
+   Font: Helvetica, Arial, sans-serif
 ========================================================= */
 
 .live-demo-section {
   position: relative;
   width: 100%;
-  padding: 120px 0;
+  padding: 100px 0;
   overflow: hidden;
-
-  background:
-    radial-gradient(
-      circle at 10% 20%,
-      rgba(249, 115, 22, 0.10),
-      transparent 32%
-    ),
-    radial-gradient(
-      circle at 90% 80%,
-      rgba(251, 146, 60, 0.08),
-      transparent 32%
-    ),
-  linear-gradient(
-    135deg,
-    #ffffff,
-    #fffaf5,
-    #ffffff
-  );
-
-  background-size: 150% 150%;
-  animation: liveBackground 12s ease-in-out infinite;
-}
-
-@keyframes liveBackground {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+  background-color: #ffffff;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .live-demo-container {
-  width: min(1180px, calc(100% - 40px));
+  width: min(1140px, calc(100% - 48px));
   margin: 0 auto;
-
   display: grid;
-  grid-template-columns: 1fr 1fr;
-
+  grid-template-columns: 1fr 1.05fr;
   align-items: center;
-
-  gap: 90px;
+  gap: 70px;
 }
-
 
 /* =========================================================
    LEFT VISUAL
@@ -63,985 +27,341 @@
 
 .live-demo-visual {
   position: relative;
-
-  min-height: 640px;
-
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 520px;
 }
-
-
-/* =========================================================
-   BACKGROUND ORBITS
-========================================================= */
 
 .journey-orbit {
   position: absolute;
-
   border-radius: 50%;
-
   pointer-events: none;
 }
 
 .journey-orbit-one {
-  width: 440px;
-  height: 440px;
-
-  border: 1px solid rgba(249, 115, 22, 0.08);
-
+  width: 380px;
+  height: 380px;
+  border: 1px solid rgba(255, 89, 0, 0.08);
   top: 50%;
   left: 50%;
-
   transform: translate(-50%, -50%);
 }
-
-.journey-orbit-two {
-  width: 340px;
-  height: 340px;
-
-  border: 1px dashed rgba(249, 115, 22, 0.08);
-
-  top: 50%;
-  left: 50%;
-
-  transform: translate(-50%, -50%);
-}
-
-.journey-orbit-one::before,
-.journey-orbit-two::before {
-  content: '';
-
-  position: absolute;
-
-  width: 7px;
-  height: 7px;
-
-  border-radius: 50%;
-
-  background: #f97316;
-
-  box-shadow:
-    0 0 0 5px rgba(249, 115, 22, 0.08);
-}
-
-.journey-orbit-one::before {
-  top: 60px;
-  left: 65px;
-}
-
-.journey-orbit-two::before {
-  right: 45px;
-  bottom: 60px;
-
-  background: #22c55e;
-
-  box-shadow:
-    0 0 0 5px rgba(34, 197, 94, 0.08);
-}
-
-
-/* =========================================================
-   LIVE BADGE
-========================================================= */
 
 .journey-live-badge {
   position: absolute;
-
-  top: 22px;
-  left: 18px;
-
-  display: flex;
+  top: -10px;
+  left: 30px;
+  display: inline-flex;
   align-items: center;
-
-  gap: 9px;
-
-  padding: 9px 15px;
-
-  border-radius: 999px;
-
+  gap: 7px;
+  padding: 5px 12px;
   background: #ffffff;
-
-  border: 1px solid #eeeeee;
-
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.06);
-
-  color: #171717;
-
-  font-size: 10px;
-
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 10.5px;
   font-weight: 800;
-
-  letter-spacing: 1px;
-
-  z-index: 20;
-}
-
-.journey-live-dot {
-  width: 8px;
-  height: 8px;
-
-  border-radius: 50%;
-
-  background: #f97316;
-
-  animation: livePulse 1.8s infinite;
-}
-
-@keyframes livePulse {
-
-  0% {
-    box-shadow:
-      0 0 0 0 rgba(249, 115, 22, 0.30);
-  }
-
-  70% {
-    box-shadow:
-      0 0 0 7px rgba(249, 115, 22, 0);
-  }
-
-  100% {
-    box-shadow:
-      0 0 0 0 rgba(249, 115, 22, 0);
-  }
-
-}
-
-
-/* =========================================================
-   MOBILE STYLE COVER
-========================================================= */
-
-.mobile-journey-cover {
-  position: relative;
-
-  width: 410px;
-
-  padding: 22px 22px 20px;
-
-  border-radius: 32px;
-
-  background:
-    linear-gradient(
-      145deg,
-      #ffffff 0%,
-      #fcfcfc 65%,
-      #fffaf5 100%
-    );
-
-  border: 1px solid #e8e8e8;
-
-  box-shadow:
-    0 35px 80px rgba(16, 24, 40, 0.12),
-    0 10px 25px rgba(16, 24, 40, 0.05);
-
-  overflow: hidden;
-
+  letter-spacing: 0.8px;
+  color: var(--bmo-primary, #ff5900);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
   z-index: 5;
 }
 
-
-/* Orange edge glow */
-
-.cover-border-glow {
-  position: absolute;
-
-  top: -1px;
-  left: 15%;
-
-  width: 70%;
-  height: 2px;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      #f97316,
-      transparent
-    );
-
-  opacity: 0.75;
+.journey-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--bmo-primary, #ff5900);
 }
 
-
-/* =========================================================
-   COVER HEADER
-========================================================= */
+/* Mobile-Style Journey Card */
+.mobile-journey-cover {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+  z-index: 2;
+}
 
 .cover-header {
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
+  margin-bottom: 14px;
 }
 
 .cover-brand {
   display: flex;
-
   align-items: center;
-
-  gap: 10px;
+  gap: 9px;
 }
 
 .cover-brand-icon {
-  width: 35px;
-  height: 35px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  border-radius: 11px;
-
+  width: 28px;
+  height: 28px;
+  background: var(--bmo-primary, #ff5900);
   color: #ffffff;
-
-  background: #f97316;
-
-  font-size: 16px;
-
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
   font-weight: 800;
-
-  box-shadow:
-    0 6px 15px rgba(249, 115, 22, 0.20);
 }
 
 .cover-brand span {
   display: block;
-
-  margin-bottom: 2px;
-
-  color: #98a2b3;
-
-  font-size: 7px;
-
+  font-size: 9.5px;
   font-weight: 800;
-
-  letter-spacing: 1px;
+  color: #9ca3af;
+  letter-spacing: 0.6px;
 }
 
 .cover-brand strong {
   display: block;
-
-  color: #171717;
-
-  font-size: 12px;
-
-  font-weight: 700;
-}
-
-
-/* =========================================================
-   MENU DOTS
-========================================================= */
-
-.cover-menu {
-  display: flex;
-
-  align-items: center;
-
-  gap: 4px;
-}
-
-.cover-menu span {
-  width: 4px;
-  height: 4px;
-
-  border-radius: 50%;
-
-  background: #98a2b3;
-}
-
-
-/* =========================================================
-   DIVIDER
-========================================================= */
-
-.cover-divider {
-  width: 100%;
-
-  height: 1px;
-
-  margin: 18px 0;
-
-  background: #eeeeee;
-}
-
-
-/* =========================================================
-   COVER TITLE
-========================================================= */
-
-.cover-title {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  margin-bottom: 5px;
-}
-
-.cover-title > div:first-child span {
-  display: block;
-
-  margin-bottom: 4px;
-
-  color: #f97316;
-
-  font-size: 8px;
-
-  font-weight: 800;
-
-  letter-spacing: 1.1px;
-}
-
-.cover-title h3 {
-  margin: 0;
-
-  color: #171717;
-
-  font-size: 17px;
-
+  font-size: 12.5px;
   font-weight: 750;
+  color: #111827;
 }
-
-
-/* =========================================================
-   LIVE STATUS
-========================================================= */
 
 .cover-live-status {
   display: flex;
-
   align-items: center;
-
-  gap: 6px;
-
-  padding: 5px 9px;
-
-  border-radius: 999px;
-
-  color: #15803d;
-
+  gap: 5px;
+  font-size: 10px;
+  font-weight: 750;
+  color: #16a34a;
   background: #f0fdf4;
-
-  border: 1px solid #bbf7d0;
-
-  font-size: 7px;
-
-  font-weight: 800;
-
-  letter-spacing: 0.7px;
+  padding: 3px 8px;
+  border-radius: 10px;
 }
 
 .cover-live-status span {
   width: 5px;
   height: 5px;
-
+  background: #16a34a;
   border-radius: 50%;
-
-  background: #22c55e;
 }
 
+.cover-divider {
+  height: 1px;
+  background: #f1f3f5;
+  margin-bottom: 14px;
+}
 
-/* =========================================================
-   LEAD JOURNEY
-========================================================= */
+.cover-title {
+  margin-bottom: 16px;
+}
 
+.cover-title span {
+  font-size: 9.5px;
+  font-weight: 800;
+  color: var(--bmo-primary, #ff5900);
+  letter-spacing: 0.8px;
+}
+
+.cover-title h3 {
+  margin: 2px 0 0;
+  font-size: 15px;
+  font-weight: 800;
+  color: #111827;
+}
+
+/* Timeline */
 .lead-journey {
   position: relative;
-
   display: flex;
-
   flex-direction: column;
-
-  gap: 23px;
-
-  padding-top: 19px;
+  gap: 12px;
+  margin-bottom: 18px;
 }
-
-
-/* =========================================================
-   JOURNEY LINE
-========================================================= */
 
 .journey-line {
   position: absolute;
-
-  left: 25px;
-
-  top: 47px;
-  bottom: 47px;
-
+  top: 18px;
+  bottom: 18px;
+  left: 17px;
   width: 2px;
-
-  background: #eeeeee;
-
+  background: #f1f3f5;
   z-index: 1;
 }
 
 .journey-line-progress {
-  position: absolute;
-
-  top: 0;
-  left: 0;
-
+  display: block;
   width: 100%;
-
-  border-radius: 999px;
-
-  background:
-    linear-gradient(
-      to bottom,
-      #f97316 0%,
-      #f97316 65%,
-      #22c55e 100%
-    );
+  background: var(--bmo-primary, #ff5900);
 }
-
-.journey-line-dot {
-  position: absolute;
-
-  left: 50%;
-
-  width: 8px;
-  height: 8px;
-
-  transform: translate(-50%, -50%);
-
-  border-radius: 50%;
-
-  background: #f97316;
-
-  box-shadow:
-    0 0 0 5px rgba(249, 115, 22, 0.10),
-    0 0 15px rgba(249, 115, 22, 0.30);
-
-  z-index: 5;
-}
-
-
-/* =========================================================
-   JOURNEY STEP
-========================================================= */
 
 .journey-step {
   position: relative;
-
   display: flex;
-
   align-items: center;
-
-  gap: 18px;
-
-  min-height: 105px;
-
+  gap: 12px;
   z-index: 2;
 }
 
-
-/* =========================================================
-   NODE
-========================================================= */
-
 .journey-node {
-  width: 51px;
-  height: 51px;
-
-  flex-shrink: 0;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-
-  color: #f97316;
-
-  background: #fff7ed;
-
-  border: 1px solid #fed7aa;
-
-  box-shadow:
-    0 7px 20px rgba(249, 115, 22, 0.10);
-
-  z-index: 5;
+  background: #ffffff;
+  border: 1.5px solid #e5e7eb;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .follow-node {
-  color: #ea580c;
-
-  background: #fff7ed;
+  border-color: rgba(255, 89, 0, 0.3);
+  color: var(--bmo-primary, #ff5900);
 }
 
-
-/* =========================================================
-   SUCCESS NODE
-========================================================= */
+.activity-node {
+  border-color: #93c5fd;
+  color: #2563eb;
+}
 
 .converted-node {
-  color: #ffffff;
-
-  background: #22c55e;
-
-  border-color: #22c55e;
-
-  box-shadow:
-    0 8px 25px rgba(34, 197, 94, 0.25);
+  border-color: #86efac;
+  color: #16a34a;
 }
-
-
-/* =========================================================
-   JOURNEY CARD
-========================================================= */
 
 .journey-card {
   flex: 1;
-
-  min-width: 0;
-
-  padding: 15px 16px;
-
-  border-radius: 15px;
-
-  background: rgba(255, 255, 255, 0.95);
-
-  border: 1px solid #eeeeee;
-
-  box-shadow:
-    0 8px 25px rgba(16, 24, 40, 0.06);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    border-color 0.3s ease;
+  background: #f9fafb;
+  border: 1px solid #f1f3f5;
+  border-radius: 8px;
+  padding: 10px 12px;
 }
-
-.journey-card:hover {
-  transform: translateX(4px);
-
-  border-color: #fed7aa;
-
-  box-shadow:
-    0 12px 30px rgba(249, 115, 22, 0.09);
-}
-
-
-/* =========================================================
-   CARD TOP
-========================================================= */
 
 .journey-card-top {
   display: flex;
-
-  align-items: flex-start;
-
+  align-items: center;
   justify-content: space-between;
-
-  gap: 10px;
 }
 
 .journey-card-label {
   display: block;
-
-  margin-bottom: 4px;
-
-  color: #f97316;
-
-  font-size: 8px;
-
+  font-size: 9px;
   font-weight: 800;
-
-  letter-spacing: 1px;
+  letter-spacing: 0.6px;
+  color: #9ca3af;
+  margin-bottom: 2px;
 }
 
 .journey-card h4 {
   margin: 0;
-
-  color: #171717;
-
-  font-size: 14px;
-
-  font-weight: 700;
-}
-
-
-/* =========================================================
-   CARD ICON
-========================================================= */
-
-.journey-card-icon {
-  width: 30px;
-  height: 30px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  flex-shrink: 0;
-
-  border-radius: 9px;
-
-  color: #f97316;
-
-  background: #fff7ed;
-}
-
-.success-icon {
-  color: #ffffff;
-
-  background: #22c55e;
-}
-
-
-/* =========================================================
-   CARD BOTTOM
-========================================================= */
-
-.journey-card-bottom {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
-
-  gap: 10px;
-
-  margin-top: 9px;
-}
-
-.journey-card-bottom > span:first-child {
-  color: #98a2b3;
-
-  font-size: 9px;
-
-  font-weight: 500;
+  font-size: 12.5px;
+  font-weight: 750;
+  color: #111827;
 }
 
 .journey-status {
-  padding: 3px 7px;
-
-  border-radius: 999px;
-
-  font-size: 7px;
-
-  font-weight: 800;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
 }
 
 .new-status {
-  color: #f97316;
-
-  background: #fff7ed;
+  background: #f3f4f6;
+  color: #4b5563;
 }
 
 .follow-status {
-  color: #c2410c;
-
-  background: #ffedd5;
+  background: #fff7ed;
+  color: var(--bmo-primary, #ff5900);
 }
 
-
-/* =========================================================
-   CONVERTED CARD
-========================================================= */
-
-.converted-card {
-  border-color: #dcfce7;
-
-  background:
-    linear-gradient(
-      135deg,
-      #ffffff,
-      #fafffb
-    );
-}
-
-.converted-card:hover {
-  border-color: #86efac;
-
-  box-shadow:
-    0 12px 30px rgba(34, 197, 94, 0.10);
-}
-
-.converted-card .journey-card-label {
-  color: #16a34a;
+.activity-status {
+  background: #eff6ff;
+  color: #2563eb;
 }
 
 .converted-status {
-  color: #15803d;
-
-  background: #dcfce7;
-
-  border: 1px solid #bbf7d0;
+  background: #f0fdf4;
+  color: #16a34a;
 }
-
-
-/* =========================================================
-   COVER FOOTER
-========================================================= */
 
 .cover-footer {
   display: flex;
-
   align-items: center;
-
   gap: 9px;
-
-  margin-top: 18px;
-
-  padding-top: 15px;
-
-  border-top: 1px solid #eeeeee;
+  padding: 10px 12px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #f1f3f5;
 }
 
 .cover-footer-icon {
-  width: 31px;
-  height: 31px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  border-radius: 9px;
-
-  color: #16a34a;
-
-  background: #f0fdf4;
-
-  border: 1px solid #bbf7d0;
+  color: var(--bmo-primary, #ff5900);
 }
 
 .cover-footer span {
   display: block;
-
-  margin-bottom: 2px;
-
-  color: #98a2b3;
-
-  font-size: 7px;
-
+  font-size: 9px;
   font-weight: 800;
-
-  letter-spacing: 0.8px;
+  color: #9ca3af;
+  letter-spacing: 0.6px;
 }
 
 .cover-footer strong {
-  color: #15803d;
-
-  font-size: 13px;
-
-  font-weight: 800;
+  display: block;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #111827;
 }
 
-
-/* =========================================================
-   MINI GRAPH
-========================================================= */
-
-.cover-footer-line {
-  flex: 1;
-
-  height: 25px;
-
-  display: flex;
-
-  align-items: flex-end;
-
-  justify-content: flex-end;
-
-  gap: 3px;
-
-  margin-left: auto;
-}
-
-.cover-footer-line span {
-  width: 4px;
-
-  margin: 0;
-
-  border-radius: 3px;
-
-  background: #22c55e;
-}
-
-.cover-footer-line span:nth-child(1) {
-  height: 7px;
-  opacity: 0.25;
-}
-
-.cover-footer-line span:nth-child(2) {
-  height: 11px;
-  opacity: 0.4;
-}
-
-.cover-footer-line span:nth-child(3) {
-  height: 15px;
-  opacity: 0.55;
-}
-
-.cover-footer-line span:nth-child(4) {
-  height: 19px;
-  opacity: 0.75;
-}
-
-.cover-footer-line span:nth-child(5) {
-  height: 23px;
-}
-
-
-/* =========================================================
-   SMART FOLLOW-UP FLOAT
-========================================================= */
-
+/* Floating Notification Card */
 .journey-notification {
   position: absolute;
-
-  right: -15px;
-  top: 125px;
-
+  bottom: 20px;
+  right: -20px;
   display: flex;
-
   align-items: center;
-
   gap: 10px;
-
-  padding: 11px 13px;
-
+  padding: 10px 14px;
   background: #ffffff;
-
-  border: 1px solid #eeeeee;
-
-  border-radius: 12px;
-
-  box-shadow:
-    0 15px 35px rgba(16, 24, 40, 0.09);
-
-  z-index: 15;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  z-index: 5;
+  white-space: nowrap;
 }
 
 .notification-icon {
-  width: 31px;
-  height: 31px;
-
+  width: 30px;
+  height: 30px;
+  background: rgba(255, 89, 0, 0.08);
+  color: var(--bmo-primary, #ff5900);
+  border-radius: 6px;
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
-  border-radius: 9px;
-
-  color: #ffffff;
-
-  background: #f97316;
 }
 
 .journey-notification span {
   display: block;
-
-  margin-bottom: 2px;
-
-  color: #98a2b3;
-
-  font-size: 7px;
-
+  font-size: 9.5px;
   font-weight: 800;
-
-  letter-spacing: 0.8px;
+  color: #6b7280;
+  letter-spacing: 0.7px;
 }
 
 .journey-notification strong {
   display: block;
-
-  color: #344054;
-
-  font-size: 10px;
-
-  font-weight: 700;
+  font-size: 12.5px;
+  font-weight: 750;
+  color: #111827;
 }
-
-
-/* =========================================================
-   SUCCESS FLOAT
-========================================================= */
-
-.journey-success-float {
-  position: absolute;
-
-  left: -18px;
-  bottom: 105px;
-
-  display: flex;
-
-  align-items: center;
-
-  gap: 9px;
-
-  padding: 10px 13px;
-
-  background: #ffffff;
-
-  border: 1px solid #dcfce7;
-
-  border-radius: 11px;
-
-  box-shadow:
-    0 14px 30px rgba(16, 24, 40, 0.07);
-
-  z-index: 15;
-}
-
-.success-float-icon {
-  width: 29px;
-  height: 29px;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  border-radius: 8px;
-
-  color: #ffffff;
-
-  background: #22c55e;
-}
-
-.journey-success-float span {
-  display: block;
-
-  margin-bottom: 2px;
-
-  color: #98a2b3;
-
-  font-size: 7px;
-
-  font-weight: 800;
-
-  letter-spacing: 0.8px;
-}
-
-.journey-success-float strong {
-  display: block;
-
-  color: #15803d;
-
-  font-size: 10px;
-
-  font-weight: 700;
-}
-
 
 /* =========================================================
    RIGHT CONTENT
@@ -1053,470 +373,141 @@
 
 .live-demo-label {
   display: inline-flex;
-
   align-items: center;
-
-  gap: 9px;
-
-  margin-bottom: 22px;
-
-  color: #f97316;
-
-  font-size: 11px;
-
+  gap: 7px;
+  margin-bottom: 16px;
+  font-size: 11.5px;
   font-weight: 800;
-
-  letter-spacing: 1.5px;
+  letter-spacing: 1.4px;
+  color: var(--bmo-primary, #ff5900);
+  text-transform: uppercase;
 }
 
 .label-dot {
-  width: 7px;
-  height: 7px;
-
+  width: 6px;
+  height: 6px;
+  background: var(--bmo-primary, #ff5900);
   border-radius: 50%;
-
-  background: #f97316;
-
-  box-shadow:
-    0 0 0 5px rgba(249, 115, 22, 0.10);
 }
-
-
-/* =========================================================
-   HEADING
-========================================================= */
 
 .live-demo-content h2 {
-  margin: 0;
-
-  color: #171717;
-
-  font-size: clamp(40px, 5vw, 62px);
-
-  line-height: 1.05;
-
-  letter-spacing: -2.5px;
-
-  font-weight: 700;
+  margin: 0 0 16px;
+  color: #111827;
+  font-family: Helvetica, Arial, sans-serif !important;
+  font-size: clamp(32px, 3.8vw, 42px);
+  line-height: 1.15;
+  font-weight: 850;
+  letter-spacing: -1.2px;
 }
 
-.live-demo-content h2 strong {
-  color: #f97316;
-
-  font-weight: 800;
+.live-demo-content h2 span {
+  color: var(--bmo-primary, #ff5900);
+  font-weight: 900;
 }
-
-
-/* =========================================================
-   DESCRIPTION
-========================================================= */
 
 .live-demo-description {
-  max-width: 500px;
-
-  margin: 24px 0 35px;
-
-  color: #667085;
-
-  font-size: 15px;
-
-  line-height: 1.75;
+  margin: 0 0 28px;
+  color: #4b5563;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-
-/* =========================================================
-   FEATURES
-========================================================= */
-
+/* 3 Capability Points */
 .live-demo-features {
   display: flex;
-
   flex-direction: column;
-
-  gap: 23px;
+  gap: 18px;
+  margin-bottom: 30px;
 }
 
 .live-feature {
   display: flex;
-
   align-items: flex-start;
-
   gap: 14px;
 }
 
 .live-feature-icon {
-  width: 38px;
-  height: 38px;
-
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255, 89, 0, 0.08);
+  color: var(--bmo-primary, #ff5900);
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   flex-shrink: 0;
-
-  border-radius: 10px;
-
-  color: #f97316;
-
-  background: #fff7ed;
-
-  border: 1px solid #fed7aa;
+  margin-top: 2px;
 }
 
 .live-feature strong {
   display: block;
-
-  margin-bottom: 4px;
-
-  color: #171717;
-
-  font-size: 14px;
-
-  font-weight: 700;
+  margin-bottom: 3px;
+  font-size: 16px;
+  font-weight: 750;
+  color: #111827;
 }
 
 .live-feature p {
   margin: 0;
-
-  color: #667085;
-
-  font-size: 12px;
-
-  line-height: 1.6;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #4b5563;
 }
 
-
-/* =========================================================
-   CTA
-========================================================= */
-
-.live-demo-actions {
-  display: flex;
-
-  align-items: center;
-
-  gap: 18px;
-
-  margin-top: 38px;
-}
-
+/* Single CTA */
 .live-demo-btn {
   display: inline-flex;
-
   align-items: center;
-
-  justify-content: center;
-
-  gap: 9px;
-
-  padding: 13px 20px;
-
-  border: none;
-
-  border-radius: 9px;
-
+  gap: 8px;
+  padding: 12px 24px;
+  background: var(--bmo-primary, #ff5900);
+  border: 1px solid var(--bmo-primary, #ff5900);
+  border-radius: 8px;
   color: #ffffff;
-
-  background: #f97316;
-
-  font-size: 13px;
-
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
   font-weight: 700;
-
   cursor: pointer;
-
-  box-shadow:
-    0 8px 20px rgba(249, 115, 22, 0.20);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease,
-    background 0.25s ease;
+  box-shadow: 0 6px 18px rgba(255, 89, 0, 0.22);
+  transition: all 0.2s ease;
 }
 
 .live-demo-btn:hover {
+  background: var(--bmo-primary-hover, #e04e00);
   transform: translateY(-2px);
-
-  background: #ea580c;
-
-  box-shadow:
-    0 12px 28px rgba(249, 115, 22, 0.28);
+  box-shadow: 0 10px 24px rgba(255, 89, 0, 0.3);
 }
-
-.live-demo-btn svg {
-  transition: transform 0.25s ease;
-}
-
-.live-demo-btn:hover svg {
-  transform: translateX(4px);
-}
-
-.live-demo-note {
-  color: #98a2b3;
-
-  font-size: 11px;
-
-  font-weight: 500;
-}
-
 
 /* =========================================================
-   TABLET
+   RESPONSIVE
 ========================================================= */
 
-@media (max-width: 1050px) {
-
+@media (max-width: 991px) {
   .live-demo-container {
     grid-template-columns: 1fr;
-
-    gap: 70px;
+    gap: 50px;
   }
 
   .live-demo-visual {
-    min-height: 620px;
+    order: 2;
   }
 
   .live-demo-content {
-    max-width: 700px;
-
-    margin: 0 auto;
+    order: 1;
+    max-width: 100%;
+    text-align: center;
   }
 
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 650px) {
-
-  .live-demo-section {
-    padding: 80px 0;
+  .live-demo-label {
+    justify-content: center;
   }
 
-  .live-demo-container {
-    width: min(100% - 28px, 560px);
-
-    gap: 55px;
-  }
-
-  .live-demo-visual {
-    min-height: 590px;
-  }
-
-
-  /* Smaller orbit */
-
-  .journey-orbit-one {
-    width: 350px;
-    height: 350px;
-  }
-
-  .journey-orbit-two {
-    width: 275px;
-    height: 275px;
-  }
-
-
-  /* Live badge */
-
-  .journey-live-badge {
-    top: 5px;
-    left: 3px;
-
-    padding: 8px 12px;
-
-    font-size: 9px;
-  }
-
-
-  /* Mobile cover */
-
-  .mobile-journey-cover {
-    width: min(100%, 390px);
-
-    padding: 19px 16px 17px;
-
-    border-radius: 27px;
-  }
-
-
-  /* Header */
-
-  .cover-brand-icon {
-    width: 32px;
-    height: 32px;
-
-    font-size: 14px;
-  }
-
-  .cover-title h3 {
-    font-size: 15px;
-  }
-
-
-  /* Journey */
-
-  .lead-journey {
-    gap: 21px;
-
-    padding-top: 16px;
-  }
-
-  .journey-line {
-    left: 24px;
-
-    top: 45px;
-    bottom: 45px;
-  }
-
-  .journey-step {
-    gap: 14px;
-
-    min-height: 96px;
-  }
-
-  .journey-node {
-    width: 48px;
-    height: 48px;
-  }
-
-  .journey-card {
-    padding: 13px;
-  }
-
-  .journey-card h4 {
-    font-size: 13px;
-  }
-
-
-  /* Floating cards */
-
-  .journey-notification {
-    right: -2px;
-    top: 70px;
-
-    transform: scale(0.82);
-
-    transform-origin: right top;
-  }
-
-  .journey-success-float {
-    left: -2px;
-    bottom: 55px;
-
-    transform: scale(0.82);
-
-    transform-origin: left bottom;
-  }
-
-
-  /* Content */
-
-  .live-demo-content h2 {
-    font-size: clamp(38px, 11vw, 52px);
-
-    letter-spacing: -1.8px;
-  }
-
-  .live-demo-description {
-    font-size: 14px;
-
-    margin-top: 20px;
-  }
-
-  .live-demo-features {
-    gap: 20px;
-  }
-
-  .live-feature p {
-    font-size: 11px;
+  .live-feature {
+    text-align: left;
   }
 
   .live-demo-actions {
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 12px;
+    display: flex;
+    justify-content: center;
   }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 430px) {
-
-  .live-demo-visual {
-    min-height: 555px;
-  }
-
-  .mobile-journey-cover {
-    width: 100%;
-
-    padding: 16px 13px;
-  }
-
-  .cover-header {
-    gap: 10px;
-  }
-
-  .cover-brand strong {
-    font-size: 11px;
-  }
-
-  .cover-title h3 {
-    font-size: 14px;
-  }
-
-  .journey-step {
-    gap: 11px;
-
-    min-height: 90px;
-  }
-
-  .journey-node {
-    width: 43px;
-    height: 43px;
-  }
-
-  .journey-card {
-    padding: 11px;
-  }
-
-  .journey-card h4 {
-    font-size: 12px;
-  }
-
-  .journey-card-bottom > span:first-child {
-    font-size: 8px;
-  }
-
-  .journey-status {
-    display: none;
-  }
-
-  .journey-card-icon {
-    width: 27px;
-    height: 27px;
-  }
-
-  .journey-notification {
-    transform: scale(0.72);
-  }
-
-  .journey-success-float {
-    transform: scale(0.72);
-  }
-
-  .cover-footer-line {
-    display: none;
-  }
-
 }

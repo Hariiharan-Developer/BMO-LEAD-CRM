@@ -1,34 +1,40 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { ArrowRight, X, Menu } from "lucide-react";
 import "./Nav.css";
+
+const navLinks = [
+  { label: "Home",        id: "home" },
+  { label: "Problem",     id: "problem" },
+  { label: "Features",    id: "features" },
+  { label: "How It Works",id: "how-it-works" },
+  { label: "Compare",     id: "difference" },
+  { label: "Who It's For",id: "who-its-for" },
+  { label: "FAQ",         id: "faq" },
+]
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleNavigation = (id: string) => {
     setMenuOpen(false);
-
     setTimeout(() => {
       const section = document.getElementById(id);
-
       if (section) {
-        section.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
+        const navHeight = 76;
+        const elementPosition = section.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
       }
-    }, 100);
+    }, 80);
   };
 
   return (
     <motion.nav
       className="bmo-navbar"
-      initial={{ y: -30, opacity: 0 }}
+      initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{
-        duration: 0.6,
-        ease: "easeOut",
-      }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="navbar-container">
         {/* LOGO */}
@@ -36,51 +42,37 @@ const Navbar = () => {
           type="button"
           className="navbar-brand"
           onClick={() => handleNavigation("home")}
-          aria-label="Go to home"
+          aria-label="BMO Lead Home"
         >
-          <span className="logo-bmo">BMO</span>
-          <span className="logo-leads">LEADS</span>
+          <img src="/icon-2.png" alt="BMO Lead Logo" className="navbar-logo-img" />
+          <div className="navbar-brand-text">
+            <span className="logo-bmo">BMO</span>
+            <span className="logo-lead">LEAD</span>
+          </div>
         </button>
 
         {/* DESKTOP NAVIGATION */}
         <div className="bmo-nav-links">
-          <button type="button" onClick={() => handleNavigation("home")}>
-            Home
-          </button>
-
-          <button type="button" onClick={() => handleNavigation("features")}>
-            Features
-          </button>
-
-          <button type="button" onClick={() => handleNavigation("live-demo")}>
-            Live Showcase
-          </button>
-
-          <button
-            type="button"
-            onClick={() => handleNavigation("how-it-works")}
-          >
-            How It Works
-          </button>
-
-          <button type="button" onClick={() => handleNavigation("security")}>
-            Security
-          </button>
-
-          <button type="button" onClick={() => handleNavigation("faq")}>
-            FAQ
-          </button>
+          {navLinks.map((link) => (
+            <button
+              key={link.id}
+              type="button"
+              onClick={() => handleNavigation(link.id)}
+            >
+              {link.label}
+            </button>
+          ))}
         </div>
 
-        {/* DESKTOP GET STARTED */}
+        {/* GET STARTED CTA */}
         <div className="navbar-action">
           <button
             type="button"
-            className="navbar-start-btn"
-            onClick={() => handleNavigation("started")}
+            className="navbar-explore-btn"
+            onClick={() => handleNavigation("cta")}
           >
             <span>Get Started</span>
-            <span className="arrow">→</span>
+            <ArrowRight size={15} />
           </button>
         </div>
 
@@ -89,15 +81,11 @@ const Navbar = () => {
           type="button"
           className={`hamburger-btn ${menuOpen ? "active" : ""}`}
           onClick={() => setMenuOpen((prev) => !prev)}
-          aria-label={
-            menuOpen ? "Close navigation menu" : "Open navigation menu"
-          }
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
           aria-controls="mobile-navigation"
         >
-          <span />
-          <span />
-          <span />
+          {menuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
 
@@ -106,51 +94,27 @@ const Navbar = () => {
         id="mobile-navigation"
         className="mobile-menu"
         initial={false}
-        animate={{
-          height: menuOpen ? "auto" : 0,
-          opacity: menuOpen ? 1 : 0,
-        }}
-        transition={{
-          duration: 0.25,
-          ease: "easeOut",
-        }}
+        animate={{ height: menuOpen ? "auto" : 0, opacity: menuOpen ? 1 : 0 }}
+        transition={{ duration: 0.25, ease: "easeOut" }}
         aria-hidden={!menuOpen}
       >
         <div className="mobile-menu-inner">
-          <button type="button" onClick={() => handleNavigation("home")}>
-            Home
-          </button>
-
-          <button type="button" onClick={() => handleNavigation("features")}>
-            Features
-          </button>
-
-          <button type="button" onClick={() => handleNavigation("live-demo")}>
-            Live Showcase
-          </button>
-
+          {navLinks.map((link) => (
+            <button
+              key={link.id}
+              type="button"
+              onClick={() => handleNavigation(link.id)}
+            >
+              {link.label}
+            </button>
+          ))}
           <button
             type="button"
-            onClick={() => handleNavigation("how-it-works")}
-          >
-            How It Works
-          </button>
-
-          <button type="button" onClick={() => handleNavigation("security")}>
-            Security
-          </button>
-
-          <button type="button" onClick={() => handleNavigation("faq")}>
-            FAQ
-          </button>
-
-          <button
-            type="button"
-            className="mobile-start-btn"
-            onClick={() => handleNavigation("started")}
+            className="mobile-explore-btn"
+            onClick={() => handleNavigation("cta")}
           >
             <span>Get Started</span>
-            <span className="arrow">→</span>
+            <ArrowRight size={15} />
           </button>
         </div>
       </motion.div>

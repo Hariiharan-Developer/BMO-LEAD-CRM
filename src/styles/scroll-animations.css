@@ -1,0 +1,69 @@
+/* =================================================================
+   BMO LEAD — SCROLL ANIMATION SYSTEM
+   Adds fade-in-up animation when any section enters the viewport.
+   Uses CSS keyframes triggered by Intersection Observer data attribute.
+================================================================= */
+
+/* Section entrance animation */
+@keyframes sectionFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Applied by JS via IntersectionObserver (see SectionObserver) */
+.section-visible {
+  animation: sectionFadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Staggered child animations */
+@keyframes childFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section-visible .ta-card:nth-child(1) { animation: childFadeUp 0.5s 0.05s cubic-bezier(0.16,1,0.3,1) both; }
+.section-visible .ta-card:nth-child(2) { animation: childFadeUp 0.5s 0.12s cubic-bezier(0.16,1,0.3,1) both; }
+.section-visible .ta-card:nth-child(3) { animation: childFadeUp 0.5s 0.19s cubic-bezier(0.16,1,0.3,1) both; }
+.section-visible .ta-card:nth-child(4) { animation: childFadeUp 0.5s 0.26s cubic-bezier(0.16,1,0.3,1) both; }
+.section-visible .ta-card:nth-child(5) { animation: childFadeUp 0.5s 0.33s cubic-bezier(0.16,1,0.3,1) both; }
+.section-visible .ta-card:nth-child(6) { animation: childFadeUp 0.5s 0.40s cubic-bezier(0.16,1,0.3,1) both; }
+.section-visible .ta-card:nth-child(7) { animation: childFadeUp 0.5s 0.47s cubic-bezier(0.16,1,0.3,1) both; }
+
+.section-visible .diff-row:nth-child(2) { animation: childFadeUp 0.45s 0.08s cubic-bezier(0.16,1,0.3,1) both; }
+.section-visible .diff-row:nth-child(3) { animation: childFadeUp 0.45s 0.15s cubic-bezier(0.16,1,0.3,1) both; }
+.section-visible .diff-row:nth-child(4) { animation: childFadeUp 0.45s 0.22s cubic-bezier(0.16,1,0.3,1) both; }
+.section-visible .diff-row:nth-child(5) { animation: childFadeUp 0.45s 0.29s cubic-bezier(0.16,1,0.3,1) both; }
+.section-visible .diff-row:nth-child(6) { animation: childFadeUp 0.45s 0.36s cubic-bezier(0.16,1,0.3,1) both; }
+.section-visible .diff-row:nth-child(7) { animation: childFadeUp 0.45s 0.43s cubic-bezier(0.16,1,0.3,1) both; }
+.section-visible .diff-row:nth-child(8) { animation: childFadeUp 0.45s 0.50s cubic-bezier(0.16,1,0.3,1) both; }
+
+/* FAQ item stagger */
+.section-visible .faq-item:nth-child(1) { animation: childFadeUp 0.45s 0.05s cubic-bezier(0.16,1,0.3,1) both; }
+.section-visible .faq-item:nth-child(2) { animation: childFadeUp 0.45s 0.10s cubic-bezier(0.16,1,0.3,1) both; }
+.section-visible .faq-item:nth-child(3) { animation: childFadeUp 0.45s 0.15s cubic-bezier(0.16,1,0.3,1) both; }
+.section-visible .faq-item:nth-child(4) { animation: childFadeUp 0.45s 0.20s cubic-bezier(0.16,1,0.3,1) both; }
+.section-visible .faq-item:nth-child(5) { animation: childFadeUp 0.45s 0.25s cubic-bezier(0.16,1,0.3,1) both; }
+.section-visible .faq-item:nth-child(6) { animation: childFadeUp 0.45s 0.30s cubic-bezier(0.16,1,0.3,1) both; }
+.section-visible .faq-item:nth-child(7) { animation: childFadeUp 0.45s 0.35s cubic-bezier(0.16,1,0.3,1) both; }
+.section-visible .faq-item:nth-child(8) { animation: childFadeUp 0.45s 0.40s cubic-bezier(0.16,1,0.3,1) both; }
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .section-visible,
+  .section-visible * {
+    animation: none !important;
+    transition: none !important;
+  }
+}

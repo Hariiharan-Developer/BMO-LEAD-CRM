@@ -1,598 +1,180 @@
 /* =========================================================
-   BMO SOFTWARE FOOTER
-   Orange: #e94f00
+   BMO LEAD - MINIMAL COMPACT FOOTER
+   Font: Helvetica, Arial, sans-serif
 ========================================================= */
 
-.bmo-footer {
+.bmo-minimal-footer {
   width: 100%;
-
-  background: #111111;
-
-  color: #ffffff;
-
-  border-top: 1px solid #252525;
-
+  background-color: #fafbfc;
+  border-top: 1px solid #e5e7eb;
+  padding: 48px 0 32px;
+  font-family: Helvetica, Arial, sans-serif;
+  color: #111827;
   box-sizing: border-box;
 }
 
-/* =========================================================
-   CONTAINER
-========================================================= */
-
-.footer-container {
-  width: min(1150px, calc(100% - 40px));
-
+.footer-mini-container {
+  width: min(1140px, calc(100% - 48px));
   margin: 0 auto;
 }
 
 /* =========================================================
-   PRODUCT BANNER
+   TOP ROW
 ========================================================= */
 
-.footer-product-banner {
+.footer-top-row {
   display: flex;
-
-  align-items: center;
-
+  align-items: flex-start;
   justify-content: space-between;
-
-  gap: 30px;
-
-  padding: 25px 28px;
-
-  margin: 35px 0 45px;
-
-  background: #191919;
-
-  border: 1px solid #292929;
-
-  border-radius: 12px;
-
-  cursor: pointer;
-
-  box-sizing: border-box;
-
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    background 0.25s ease,
-    box-shadow 0.25s ease;
+  gap: 40px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid #f1f3f5;
 }
 
-.footer-product-banner:hover {
-  transform: translateY(-2px);
-
-  background: #1c1c1c;
-
-  border-color: rgba(233, 79, 0, 0.55);
-
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+.footer-brand-side {
+  max-width: 440px;
 }
 
-/* =========================================================
-   BANNER TEXT
-========================================================= */
-
-.product-banner-text {
-  min-width: 0;
-}
-
-.product-banner-text span {
-  display: block;
-
-  margin-bottom: 7px;
-
-  color: #e94f00;
-
-  font-size: 10px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.1em;
-
-  text-transform: uppercase;
-}
-
-.product-banner-text h3 {
-  margin: 0;
-
-  color: #ffffff;
-
-  font-size: 20px;
-
-  font-weight: 750;
-
-  line-height: 1.25;
-
-  letter-spacing: -0.4px;
-}
-
-.product-banner-text p {
-  margin: 7px 0 0;
-
-  color: #777777;
-
-  font-size: 12px;
-
-  line-height: 1.5;
-}
-
-/* =========================================================
-   BANNER BUTTON
-========================================================= */
-
-.product-banner-button {
+.footer-mini-logo {
   display: inline-flex;
-
   align-items: center;
-
-  justify-content: center;
-
-  gap: 9px;
-
-  flex-shrink: 0;
-
-  min-width: 125px;
-
-  padding: 11px 17px;
-
-  color: #ffffff;
-
-  background: #e94f00;
-
-  border: 1px solid #e94f00;
-
-  border-radius: 8px;
-
-  font-size: 11px;
-
-  font-weight: 700;
-
-  cursor: pointer;
-
-  transition:
-    background 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.product-banner-button span {
-  color: #ffffff;
-
-  font-size: 15px;
-
-  transition: transform 0.25s ease;
-}
-
-.footer-product-banner:hover .product-banner-button {
-  background: #d94700;
-
-  box-shadow: 0 8px 20px rgba(233, 79, 0, 0.2);
-}
-
-.footer-product-banner:hover .product-banner-button span {
-  transform: translateX(3px);
-}
-
-/* =========================================================
-   MAIN FOOTER CONTENT
-========================================================= */
-
-.footer-content {
-  display: grid;
-
-  grid-template-columns: 1fr 1.4fr;
-
-  align-items: start;
-
-  gap: 70px;
-
-  padding-bottom: 42px;
-}
-
-/* =========================================================
-   ABOUT BMO SOFTWARE
-========================================================= */
-
-.footer-about {
-  max-width: 500px;
-}
-
-.footer-logo {
-  display: inline-flex;
-
-  align-items: center;
-
+  gap: 10px;
   padding: 0;
-
-  margin: 0 0 17px;
-
-  color: #ffffff;
-
+  margin: 0 0 12px;
   background: transparent;
-
   border: none;
-
-  font-size: 24px;
-
-  font-weight: 900;
-
-  letter-spacing: -1px;
-
   cursor: pointer;
-
-  transition: color 0.25s ease;
+  text-decoration: none;
 }
 
-.footer-logo span {
-  color: #e94f00;
-
-  transition: color 0.25s ease;
+.footer-logo-img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  border-radius: 50%;
 }
 
-.footer-logo:hover {
-  color: #e94f00;
+.brand-text {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 850;
+  letter-spacing: -0.6px;
+  color: #111827;
 }
 
-.footer-logo:hover span {
-  color: #ffffff;
+.brand-orange {
+  color: var(--bmo-primary, #ff5900);
 }
 
-.footer-about h3 {
-  margin: 0 0 11px;
-
-  color: #ffffff;
-
-  font-size: 13px;
-
-  font-weight: 700;
-}
-
-.footer-about p {
-  max-width: 470px;
-
+.footer-tagline {
   margin: 0;
-
-  color: #707070;
-
-  font-size: 12px;
-
-  line-height: 1.75;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: #6b7280;
 }
 
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
-.footer-navigation {
-  min-width: 0;
-
-  padding-top: 4px;
+/* Simple Navigation Links */
+.footer-nav-simple {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding-top: 0;
 }
 
-.footer-navigation h3 {
-  margin: 0 0 17px;
-
-  color: #ffffff;
-
-  font-size: 11px;
-
-  font-weight: 700;
-
-  letter-spacing: 0.12em;
-
+.footer-nav-heading {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: #111827;
+  font-family: Helvetica, Arial, sans-serif;
+  margin-bottom: 2px;
 }
 
-/* =========================================================
-   NAV LINKS
-   SINGLE ROW
-========================================================= */
-
-.footer-nav-links {
+.footer-info-col {
   display: flex;
-
-  flex-direction: row;
-
-  align-items: center;
-
-  gap: 25px;
-
-  width: 100%;
-
-  overflow-x: auto;
-
-  padding-bottom: 6px;
-
-  scrollbar-width: none;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.footer-nav-links::-webkit-scrollbar {
-  display: none;
+.footer-info-col span:first-child {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #111827;
+  margin-bottom: 2px;
 }
 
-/* =========================================================
-   NAV LINK
-========================================================= */
+.footer-info-col span:not(:first-child) {
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-family: Helvetica, Arial, sans-serif;
+}
 
-.footer-nav-links button {
-  position: relative;
-
-  flex-shrink: 0;
-
-  padding: 5px 0;
-
-  color: #777777;
-
+.footer-nav-simple button {
+  padding: 0;
   background: transparent;
-
   border: none;
-
-  font-size: 12px;
-
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 14px;
   font-weight: 600;
-
-  white-space: nowrap;
-
+  color: #4b5563;
   cursor: pointer;
+  transition: color 0.2s ease;
+}
 
-  transition:
-    color 0.25s ease,
-    transform 0.25s ease;
+.footer-nav-simple button:hover {
+  color: var(--bmo-primary, #ff5900);
 }
 
 /* =========================================================
-   NAV LINK HOVER LINE
+   BOTTOM ROW
 ========================================================= */
 
-.footer-nav-links button::after {
-  content: "";
-
-  position: absolute;
-
-  left: 50%;
-
-  bottom: 0;
-
-  width: 0;
-
-  height: 2px;
-
-  background: #e94f00;
-
-  border-radius: 20px;
-
-  transform: translateX(-50%);
-
-  transition: width 0.25s ease;
-}
-
-.footer-nav-links button:hover {
-  color: #ffffff;
-
-  transform: translateY(-2px);
-}
-
-.footer-nav-links button:hover::after {
-  width: 100%;
-}
-
-/* =========================================================
-   FOCUS
-========================================================= */
-
-.footer-nav-links button:focus-visible {
-  outline: none;
-
-  color: #e94f00;
-}
-
-.footer-nav-links button:focus-visible::after {
-  width: 100%;
-}
-
-/* =========================================================
-   FOOTER BOTTOM
-========================================================= */
-
-.footer-bottom {
+.footer-bottom-row {
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
+  padding-top: 24px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  color: #9ca3af;
+  flex-wrap: wrap;
+  gap: 14px;
+}
 
-  min-height: 60px;
+.footer-copyright {
+  font-weight: 500;
+  color: #6b7280;
+}
 
-  padding: 15px 0;
-
-  border-top: 1px solid #292929;
-
-  color: #505050;
-
-  font-size: 10px;
-
-  box-sizing: border-box;
+.footer-motto {
+  font-weight: 700;
+  color: var(--bmo-primary, #ff5900);
+  letter-spacing: 0.3px;
 }
 
 /* =========================================================
-   TABLET
+   RESPONSIVE DESIGN
 ========================================================= */
 
-@media (max-width: 900px) {
-  .footer-content {
-    grid-template-columns: 1fr;
-
-    gap: 35px;
-  }
-
-  .footer-about {
-    max-width: 650px;
-  }
-
-  .footer-navigation {
-    padding-top: 0;
-  }
-}
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 650px) {
-  .footer-container {
-    width: calc(100% - 30px);
-  }
-
-  /* =====================================
-     PRODUCT BANNER
-  ===================================== */
-
-  .footer-product-banner {
+@media (max-width: 768px) {
+  .footer-top-row {
     flex-direction: column;
+    gap: 24px;
+    padding-bottom: 28px;
+  }
 
-    align-items: flex-start;
-
+  .footer-nav-simple {
     gap: 20px;
-
-    padding: 22px;
-
-    margin: 25px 0 35px;
   }
 
-  .product-banner-text h3 {
-    font-size: 18px;
-  }
-
-  .product-banner-text p {
-    font-size: 11px;
-  }
-
-  .product-banner-button {
-    width: 100%;
-  }
-
-  /* =====================================
-     CONTENT
-  ===================================== */
-
-  .footer-content {
-    gap: 32px;
-
-    padding-bottom: 35px;
-  }
-
-  .footer-about {
-    max-width: 100%;
-  }
-
-  .footer-about p {
-    max-width: 100%;
-
-    font-size: 11px;
-  }
-
-  /* =====================================
-     NAVIGATION
-  ===================================== */
-
-  .footer-navigation {
-    width: 100%;
-  }
-
-  .footer-nav-links {
-    width: 100%;
-
-    gap: 22px;
-
-    overflow-x: auto;
-
-    padding-bottom: 8px;
-  }
-
-  .footer-nav-links button {
-    font-size: 11px;
-  }
-
-  /* =====================================
-     BOTTOM
-  ===================================== */
-
-  .footer-bottom {
-    min-height: auto;
-
-    padding: 17px 0;
-
-    font-size: 9px;
-  }
-}
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 400px) {
-  .footer-container {
-    width: calc(100% - 28px);
-  }
-
-  .footer-product-banner {
-    padding: 19px;
-  }
-
-  .product-banner-text h3 {
-    font-size: 17px;
-  }
-
-  .footer-logo {
-    font-size: 22px;
-  }
-
-  .footer-about h3 {
-    font-size: 12px;
-  }
-
-  .footer-about p {
-    font-size: 11px;
-
-    line-height: 1.7;
-  }
-
-  .footer-nav-links {
-    gap: 19px;
-  }
-
-  .footer-nav-links button {
-    font-size: 10px;
-  }
-
-  .footer-bottom {
+  .footer-bottom-row {
     flex-direction: column;
-
     align-items: flex-start;
-
-    gap: 7px;
-  }
-}
-
-/* =========================================================
-   EXTRA SMALL MOBILE
-========================================================= */
-
-@media (max-width: 340px) {
-  .footer-container {
-    width: calc(100% - 24px);
-  }
-
-  .footer-product-banner {
-    padding: 17px;
-  }
-
-  .product-banner-text h3 {
-    font-size: 16px;
-  }
-
-  .footer-nav-links {
-    gap: 17px;
+    gap: 8px;
   }
 }

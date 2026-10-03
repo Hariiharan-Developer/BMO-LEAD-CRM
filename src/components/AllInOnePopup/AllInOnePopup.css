@@ -1,0 +1,642 @@
+/* ==========================================================
+   BMO LEAD - ALL IN ONE WEBSITE POPUP MODAL
+   Designed with BMO Website Theme: Clean White, Brand Orange (#ff5900) & Slate
+========================================================== */
+
+/* Fullscreen Overlay */
+.aio-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+/* Crisp Backdrop */
+.aio-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.48);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Modal Dialog */
+.aio-modal-dialog {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 760px;
+  margin: auto;
+}
+
+/* Clean Website Card (Pure White with Brand Accent) */
+.aio-modal-content {
+  position: relative;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 22px;
+  box-shadow: 
+    0 25px 60px -15px rgba(15, 23, 42, 0.22),
+    0 0 30px rgba(255, 89, 0, 0.08);
+  padding: 24px 28px;
+  color: #111827;
+  overflow: hidden;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* Close Button */
+.aio-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 20;
+}
+
+.aio-modal-close:hover {
+  background: #fee2e2;
+  color: #ef4444;
+  border-color: #fca5a5;
+  transform: rotate(90deg);
+}
+
+/* Top Badge with Logo */
+.aio-badge-wrap {
+  margin-bottom: 10px;
+}
+
+.aio-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 89, 0, 0.08);
+  border: 1.5px solid #ff5900;
+  padding: 4px 12px 4px 6px;
+  border-radius: 100px;
+  box-shadow: 0 2px 8px rgba(255, 89, 0, 0.15);
+}
+
+.aio-badge-logo {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: contain;
+  box-shadow: 0 1px 4px rgba(255, 89, 0, 0.25);
+}
+
+.aio-badge-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 0.82rem;
+  font-weight: 850;
+  letter-spacing: -0.3px;
+}
+
+.badge-bmo {
+  color: #ff5900;
+}
+
+.badge-lead {
+  color: #111827;
+}
+
+.aio-badge-divider {
+  color: #d1d5db;
+  font-weight: 300;
+  font-size: 0.8rem;
+  margin: 0 2px;
+}
+
+.aio-badge-subtitle {
+  color: #ff5900;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* Header Text */
+.aio-header {
+  margin-bottom: 18px;
+}
+
+.aio-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 6px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+/* HIGH-IMPACT "ALL IN ONE" HIGHLIGHTING (Website Theme) */
+.aio-highlight {
+  display: inline-block;
+  background: linear-gradient(135deg, rgba(255, 89, 0, 0.12), rgba(255, 120, 46, 0.2));
+  color: #ff5900;
+  border: 1.5px solid rgba(255, 89, 0, 0.45);
+  padding: 1px 10px;
+  margin: 0 3px;
+  border-radius: 8px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  box-shadow: 0 2px 10px rgba(255, 89, 0, 0.15);
+}
+
+.aio-desc {
+  font-size: 0.88rem;
+  color: #4b5563;
+  margin: 0;
+  line-height: 1.45;
+}
+
+/* ==========================================================
+   BODY GRID: CHARACTER ON LEFT, FEATURES ON RIGHT
+========================================================== */
+.aio-body-grid {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 20px;
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #f1f5f9;
+  border-radius: 18px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+}
+
+/* Left: Character Stage */
+.aio-character-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 220px;
+}
+
+.char-glow-circle {
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 89, 0, 0.15) 0%, rgba(255, 89, 0, 0.03) 70%, transparent 100%);
+  z-index: 1;
+}
+
+.aio-hero-image {
+  max-width: 100%;
+  max-height: 210px;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.12));
+}
+
+/* Floating Clean Chips */
+.char-float-chip {
+  position: absolute;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  border-radius: 100px;
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #1f2937;
+  z-index: 5;
+  white-space: nowrap;
+}
+
+.chip-top {
+  top: 15px;
+  left: -10px;
+}
+
+.chip-bottom {
+  bottom: 15px;
+  right: -10px;
+}
+
+.chip-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.chip-alarm {
+  background: #f59e0b;
+  box-shadow: 0 0 6px #f59e0b;
+}
+
+.chip-sync {
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+
+/* Right: Features Panel */
+.aio-features-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 6-Item Modern Grid: Small Rounded Circle Icon with Text Below */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.feature-app-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 8px 4px 6px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+  outline: none;
+}
+
+.feature-app-box:hover {
+  border-color: #cbd5e1;
+  background: #fafafa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.feature-app-box.selected {
+  border-color: #ff5900;
+  background: #fffaf5;
+  box-shadow: 0 4px 12px rgba(255, 89, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Small Rounded Circle Icon */
+.feature-ico-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid transparent;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  overflow: hidden;
+  padding: 4px;
+}
+
+.feat-app-img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+}
+
+.feature-app-box:hover .feature-ico-circle {
+  transform: scale(1.08);
+}
+
+.feature-app-box.selected .feature-ico-circle {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 3px rgba(255, 89, 0, 0.15);
+}
+
+/* Simple Crisp Text Below Icon */
+.feature-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #4b5563;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.feature-app-box.selected .feature-label {
+  color: #ff5900;
+  font-weight: 800;
+}
+
+/* Feature Preview Bar */
+.feature-preview-bar {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-left: 3px solid #ff5900;
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.preview-top {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.preview-name {
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.preview-desc {
+  font-size: 0.76rem;
+  color: #4b5563;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ==========================================================
+   FOOTER ACTIONS
+========================================================== */
+.aio-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 2px;
+}
+
+.aio-footer-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+.note-check {
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+.aio-footer-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-modal-secondary {
+  padding: 8px 16px;
+  border-radius: 10px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  color: #4b5563;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-modal-secondary:hover {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.btn-modal-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 18px;
+  border-radius: 10px;
+  background: #ff5900;
+  border: none;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255, 89, 0, 0.3);
+  transition: all 0.2s ease;
+}
+
+.btn-modal-primary:hover {
+  background: #e04e00;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(255, 89, 0, 0.4);
+}
+
+/* ==========================================================
+   FLOATING LAUNCHER BUTTON (WEBSITE COMPLIANT)
+========================================================== */
+.aio-reopen-trigger {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 999;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1.5px solid #ff5900; /* Matching brand orange */
+  padding: 8px 18px;
+  border-radius: 100px;
+  color: #ff5900;
+  font-size: 0.82rem;
+  font-weight: 800;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08), 0 0 14px rgba(255, 89, 0, 0.18);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.aio-reopen-trigger:hover {
+  background: #ff5900;
+  border-color: #ff5900;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(255, 89, 0, 0.35);
+}
+
+.aio-trigger-bmo-logo {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+/* ==========================================================
+   RESPONSIVENESS (MOBILE & TABLETS)
+========================================================== */
+/* ==========================================================
+   RESPONSIVENESS (MOBILE & TABLETS)
+========================================================== */
+@media (max-width: 680px) {
+  .aio-modal-dialog {
+    max-width: 94%;
+    max-height: 94vh;
+  }
+
+  .aio-modal-content {
+    padding: 16px 14px;
+    border-radius: 18px;
+    max-height: 92vh;
+    overflow-y: auto;
+  }
+
+  .aio-badge-wrap {
+    margin-bottom: 6px;
+  }
+
+  .aio-badge {
+    padding: 3px 10px 3px 5px;
+    font-size: 0.68rem;
+  }
+
+  .aio-badge-logo {
+    width: 18px;
+    height: 18px;
+  }
+
+  .aio-badge-brand {
+    font-size: 0.75rem;
+  }
+
+  .aio-header {
+    margin-bottom: 12px;
+  }
+
+  .aio-title {
+    font-size: 1.15rem;
+    line-height: 1.3;
+  }
+
+  .aio-highlight {
+    font-size: 0.98rem;
+    padding: 1px 6px;
+  }
+
+  .aio-desc {
+    font-size: 0.76rem;
+    line-height: 1.35;
+  }
+
+  .aio-body-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 8px 10px;
+    margin-bottom: 12px;
+  }
+
+  /* Compact Character Stage on Mobile */
+  .aio-character-stage {
+    height: 100px;
+  }
+
+  .char-glow-circle {
+    width: 90px;
+    height: 90px;
+  }
+
+  .aio-hero-image {
+    max-height: 95px;
+  }
+
+  .char-float-chip {
+    font-size: 0.58rem;
+    padding: 2px 7px;
+    gap: 4px;
+  }
+
+  .chip-top {
+    left: 4px;
+    top: 2px;
+  }
+
+  .chip-bottom {
+    right: 4px;
+    bottom: 2px;
+  }
+
+  /* 3x2 Grid on Mobile with Small Rounded Icons and Text Below */
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+  }
+
+  .feature-app-box {
+    padding: 6px 2px 5px;
+    gap: 4px;
+    border-radius: 10px;
+  }
+
+  .feature-ico-circle {
+    width: 32px;
+    height: 32px;
+  }
+
+  .feature-label {
+    font-size: 0.62rem;
+    letter-spacing: -0.2px;
+  }
+
+  /* Compact Preview Bar */
+  .feature-preview-bar {
+    padding: 6px 10px;
+    margin-top: 4px;
+  }
+
+  .preview-name {
+    font-size: 0.72rem;
+  }
+
+  .preview-desc {
+    font-size: 0.68rem;
+    line-height: 1.3;
+  }
+
+  /* Clean Footer */
+  .aio-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .aio-footer-note {
+    font-size: 0.7rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .aio-footer-buttons {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+  }
+
+  .btn-modal-secondary,
+  .btn-modal-primary {
+    flex: 1;
+    justify-content: center;
+    padding: 8px 12px;
+    font-size: 0.78rem;
+  }
+
+  .aio-reopen-trigger {
+    bottom: 16px;
+    right: 16px;
+    padding: 7px 13px;
+    font-size: 0.74rem;
+  }
+}

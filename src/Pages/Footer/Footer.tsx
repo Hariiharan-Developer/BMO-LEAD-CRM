@@ -1,141 +1,78 @@
-import { motion } from "framer-motion";
+import React from "react";
 import "./Footer.css";
 
-const Footer = () => {
+const footerLinks = [
+  { label: "Home",         id: "home" },
+  { label: "Problem",      id: "problem" },
+  { label: "Features",     id: "features" },
+  { label: "How It Works", id: "how-it-works" },
+  { label: "Compare",      id: "difference" },
+  { label: "Who It's For", id: "who-its-for" },
+  { label: "FAQ",          id: "faq" },
+]
+
+const Footer: React.FC = () => {
   const handleNavigation = (id: string) => {
     const section = document.getElementById(id);
-
     if (section) {
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
-  const handleProductRedirect = () => {
-    window.location.href = "https://your-product-url.com";
-  };
-
   return (
-    <footer className="bmo-footer">
-      <div className="footer-container">
-        {/* =================================================
-            PRODUCT BANNER
-        ================================================= */}
-
-        <motion.div
-          className="footer-product-banner"
-          onClick={handleProductRedirect}
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="product-banner-text">
-            <span>BMO Leads</span>
-
-            <h3>Take control of your leads.</h3>
-
-            <p>Start managing your leads with BMO Leads.</p>
-          </div>
-
-          <button type="button" className="product-banner-button">
-            Get Started
-            <span>→</span>
-          </button>
-        </motion.div>
-
-        {/* =================================================
-            ABOUT + NAVLINKS
-        ================================================= */}
-
-        <motion.div
-          className="footer-content"
-          initial={{ opacity: 0, y: 15 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{
-            duration: 0.5,
-            delay: 0.1,
-          }}
-        >
-          {/* =================================================
-              ABOUT BMO SOFTWARE
-          ================================================= */}
-
-          <div className="footer-about">
+    <footer className="bmo-minimal-footer">
+      <div className="footer-mini-container">
+        {/* Top row */}
+        <div className="footer-top-row">
+          {/* Brand */}
+          <div className="footer-brand-side">
             <button
               type="button"
-              className="footer-logo"
+              className="footer-mini-logo"
               onClick={() => handleNavigation("home")}
+              aria-label="BMO Lead Home"
             >
-              <span>BMO</span> Leads
+              <img src="/icon-2.png" alt="BMO Lead Logo" className="footer-logo-img" />
+              <span className="brand-text">
+                <span className="brand-orange">BMO</span> LEAD
+              </span>
             </button>
-
-            {/* <h3>About BMO Software</h3> */}
-
-            <p>
-              BMO Software helps businesses manage, track, and convert leads
-              through a simple and efficient lead management platform.
+            <p className="footer-tagline">
+              BMO Lead helps businesses organize their customer enquiries and
+              follow-ups in one place. Replace Excel, notebooks and missed calls.
             </p>
           </div>
 
-          {/* =================================================
-              NAVLINKS
-          ================================================= */}
-
-          <div className="footer-navigation">
-            <h3>NavLinks</h3>
-
-            <nav className="footer-nav-links">
-              <button type="button" onClick={() => handleNavigation("home")}>
-                Home
-              </button>
-
+          {/* Navigation links */}
+          <nav className="footer-nav-simple">
+            <span className="footer-nav-heading">Navigate</span>
+            {footerLinks.map((link) => (
               <button
+                key={link.id}
                 type="button"
-                onClick={() => handleNavigation("features")}
+                onClick={() => handleNavigation(link.id)}
               >
-                Features
+                {link.label}
               </button>
+            ))}
+          </nav>
 
-              <button
-                type="button"
-                onClick={() => handleNavigation("live-demo")}
-              >
-                Live Showcase
-              </button>
-
-              <button
-                type="button"
-                onClick={() => handleNavigation("how-it-works")}
-              >
-                How It Works
-              </button>
-
-              <button
-                type="button"
-                onClick={() => handleNavigation("security")}
-              >
-                Security
-              </button>
-
-              <button type="button" onClick={() => handleNavigation("faq")}>
-                FAQ
-              </button>
-            </nav>
+          {/* Quick info */}
+          <div className="footer-info-col">
+            <span className="footer-nav-heading">Platform</span>
+            <span>Lead Management</span>
+            <span>Callback Tracking</span>
+            <span>Follow-up Reminders</span>
+            <span>Team Dashboard</span>
+            <span>Lead Status & History</span>
           </div>
-        </motion.div>
+        </div>
 
-        {/* =================================================
-            FOOTER BOTTOM
-        ================================================= */}
-
-        <div className="footer-bottom">
-          <span>© {new Date().getFullYear()} BMO Software</span>
-
-          <span>BMO Leads</span>
+        {/* Bottom line */}
+        <div className="footer-bottom-row">
+          <span className="footer-copyright">
+            © 2026 BMO Lead. All rights reserved.
+          </span>
         </div>
       </div>
     </footer>

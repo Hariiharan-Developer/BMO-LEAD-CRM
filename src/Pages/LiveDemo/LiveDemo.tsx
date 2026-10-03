@@ -4,531 +4,306 @@ import {
   CalendarClock,
   CheckCircle2,
   Phone,
-  TrendingUp,
   UserPlus,
-  Zap,
+  Bell,
+  Target,
+  BarChart2,
+  Clock,
 } from 'lucide-react'
 import './LiveDemo.css'
 
 const LiveDemo = () => {
+  const handleExplore = () => {
+    const section = document.getElementById('how-it-works')
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   return (
     <section id="live-demo" className="live-demo-section">
       <div className="live-demo-container">
-
         {/* =====================================================
-            LEFT - MOBILE STYLE LEAD JOURNEY
+            LEFT - LEAD JOURNEY TIMELINE VISUAL
         ====================================================== */}
         <motion.div
           className="live-demo-visual"
-          initial={{ opacity: 0, x: -60 }}
+          initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
         >
-          {/* Background glow */}
+          {/* Subtle Background Orbit */}
           <div className="journey-orbit journey-orbit-one" />
-          <div className="journey-orbit journey-orbit-two" />
 
-          {/* Floating live badge */}
+          {/* Floating Live Badge */}
           <motion.div
             className="journey-live-badge"
-            animate={{ y: [0, -6, 0] }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          >
-            <span className="journey-live-dot" />
-            LIVE JOURNEY
-          </motion.div>
-
-          {/* =================================================
-              MOBILE COVER
-          ================================================== */}
-          <motion.div
-            className="mobile-journey-cover"
-            animate={{
-              y: [0, -6, 0],
-            }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          >
-            {/* Decorative border */}
-            <div className="cover-border-glow" />
-
-            {/* Top Header */}
-            <div className="cover-header">
-              <div className="cover-brand">
-                <div className="cover-brand-icon">
-                  B
-                </div>
-
-                <div>
-                  <span>BMO LEADS</span>
-                  <strong>Sales Journey</strong>
-                </div>
-              </div>
-
-              <div className="cover-menu">
-                <span />
-                <span />
-                <span />
-              </div>
-            </div>
-
-            {/* Small divider */}
-            <div className="cover-divider" />
-
-            {/* Journey title */}
-            <div className="cover-title">
-              <div>
-                <span>LIVE PIPELINE</span>
-                <h3>Lead Progress</h3>
-              </div>
-
-              <div className="cover-live-status">
-                <span />
-                LIVE
-              </div>
-            </div>
-
-            {/* =================================================
-                LEAD JOURNEY
-            ================================================== */}
-            <div className="lead-journey">
-
-              {/* Connection line */}
-              <div className="journey-line">
-
-                <motion.span
-                  className="journey-line-progress"
-                  initial={{ height: '0%' }}
-                  whileInView={{ height: '100%' }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 2.2,
-                    delay: 0.4,
-                    ease: 'easeInOut',
-                  }}
-                />
-
-                <motion.span
-                  className="journey-line-dot"
-                  animate={{
-                    top: ['0%', '100%'],
-                  }}
-                  transition={{
-                    duration: 2.5,
-                    repeat: Infinity,
-                    ease: 'easeInOut',
-                  }}
-                />
-
-              </div>
-
-
-              {/* =================================================
-                  NEW LEAD
-              ================================================== */}
-              <motion.div
-                className="journey-step"
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.2,
-                }}
-              >
-                <div className="journey-node">
-                  <UserPlus size={18} />
-                </div>
-
-                <div className="journey-card">
-
-                  <div className="journey-card-top">
-
-                    <div>
-                      <span className="journey-card-label">
-                        NEW LEAD
-                      </span>
-
-                      <h4>
-                        Rajesh Enterprises
-                      </h4>
-                    </div>
-
-                    <div className="journey-card-icon">
-                      <UserPlus size={15} />
-                    </div>
-
-                  </div>
-
-                  <div className="journey-card-bottom">
-
-                    <span>
-                      Just added
-                    </span>
-
-                    <span className="journey-status new-status">
-                      New
-                    </span>
-
-                  </div>
-
-                </div>
-              </motion.div>
-
-
-              {/* =================================================
-                  FOLLOW UP
-              ================================================== */}
-              <motion.div
-                className="journey-step"
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 0.6,
-                  delay: 0.7,
-                }}
-              >
-
-                <div className="journey-node follow-node">
-                  <Phone size={17} />
-                </div>
-
-                <div className="journey-card">
-
-                  <div className="journey-card-top">
-
-                    <div>
-                      <span className="journey-card-label">
-                        FOLLOW-UP
-                      </span>
-
-                      <h4>
-                        Call scheduled
-                      </h4>
-                    </div>
-
-                    <div className="journey-card-icon">
-                      <CalendarClock size={15} />
-                    </div>
-
-                  </div>
-
-                  <div className="journey-card-bottom">
-
-                    <span>
-                      Tomorrow · 10:30 AM
-                    </span>
-
-                    <span className="journey-status follow-status">
-                      Scheduled
-                    </span>
-
-                  </div>
-
-                </div>
-
-              </motion.div>
-
-
-              {/* =================================================
-                  CONVERTED
-              ================================================== */}
-              <motion.div
-                className="journey-step"
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 0.6,
-                  delay: 1.2,
-                }}
-              >
-
-                <div className="journey-node converted-node">
-                  <CheckCircle2 size={18} />
-                </div>
-
-                <div className="journey-card converted-card">
-
-                  <div className="journey-card-top">
-
-                    <div>
-                      <span className="journey-card-label">
-                        CONVERTED
-                      </span>
-
-                      <h4>
-                        New customer
-                      </h4>
-                    </div>
-
-                    <div className="journey-card-icon success-icon">
-                      <CheckCircle2 size={15} />
-                    </div>
-
-                  </div>
-
-                  <div className="journey-card-bottom">
-
-                    <span>
-                      Deal successfully closed
-                    </span>
-
-                    <span className="journey-status converted-status">
-                      Won
-                    </span>
-
-                  </div>
-
-                </div>
-
-              </motion.div>
-
-            </div>
-
-
-            {/* =================================================
-                COVER FOOTER
-            ================================================== */}
-            <div className="cover-footer">
-
-              <div className="cover-footer-icon">
-                <TrendingUp size={15} />
-              </div>
-
-              <div>
-                <span>CONVERSION RATE</span>
-                <strong>+24.8%</strong>
-              </div>
-
-              <div className="cover-footer-line">
-                <span />
-                <span />
-                <span />
-                <span />
-                <span />
-              </div>
-
-            </div>
-
-          </motion.div>
-
-
-          {/* =================================================
-              FLOATING SMART FOLLOW-UP
-          ================================================== */}
-          <motion.div
-            className="journey-notification"
-            animate={{
-              y: [0, -8, 0],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          >
-
-            <div className="notification-icon">
-              <Zap size={15} />
-            </div>
-
-            <div>
-              <span>
-                SMART FOLLOW-UP
-              </span>
-
-              <strong>
-                Never miss an opportunity
-              </strong>
-            </div>
-
-          </motion.div>
-
-
-          {/* =================================================
-              FLOATING SUCCESS
-          ================================================== */}
-          <motion.div
-            className="journey-success-float"
-            animate={{
-              y: [0, 7, 0],
-            }}
+            animate={{ y: [0, -5, 0] }}
             transition={{
               duration: 3.5,
               repeat: Infinity,
               ease: 'easeInOut',
             }}
           >
-
-            <div className="success-float-icon">
-              <CheckCircle2 size={15} />
-            </div>
-
-            <div>
-              <span>DEAL CLOSED</span>
-              <strong>Successfully</strong>
-            </div>
-
+            <span className="journey-live-dot" />
+            TIMELINE WORKFLOW
           </motion.div>
 
+          {/* Mobile-Style Timeline Container */}
+          <motion.div
+            className="mobile-journey-cover"
+            animate={{ y: [0, -6, 0] }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+          >
+            {/* Top Header */}
+            <div className="cover-header">
+              <div className="cover-brand">
+                <div className="cover-brand-icon">B</div>
+                <div>
+                  <span>BMO LEAD</span>
+                  <strong>Lead Timeline</strong>
+                </div>
+              </div>
+
+              <div className="cover-live-status">
+                <span />
+                ACTIVE
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="cover-divider" />
+
+            {/* Title */}
+            <div className="cover-title">
+              <div>
+                <span>TIMELINE STAGES</span>
+                <h3>Lead Activity Flow</h3>
+              </div>
+            </div>
+
+            {/* =================================================
+                4 REAL BMO LEAD STAGES
+            ================================================== */}
+            <div className="lead-journey">
+              {/* Connecting Line */}
+              <div className="journey-line">
+                <motion.span
+                  className="journey-line-progress"
+                  initial={{ height: '0%' }}
+                  whileInView={{ height: '100%' }}
+                  viewport={{ once: true }}
+                  transition={{
+                    duration: 1.8,
+                    delay: 0.3,
+                    ease: 'easeInOut',
+                  }}
+                />
+              </div>
+
+              {/* 1. NEW LEAD */}
+              <motion.div
+                className="journey-step"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <div className="journey-node">
+                  <UserPlus size={16} />
+                </div>
+                <div className="journey-card">
+                  <div className="journey-card-top">
+                    <div>
+                      <span className="journey-card-label">NEW LEAD</span>
+                      <h4>Rajesh Enterprises</h4>
+                    </div>
+                    <span className="journey-status new-status">Lead added</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* 2. FOLLOW-UP */}
+              <motion.div
+                className="journey-step"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.5 }}
+              >
+                <div className="journey-node follow-node">
+                  <CalendarClock size={16} />
+                </div>
+                <div className="journey-card">
+                  <div className="journey-card-top">
+                    <div>
+                      <span className="journey-card-label">FOLLOW-UP</span>
+                      <h4>Customer follow-up</h4>
+                    </div>
+                    <span className="journey-status follow-status">Scheduled</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* 3. ACTIVITY */}
+              <motion.div
+                className="journey-step"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.8 }}
+              >
+                <div className="journey-node activity-node">
+                  <Phone size={16} />
+                </div>
+                <div className="journey-card">
+                  <div className="journey-card-top">
+                    <div>
+                      <span className="journey-card-label">ACTIVITY</span>
+                      <h4>Customer contacted</h4>
+                    </div>
+                    <span className="journey-status activity-status">Updated</span>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* 4. OUTCOME */}
+              <motion.div
+                className="journey-step"
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 1.1 }}
+              >
+                <div className="journey-node converted-node">
+                  <CheckCircle2 size={16} />
+                </div>
+                <div className="journey-card converted-card">
+                  <div className="journey-card-top">
+                    <div>
+                      <span className="journey-card-label">OUTCOME</span>
+                      <h4>Lead status updated</h4>
+                    </div>
+                    <span className="journey-status converted-status">Completed</span>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Cover Footer: Real Status */}
+            <div className="cover-footer">
+              <div className="cover-footer-icon">
+                <Clock size={15} />
+              </div>
+              <div>
+                <span>STATUS TRACKING</span>
+                <strong>Full History Recorded</strong>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Floating Card: FOLLOW-UP ALERT - Stay on track */}
+          <motion.div
+            className="journey-notification"
+            animate={{ y: [0, -8, 0] }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: 'easeInOut',
+            }}
+          >
+            <div className="notification-icon">
+              <Bell size={15} />
+            </div>
+            <div>
+              <span>FOLLOW-UP ALERT</span>
+              <strong>Stay on track</strong>
+            </div>
+          </motion.div>
         </motion.div>
 
-
         {/* =====================================================
-            RIGHT CONTENT
+            RIGHT CONTENT (3 Capability Points + Single CTA)
         ====================================================== */}
         <motion.div
           className="live-demo-content"
-          initial={{
-            opacity: 0,
-            x: 60,
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          transition={{
-            duration: 0.8,
-          }}
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
         >
-
           <span className="live-demo-label">
             <span className="label-dot" />
-            LIVE SHOWCASE
+            LEAD JOURNEY
           </span>
 
           <h2>
-            See Your Sales
+            Follow Every Lead.
             <br />
-            <strong>
-              Come To Life.
-            </strong>
+            <span>From Start to Outcome.</span>
           </h2>
 
           <p className="live-demo-description">
-            Experience how BMO Leads helps you manage your entire
-            sales process from one simple and powerful platform.
+            Keep every lead, follow-up, activity, and update connected in one clear
+            timeline.
           </p>
 
-
-          {/* Features */}
+          {/* 3 Simple Capability Points */}
           <div className="live-demo-features">
-
+            {/* 1. Track Every Lead */}
             <div className="live-feature">
-
               <div className="live-feature-icon">
-                <Zap size={18} />
+                <Target size={18} />
               </div>
-
               <div>
-                <strong>
-                  Manage Leads Effortlessly
-                </strong>
-
-                <p>
-                  Capture, organize and track every lead
-                  without losing valuable opportunities.
-                </p>
+                <strong>Track Every Lead</strong>
+                <p>Keep lead details and status updates organized in one place.</p>
               </div>
-
             </div>
 
-
+            {/* 2. Stay Ahead of Follow-ups */}
             <div className="live-feature">
-
               <div className="live-feature-icon">
-                <TrendingUp size={18} />
+                <Bell size={18} />
               </div>
-
               <div>
-                <strong>
-                  Track Your Sales Pipeline
-                </strong>
-
-                <p>
-                  Get a clear view of enquiries, quotations,
-                  confirmations and conversions.
-                </p>
+                <strong>Stay Ahead of Follow-ups</strong>
+                <p>Get reminders and alerts for important follow-up activities.</p>
               </div>
-
             </div>
 
-
+            {/* 3. Understand Performance */}
             <div className="live-feature">
-
               <div className="live-feature-icon">
-                <CheckCircle2 size={18} />
+                <BarChart2 size={18} />
               </div>
-
               <div>
-                <strong>
-                  Turn Leads Into Customers
-                </strong>
-
+                <strong>Understand Performance</strong>
                 <p>
-                  Follow every opportunity and improve
-                  your conversion performance.
+                  See activity and performance through a centralized dashboard and
+                  reports.
                 </p>
               </div>
-
             </div>
-
           </div>
 
-
-          {/* CTA */}
+          {/* Single CTA: Explore BMO Lead -> */}
           <div className="live-demo-actions">
-
-            <button className="live-demo-btn">
-              Explore BMO Leads
-              <ArrowRight size={17} />
+            <button
+              className="live-demo-btn"
+              type="button"
+              onClick={handleExplore}
+            >
+              <span>Explore BMO Lead</span>
+              <ArrowRight size={16} />
             </button>
-
-            <span className="live-demo-note">
-              Simple. Smart. Powerful.
-            </span>
-
           </div>
-
         </motion.div>
-
       </div>
     </section>
   )

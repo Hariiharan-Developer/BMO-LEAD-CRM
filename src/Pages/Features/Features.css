@@ -1,1145 +1,372 @@
-/* =========================================
-   BMO LEADS - FEATURES
-   Theme: #ff5900
-   Scroll Reveal + Hover Animations
-========================================= */
-
-
-/* =========================================
-   SECTION
-========================================= */
+/* =========================================================
+   BMO LEAD — FEATURES SECTION
+   Light / white background — arc icon flow from reference image
+   Brand: #ff5900 orange
+========================================================= */
 
 .features-section {
-  padding: 110px 0;
-  background:
-  radial-gradient(
-    circle at 15% 15%,
-    rgba(255, 89, 0, 0.06),
-    transparent 32%
-  ),
-  radial-gradient(
-    circle at 90% 85%,
-    rgba(255, 89, 0, 0.04),
-    transparent 30%
-  ),
-  #f6f6f6;
-  overflow: hidden;
-}
-
-
-/* =========================================
-   HEADER
-========================================= */
-
-.features-header {
-  max-width: 780px;
-  margin: 0 auto 55px;
-  text-align: center;
-
-  opacity: 0;
-  transform: translateY(35px);
-
-  animation: headerReveal 0.8s
-    cubic-bezier(0.2, 0.75, 0.2, 1)
-    forwards;
-}
-
-.features-eyebrow {
-  display: inline-block;
-  margin-bottom: 16px;
-
-  color: #ff5900;
-
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 2px;
-
-  opacity: 0;
-  transform: translateY(15px);
-
-  animation: eyebrowReveal 0.7s ease forwards;
-  animation-delay: 0.15s;
-}
-
-.features-header h2 {
-  margin: 0;
-
-  color: #24211f;
-
-  font-size: clamp(40px, 5vw, 58px);
-  line-height: 1.08;
-  font-weight: 750;
-
-  letter-spacing: -2.5px;
-}
-
-.features-header h2 span {
-  color: #ff5900;
-  font-weight: 750;
-}
-
-.features-header p {
-  max-width: 600px;
-  margin: 20px auto 0;
-
-  color: #625c57;
-
-  font-size: 14px;
-  line-height: 1.75;
-
-  opacity: 0;
-  transform: translateY(15px);
-
-  animation: paragraphReveal 0.7s ease forwards;
-  animation-delay: 0.3s;
-}
-
-
-/* =========================================
-   HEADER ANIMATIONS
-========================================= */
-
-@keyframes headerReveal {
-  from {
-    opacity: 0;
-    transform: translateY(35px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes eyebrowReveal {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-    letter-spacing: 5px;
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-    letter-spacing: 2px;
-  }
-}
-
-@keyframes paragraphReveal {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* =========================================
-   FEATURE LIST
-========================================= */
-
-.features-list {
-  display: grid;
-
-  grid-template-columns: repeat(2, 1fr);
-
-  gap: 16px;
-}
-
-
-/* =========================================
-   FEATURE CARD
-========================================= */
-
-.feature-card {
   position: relative;
-
-  min-height: 205px;
-
-  display: flex;
-  align-items: center;
-
-  gap: 24px;
-
-  padding: 25px;
-
   background: #ffffff;
-
-  border: 1px solid #e5e0db;
-
-  border-radius: 18px;
-
+  color: #111827;
+  padding: 90px 0 80px;
   overflow: hidden;
-
-  opacity: 0;
-
-  transform:
-    translateY(55px)
-    scale(0.96);
-
-  animation:
-    featureReveal 0.8s
-    cubic-bezier(0.2, 0.75, 0.2, 1)
-    forwards;
-
-  animation-delay: var(--delay);
-
-  transition:
-    transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1),
-    border-color 0.3s ease,
-    box-shadow 0.3s ease;
+  border-top: 1px solid #f1f5f9;
 }
 
-
-/* =========================================
-   CARD REVEAL
-========================================= */
-
-@keyframes featureReveal {
-  0% {
-    opacity: 0;
-
-    transform:
-      translateY(55px)
-      scale(0.96);
-  }
-
-  65% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-
-    transform:
-      translateY(0)
-      scale(1);
-  }
-}
-
-
-/* =========================================
-   ORANGE GLOW
-========================================= */
-
-.feature-card::before {
-  content: "";
-
+/* subtle ambient glow */
+.feat-grid-overlay {
   position: absolute;
-
-  width: 200px;
-  height: 200px;
-
-  top: -110px;
-  right: -90px;
-
-  border-radius: 50%;
-
+  inset: 0;
   background:
-    rgba(255, 89, 0, 0.09);
-
-  filter: blur(38px);
-
-  opacity: 0;
-
+    radial-gradient(circle at 75% 50%, rgba(255, 89, 0, 0.05) 0%, transparent 55%),
+    radial-gradient(circle at 20% 80%, rgba(255, 89, 0, 0.03) 0%, transparent 45%);
   pointer-events: none;
-
-  transition:
-    opacity 0.5s ease,
-    transform 0.5s ease;
+  z-index: 0;
 }
 
-.feature-card:hover::before {
-  opacity: 1;
-
-  transform: scale(1.2);
-}
-
-
-/* =========================================
-   CARD HOVER
-========================================= */
-
-.feature-card:hover {
-  transform: translateY(-7px);
-
-  border-color: #d8d0c9;
-
-  box-shadow:
-    0 18px 40px rgba(50, 43, 38, 0.09);
-}
-
-
-/* =========================================
-   ICON BLOCK
-========================================= */
-
-.feature-icon-wrapper {
+.features-container {
   position: relative;
-
-  flex-shrink: 0;
-
-  width: 65px;
-  height: 65px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 17px;
-
-  background: #fff0e8;
-
-  opacity: 0;
-
-  transform:
-    scale(0.5)
-    rotate(-10deg);
-
-  animation:
-    iconPop 0.7s
-    cubic-bezier(0.2, 0.8, 0.2, 1)
-    forwards;
-
-  animation-delay:
-    calc(var(--delay) + 0.25s);
-
-  transition:
-    transform 0.4s ease,
-    background 0.4s ease,
-    box-shadow 0.4s ease;
-}
-
-
-/* =========================================
-   ICON POP
-========================================= */
-
-@keyframes iconPop {
-  0% {
-    opacity: 0;
-
-    transform:
-      scale(0.5)
-      rotate(-10deg);
-  }
-
-  70% {
-    opacity: 1;
-
-    transform:
-      scale(1.08)
-      rotate(2deg);
-  }
-
-  100% {
-    opacity: 1;
-
-    transform:
-      scale(1)
-      rotate(0);
-  }
-}
-
-
-/* =========================================
-   ICON HOVER
-========================================= */
-
-.feature-card:hover .feature-icon-wrapper {
-  transform:
-    scale(1.08)
-    rotate(-4deg);
-
-  background: #ff5900;
-
-  box-shadow:
-    0 10px 25px rgba(255, 89, 0, 0.2);
-}
-
-
-/* =========================================
-   ICON
-========================================= */
-
-.feature-icon {
-  color: #ff5900;
-
-  font-size: 23px;
-  font-weight: 600;
-
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
-}
-
-.feature-card:hover .feature-icon {
-  color: #ffffff;
-
-  transform: scale(1.1);
-}
-
-
-/* =========================================
-   CONTENT
-========================================= */
-
-.feature-card-content {
-  position: relative;
-
   z-index: 2;
-
-  flex: 1;
-
-  opacity: 0;
-
-  transform: translateX(20px);
-
-  animation:
-    contentReveal 0.7s
-    ease forwards;
-
-  animation-delay:
-    calc(var(--delay) + 0.15s);
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 46% 54%;
+  gap: 40px;
+  align-items: center;
+  min-height: 520px;
 }
 
-
-/* =========================================
-   CONTENT REVEAL
-========================================= */
-
-@keyframes contentReveal {
-  from {
-    opacity: 0;
-
-    transform: translateX(20px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform: translateX(0);
-  }
+/* =========================================================
+   LEFT COLUMN — TEXT
+========================================================= */
+.feat-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-
-/* =========================================
-   FEATURE TAG
-========================================= */
-
-.feature-tag {
-  display: block;
-
-  margin-bottom: 7px;
-
-  color: #ff5900;
-
-  font-size: 8px;
-
-  font-weight: 700;
-
-  letter-spacing: 1.5px;
+/* Platform pill tags */
+.feat-platform-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-
-/* =========================================
-   TITLE
-========================================= */
-
-.feature-card-content h3 {
-  margin: 0 0 8px;
-
-  color: #25221f;
-
-  font-size: 19px;
-
-  font-weight: 700;
-
-  letter-spacing: -0.5px;
-
-  transition:
-    color 0.3s ease,
-    transform 0.3s ease;
+.feat-platform-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid #e2e8f0;
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-size: 0.76rem;
+  font-weight: 650;
+  color: #374151;
+  font-family: var(--bmo-font-sans, Helvetica, Arial, sans-serif);
+  background: #f8fafc;
+  letter-spacing: 0.02em;
 }
 
-.feature-card:hover .feature-card-content h3 {
-  color: #ff5900;
-
-  transform: translateX(2px);
+.feat-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 89, 0, 0.08);
+  border: 1px solid rgba(255, 89, 0, 0.2);
+  color: var(--bmo-primary, #ff5900);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  padding: 5px 14px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  font-family: var(--bmo-font-sans, Helvetica, Arial, sans-serif);
+  width: fit-content;
 }
 
-
-/* =========================================
-   DESCRIPTION
-========================================= */
-
-.feature-card-content p {
-  max-width: 350px;
-
+/* Main heading */
+.feat-heading {
+  font-family: var(--bmo-font-heading, Helvetica, Arial, sans-serif);
+  font-size: 2.5rem;
+  font-weight: 850;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  color: #111827;
   margin: 0;
+}
 
-  color: #77706a;
+.feat-heading-orange {
+  color: var(--bmo-primary, #ff5900);
+}
 
-  font-size: 12.5px;
-
+/* Sub text */
+.feat-sub {
+  font-family: var(--bmo-font-sans, Helvetica, Arial, sans-serif);
+  font-size: 0.97rem;
   line-height: 1.65;
+  color: #4b5563;
+  margin: 0;
+  max-width: 440px;
 }
 
+/* Bullet list */
+.feat-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
 
-/* =========================================
-   VISUAL AREA
-========================================= */
+.feat-bullet {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 0.9rem;
+  font-family: var(--bmo-font-sans, Helvetica, Arial, sans-serif);
+  color: #374151;
+  font-weight: 500;
+}
 
-.feature-visual {
+.feat-bullet-icon {
+  color: var(--bmo-primary, #ff5900);
   flex-shrink: 0;
+}
 
-  width: 155px;
-
-  display: flex;
+/* CTA Button */
+.feat-cta-btn {
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
-
-  opacity: 0;
-
-  transform:
-    translateX(30px)
-    scale(0.92);
-
-  animation:
-    visualReveal 0.8s
-    cubic-bezier(0.2, 0.75, 0.2, 1)
-    forwards;
-
-  animation-delay:
-    calc(var(--delay) + 0.35s);
+  gap: 8px;
+  background: transparent;
+  border: 1.5px solid #d1d5db;
+  color: #111827;
+  font-family: var(--bmo-font-sans, Helvetica, Arial, sans-serif);
+  font-size: 0.9rem;
+  font-weight: 650;
+  padding: 11px 24px;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  letter-spacing: 0.01em;
+  width: fit-content;
 }
 
-
-/* =========================================
-   VISUAL REVEAL
-========================================= */
-
-@keyframes visualReveal {
-  from {
-    opacity: 0;
-
-    transform:
-      translateX(30px)
-      scale(0.92);
-  }
-
-  to {
-    opacity: 1;
-
-    transform:
-      translateX(0)
-      scale(1);
-  }
-}
-
-
-/* =========================================
-   VISUAL FLOAT
-========================================= */
-
-.status-flow,
-.excel-box,
-.status-pill,
-.report-bars {
-  animation:
-    visualFloat 3.5s
-    ease-in-out
-    infinite;
-}
-
-@keyframes visualFloat {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-5px);
-  }
-}
-
-
-/* =========================================
-   STATUS FLOW
-========================================= */
-
-.status-flow {
-  display: flex;
-
-  align-items: center;
-
-  gap: 7px;
-
-  color: #77706a;
-
-  font-size: 9px;
-}
-
-.status-flow span {
-  padding: 7px 9px;
-
-  background: #f7f4f1;
-
-  border-radius: 7px;
-
-  transition:
-    background 0.3s ease,
-    transform 0.3s ease;
-}
-
-.feature-card:hover .status-flow span {
-  background: #fff0e8;
-
+.feat-cta-btn:hover {
+  background: rgba(255, 89, 0, 0.06);
+  border-color: var(--bmo-primary, #ff5900);
+  color: var(--bmo-primary, #ff5900);
   transform: translateY(-2px);
 }
 
-.status-flow b {
-  color: #ff5900;
-
-  font-size: 13px;
-
-  animation:
-    arrowMove 1.5s
-    ease-in-out
-    infinite;
+/* =========================================================
+   RIGHT COLUMN — DIAGONAL ARC OF GLOSSY ICONS
+   Same arc flow as reference image (bottom-left → top-right)
+   Each icon: iOS-style coloured rounded square with gloss
+========================================================= */
+.feat-right {
+  position: relative;
+  height: 500px;
 }
 
-
-/* =========================================
-   ARROW ANIMATION
-========================================= */
-
-@keyframes arrowMove {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-
-  50% {
-    transform: translateX(4px);
-  }
+.feat-arc-wrapper {
+  position: absolute;
+  inset: 0;
 }
 
-
-/* =========================================
-   EXCEL BOX
-========================================= */
-
-.excel-box {
-  display: flex;
-
-  align-items: center;
-
-  gap: 10px;
-
-  padding: 11px;
-
-  background: #f7f4f1;
-
-  border-radius: 10px;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.feature-card:hover .excel-box {
-  box-shadow:
-    0 8px 20px rgba(50, 43, 38, 0.07);
-}
-
-.excel-box > span {
-  width: 30px;
-  height: 30px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 7px;
-
-  background: #e7f3e9;
-
-  color: #32814a;
-
-  font-size: 9px;
-  font-weight: 800;
-}
-
-.excel-box b {
-  display: block;
-
-  color: #292522;
-
-  font-size: 13px;
-}
-
-.excel-box small {
-  display: block;
-
-  color: #918a84;
-
-  font-size: 8px;
-}
-
-
-/* =========================================
-   STATUS PILL
-========================================= */
-
-.status-pill {
-  display: flex;
-
-  align-items: center;
-
-  gap: 8px;
-
-  padding: 10px 13px;
-
-  background: #fff0e8;
-
-  border: 1px solid #ffd8c2;
-
+/* ---- Base icon box ---- */
+.feat-arc-icon {
+  position: absolute;
+  width: 80px;
+  height: 80px;
   border-radius: 20px;
-
-  color: #6e655f;
-
-  font-size: 10px;
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
+  cursor: pointer;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  z-index: calc(var(--arc-index, 0) + 1);
 }
 
-.feature-card:hover .status-pill {
+/* Coloured background layer */
+.feat-arc-icon::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: var(--arc-bg, #e0e0e0);
   box-shadow:
-    0 8px 20px rgba(255, 89, 0, 0.12);
+    0 10px 30px rgba(0, 0, 0, 0.13),
+    0 0 0 1px rgba(255, 255, 255, 0.6),
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.08);
+  z-index: 0;
 }
 
-.status-pill i {
-  width: 7px;
-  height: 7px;
-
-  display: block;
-
-  border-radius: 50%;
-
-  background: #ff5900;
-
-  animation:
-    statusPulse 1.8s
-    ease-in-out
-    infinite;
-}
-
-
-/* =========================================
-   STATUS PULSE
-========================================= */
-
-@keyframes statusPulse {
-  0%,
-  100% {
-    opacity: 1;
-
-    transform: scale(1);
-
-    box-shadow:
-      0 0 0 0 rgba(255, 89, 0, 0.25);
-  }
-
-  50% {
-    opacity: 0.45;
-
-    transform: scale(0.75);
-
-    box-shadow:
-      0 0 0 6px rgba(255, 89, 0, 0);
-  }
-}
-
-
-/* =========================================
-   REPORT BARS
-========================================= */
-
-.report-bars {
-  width: 110px;
-  height: 70px;
-
-  display: flex;
-
-  align-items: flex-end;
-  justify-content: center;
-
-  gap: 7px;
-
-  padding: 12px;
-
-  background: #f7f4f1;
-
-  border-radius: 10px;
-
-  transition:
-    box-shadow 0.3s ease;
-}
-
-.feature-card:hover .report-bars {
-  box-shadow:
-    0 8px 20px rgba(50, 43, 38, 0.07);
-}
-
-.report-bars span {
-  width: 12px;
-
-  border-radius:
-    4px 4px 2px 2px;
-
-  background: #ff5900;
-
-  transform-origin: bottom;
-
-  animation:
-    barAnimation 2s
-    ease-in-out
-    infinite;
-}
-
-.report-bars span:nth-child(1) {
-  height: 25%;
-}
-
-.report-bars span:nth-child(2) {
+/* Gloss top-half shine */
+.feat-arc-icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 50%;
-
-  animation-delay: 0.15s;
+  border-radius: 20px 20px 0 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.38) 0%,
+    transparent 100%
+  );
+  z-index: 2;
+  pointer-events: none;
 }
 
-.report-bars span:nth-child(3) {
-  height: 70%;
-
-  animation-delay: 0.3s;
-}
-
-.report-bars span:nth-child(4) {
-  height: 90%;
-
-  animation-delay: 0.45s;
-}
-
-
-/* =========================================
-   BAR ANIMATION
-========================================= */
-
-@keyframes barAnimation {
-  0%,
-  100% {
-    transform: scaleY(1);
-  }
-
-  50% {
-    transform: scaleY(0.7);
-  }
-}
-
-
-/* =========================================
-   DASHBOARD NUMBER
-========================================= */
-
-.dashboard-number {
-  padding: 13px 18px;
-
-  background: #f7f4f1;
-
-  border-radius: 10px;
-}
-
-.dashboard-number small {
+/* Icon image inside the coloured square */
+.feat-arc-icon-img {
+  position: relative;
+  z-index: 1;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  padding: 14px;
+  border-radius: 20px;
   display: block;
-
-  color: #918a84;
-
-  font-size: 8px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.18));
 }
 
-.dashboard-number strong {
-  display: block;
-
-  margin: 2px 0;
-
-  color: #292522;
-
-  font-size: 21px;
-
-  letter-spacing: -1px;
-}
-
-.dashboard-number em {
-  color: #3e9760;
-
-  font-size: 8px;
-
-  font-style: normal;
-
-  font-weight: 700;
-}
-
-
-/* =========================================
-   RECORD CHECK
-========================================= */
-
-.record-check {
-  display: flex;
-
-  align-items: center;
-
-  gap: 9px;
-
-  padding: 11px;
-
-  background: #f7f4f1;
-
-  border-radius: 10px;
-}
-
-.record-check > span {
-  width: 28px;
-  height: 28px;
-
-  display: flex;
-
-  align-items: center;
-  justify-content: center;
-
-  border-radius: 50%;
-
-  background: #ff5900;
-
+/* Tooltip on hover */
+.feat-arc-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(17, 24, 39, 0.92);
   color: #ffffff;
-
-  font-size: 11px;
-
-  animation:
-    recordPulse 2s
-    ease-in-out
-    infinite;
+  font-size: 0.67rem;
+  font-weight: 600;
+  font-family: var(--bmo-font-sans, Helvetica, Arial, sans-serif);
+  white-space: nowrap;
+  padding: 5px 10px;
+  border-radius: 6px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  z-index: 30;
 }
 
-@keyframes recordPulse {
-  0%,
-  100% {
-    box-shadow:
-      0 0 0 0
-      rgba(255, 89, 0, 0.25);
-  }
-
-  50% {
-    box-shadow:
-      0 0 0 7px
-      rgba(255, 89, 0, 0);
-  }
+.feat-arc-icon:hover .feat-arc-tooltip {
+  opacity: 1;
 }
 
-.record-check b {
-  display: block;
-
-  color: #403a36;
-
-  font-size: 9px;
+.feat-arc-icon:hover {
+  z-index: 30;
+  box-shadow: 0 18px 40px rgba(255, 89, 0, 0.18), 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.record-check small {
-  color: #928a84;
+/* -------------------------------------------------------
+   Arc positions — diagonal bottom-left to top-right
+   Matching the reference image curve shape
+------------------------------------------------------- */
+.feat-arc-icon:nth-child(1) { left:  1%; top: 74%; transform: rotate(-14deg) scale(0.92); }
+.feat-arc-icon:nth-child(2) { left: 12%; top: 58%; transform: rotate(-10deg) scale(0.95); }
+.feat-arc-icon:nth-child(3) { left: 23%; top: 43%; transform: rotate(-6deg)  scale(0.97); }
+.feat-arc-icon:nth-child(4) { left: 34%; top: 30%; transform: rotate(-3deg)  scale(0.99); }
+.feat-arc-icon:nth-child(5) { left: 45%; top: 20%; transform: rotate(0deg)   scale(1);    }
+.feat-arc-icon:nth-child(6) { left: 56%; top: 13%; transform: rotate(3deg)   scale(0.99); }
+.feat-arc-icon:nth-child(7) { left: 67%; top: 10%; transform: rotate(6deg)   scale(0.97); }
+.feat-arc-icon:nth-child(8) { left: 78%; top:  8%; transform: rotate(10deg)  scale(0.95); }
+.feat-arc-icon:nth-child(9) { left: 88%; top:  4%; transform: rotate(14deg)  scale(0.92); }
 
-  font-size: 7px;
+/* Override transform on hover */
+.feat-arc-icon:nth-child(1):hover,
+.feat-arc-icon:nth-child(2):hover,
+.feat-arc-icon:nth-child(3):hover,
+.feat-arc-icon:nth-child(4):hover,
+.feat-arc-icon:nth-child(5):hover,
+.feat-arc-icon:nth-child(6):hover,
+.feat-arc-icon:nth-child(7):hover,
+.feat-arc-icon:nth-child(8):hover,
+.feat-arc-icon:nth-child(9):hover {
+  transform: rotate(0deg) scale(1.1) !important;
 }
 
-
-/* =========================================
-   SCROLL BEHAVIOR
-========================================= */
-
-html {
-  scroll-behavior: smooth;
-}
-
-.features-section {
-  scroll-margin-top: 90px;
-}
-
-
-/* =========================================
-   ACCESSIBILITY
-========================================= */
-
-@media (prefers-reduced-motion: reduce) {
-  .feature-card,
-  .feature-icon-wrapper,
-  .feature-card-content,
-  .feature-visual,
-  .features-header,
-  .features-eyebrow,
-  .features-header p,
-  .status-flow,
-  .excel-box,
-  .status-pill,
-  .report-bars,
-  .record-check > span,
-  .status-flow b {
-    animation: none;
-
-    opacity: 1;
-
-    transform: none;
-  }
-
-  .feature-card,
-  .feature-icon-wrapper {
-    transition: none;
-  }
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
+/* =========================================================
+   RESPONSIVE
+========================================================= */
 @media (max-width: 991px) {
-
-  .features-section {
-    padding: 85px 0;
-  }
-
-  .features-list {
+  .features-container {
     grid-template-columns: 1fr;
+    min-height: unset;
   }
 
-  .feature-card {
-    min-height: 190px;
+  .feat-right {
+    height: 340px;
+    order: -1;
+  }
+
+  .feat-heading {
+    font-size: 2rem;
+  }
+
+  /* Shrink icons on tablet */
+  .feat-arc-icon {
+    width: 62px;
+    height: 62px;
+    border-radius: 16px;
+  }
+
+  .feat-arc-icon-img {
+    width: 62px;
+    height: 62px;
+    padding: 10px;
+    border-radius: 16px;
+  }
+
+  .feat-arc-icon::before,
+  .feat-arc-icon::after {
+    border-radius: 16px;
+  }
+
+  .feat-arc-icon::after {
+    border-radius: 16px 16px 0 0;
   }
 }
 
-
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 767px) {
-
+@media (max-width: 640px) {
   .features-section {
-    padding: 75px 20px;
+    padding: 58px 0 50px;
   }
 
-  .features-header {
-    margin-bottom: 40px;
+  .feat-heading {
+    font-size: 1.65rem;
   }
 
-  .features-header h2 {
-    font-size: 39px;
-
-    letter-spacing: -1.8px;
+  .feat-sub {
+    font-size: 0.86rem;
   }
 
-  .features-header p {
-    font-size: 13px;
+  .feat-right {
+    height: 250px;
   }
 
-  .feature-card {
-    min-height: 175px;
-
-    padding: 20px;
-
-    gap: 17px;
-  }
-
-  .feature-icon-wrapper {
-    width: 52px;
-    height: 52px;
-
-    border-radius: 14px;
-  }
-
-  .feature-icon {
-    font-size: 19px;
-  }
-
-  .feature-card-content h3 {
-    font-size: 17px;
-  }
-
-  .feature-card-content p {
-    font-size: 11.5px;
-  }
-
-  .feature-visual {
-    display: none;
-  }
-}
-
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media (max-width: 480px) {
-
-  .features-header h2 {
-    font-size: 34px;
-  }
-
-  .feature-card {
-    min-height: 165px;
-  }
-
-  .feature-card-content h3 {
-    font-size: 16px;
-  }
-
-  .feature-card-content p {
-    font-size: 11px;
-  }
-}
-
-
-/* =========================================
-   VERY SMALL DEVICES
-========================================= */
-
-@media (max-width: 360px) {
-
-  .features-section {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
-  .feature-card {
-    padding: 17px;
-
-    gap: 13px;
-  }
-
-  .feature-icon-wrapper {
+  .feat-arc-icon {
     width: 48px;
     height: 48px;
+    border-radius: 13px;
   }
 
-  .feature-card-content h3 {
-    font-size: 15px;
+  .feat-arc-icon-img {
+    width: 48px;
+    height: 48px;
+    padding: 8px;
+    border-radius: 13px;
   }
 
-  .feature-card-content p {
-    font-size: 10.5px;
+  .feat-arc-icon::before,
+  .feat-arc-icon::after {
+    border-radius: 13px;
+  }
+
+  .feat-arc-icon::after {
+    border-radius: 13px 13px 0 0;
   }
 }

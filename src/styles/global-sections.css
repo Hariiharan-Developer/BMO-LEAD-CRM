@@ -1,0 +1,234 @@
+/* =================================================================
+   BMO LEAD — GLOBAL SECTION SYSTEM
+   Unified spacing, alternating backgrounds, scroll animations
+================================================================= */
+
+/* ----------------------------------------------------------------
+   SECTION SPACING — single consistent vertical rhythm
+   All sections use 80px top/bottom padding. No margins on sections.
+---------------------------------------------------------------- */
+.bmo-problem-section,
+.features-section,
+.works-section,
+.diff-section,
+.ta-section,
+.faq-section,
+.cta-section {
+  margin: 0 !important;
+}
+
+/* ----------------------------------------------------------------
+   ALTERNATING SECTION BACKGROUNDS
+   Hero       → white (own bg)
+   Problem    → #ffffff
+   Features   → #f7f8fc  (very light blue-grey)
+   Works      → #ffffff
+   Difference → #f7f8fc
+   TargetAud  → #ffffff
+   FAQ        → #f7f8fc
+   CTA        → #ffffff
+---------------------------------------------------------------- */
+.bmo-problem-section { background: #ffffff !important; }
+.features-section    { background: #f7f8fc !important; }
+.works-section       { background: #ffffff !important; }
+.diff-section        { background: #f7f8fc !important; }
+.ta-section          { background: #ffffff !important; }
+.faq-section         { background: #f7f8fc !important; }
+.cta-section         { background: #ffffff !important; }
+
+/* Remove bg overrides on inner overlay for features (already has its own) */
+.feat-grid-overlay {
+  background:
+    radial-gradient(circle at 75% 50%, rgba(255, 89, 0, 0.04) 0%, transparent 55%),
+    radial-gradient(circle at 20% 80%, rgba(255, 89, 0, 0.025) 0%, transparent 45%) !important;
+}
+
+/* ----------------------------------------------------------------
+   CONSISTENT SECTION PADDING
+---------------------------------------------------------------- */
+.bmo-problem-section { padding: 80px 0 !important; }
+.features-section    { padding: 80px 0 !important; }
+.works-section       { padding: 80px 0 !important; }
+.diff-section        { padding: 80px 0 !important; }
+.ta-section          { padding: 80px 0 !important; }
+.faq-section         { padding: 80px 0 !important; }
+.cta-section         { padding: 80px 7% !important; }
+
+/* Mobile section padding */
+@media (max-width: 768px) {
+  .bmo-problem-section,
+  .features-section,
+  .works-section,
+  .diff-section,
+  .ta-section,
+  .faq-section { padding: 56px 0 !important; }
+
+  .cta-section { padding: 56px 5% !important; }
+}
+
+/* ----------------------------------------------------------------
+   DIVIDERS between sections — subtle 1px line
+---------------------------------------------------------------- */
+.bmo-problem-section,
+.features-section,
+.works-section,
+.diff-section,
+.ta-section,
+.faq-section,
+.cta-section {
+  border-top: 1px solid rgba(0, 0, 0, 0.055) !important;
+}
+
+/* ----------------------------------------------------------------
+   GLOBAL BUTTON CONSISTENCY
+   All primary action buttons same height (44px) and font size
+---------------------------------------------------------------- */
+.hero-explore-btn,
+.navbar-explore-btn,
+.mobile-explore-btn,
+.feat-cta-btn,
+.works-cta-btn,
+.cta-primary-btn,
+.cta-secondary-btn {
+  height: 44px !important;
+  min-height: 44px !important;
+  font-size: 0.875rem !important;
+  font-weight: 700 !important;
+  font-family: Helvetica, Arial, sans-serif !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 10px !important;
+  white-space: nowrap;
+}
+
+/* Pill-shaped buttons keep their border-radius */
+.feat-cta-btn,
+.works-cta-btn,
+.cta-primary-btn,
+.cta-secondary-btn {
+  border-radius: 100px !important;
+}
+
+/* Navbar button smaller */
+.navbar-explore-btn {
+  height: 38px !important;
+  min-height: 38px !important;
+  font-size: 0.82rem !important;
+  padding-left: 18px !important;
+  padding-right: 18px !important;
+  border-radius: 8px !important;
+}
+
+/* Mobile CTA button full width */
+@media (max-width: 820px) {
+  .mobile-explore-btn {
+    width: 100% !important;
+    height: 46px !important;
+    justify-content: center !important;
+  }
+
+  .cta-buttons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .cta-primary-btn,
+  .cta-secondary-btn {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* ----------------------------------------------------------------
+   FEATURES SECTION — MOBILE FIX
+   On mobile: hide arc icons, show feature list in simple grid
+---------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .feat-right {
+    display: none !important;
+  }
+
+  .features-container {
+    grid-template-columns: 1fr !important;
+    min-height: unset !important;
+  }
+
+  .feat-left {
+    text-align: center;
+    align-items: center;
+  }
+
+  .feat-platform-tags {
+    justify-content: center;
+  }
+
+  .feat-sub {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .feat-bullets {
+    text-align: left;
+    align-self: stretch;
+    max-width: 400px;
+  }
+
+  .feat-cta-btn {
+    align-self: center;
+  }
+
+  /* Show a simple mobile feature grid instead of arc */
+  .feat-mobile-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    width: 100%;
+    margin-top: 8px;
+  }
+}
+
+@media (min-width: 769px) {
+  .feat-mobile-grid {
+    display: none !important;
+  }
+}
+
+/* Mobile grid feature pill */
+.feat-mobile-pill {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid #ede8e3;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 0.78rem;
+  font-weight: 650;
+  color: #374151;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.feat-mobile-pill img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+/* ----------------------------------------------------------------
+   FONT CONSISTENCY
+   Ensure every text element uses the brand font
+---------------------------------------------------------------- */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6,
+p, span, button, li, label, a, input, textarea {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+
